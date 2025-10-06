@@ -1,0 +1,61 @@
+name: BraiNavLab
+url: http://127.0.0.1:5000/
+
+exclude: [bibble, README.md, Makefile]
+
+# colorize code snippets with the pygments module
+highlighter: pygments
+
+# The path structure for blog posts.
+permalink: /blog/:year/:month/:day/:title.html
+
+# Sections on the "people" page.
+roles:
+  - key: full_professor
+    name: Full Professor
+  - key: associate_professor
+    name: Associate Professor
+  - key: assistant_professor
+    name: Assistant Professor
+  - key: post_doc
+    name: Post-DOC
+  - key: phd_student
+    name: PhD Student
+  - key: research_fellow
+    name: Research Fellow
+  - key: graduate_student
+    name: Graduate Student
+  - key: undergraduate_student
+    name: Undergraduate Student
+  - key: collab
+    name: Collaborator
+  - key: alum
+    name: Alumni
+
+# Number of news stories on the front page.
+front_page_news: 8
+
+# Base pathname for links.
+base: ''
+
+# make pages for the _projects folder
+collections:
+  projects:
+    output: true
+
+# Navigation bar links.
+navigation:
+  - title: Home
+    link: /
+  - title: People
+    link: /pages/lab_member.html
+  - title: Research Topics
+    link: /pages/research_projects.html
+  - title: Publications
+    link: /pages/publications.html
+  - title: Funded Projects
+    link: /pages/funded_projects.html
+  - title: Contacts
+    link: /pages/contacts.html
+  - title: GitHub
+    link: https://github.com/orgs/BraiNavLab

@@ -1,0 +1,550 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  --hr-line-offset: 25%;
+  --hr-color: #058EFE;
+}
+
+.header {
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer {
+  /* padding-top: 19px; */
+  color: #999;
+  border-top: 1px solid #EEE;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 2em;
+}
+.footer a:link, .footer a:visited {
+  color: #999;
+}
+
+/* Customize container */
+.container-fluid {
+  margin-left: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  color: rgb(90, 90, 90); /* set the general color for text in all pages */
+}
+
+/* ######################################### GENERAL ######################################### */
+@media (min-width: 576px) {
+  .project-people {
+    column-count: 2;
+  }
+  .card-columns {
+    column-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  .role.grad {
+    column-count: 2;
+  }
+  .project-people {
+    column-count: 3;
+  }
+  .card-columns {
+    column-count: 2;
+  }
+}
+.title img {
+  max-width: 50%;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.profile {
+  object-fit: cover;
+}
+
+.noprofile circle {
+  fill: #EEE;
+}
+.noprofile text {
+  font-weight: 700;
+  fill: white;
+}
+
+.person {
+  margin-bottom: 10px;
+}
+.person .profile {
+  height: 70px;
+  width: 70px;
+}
+.person .bio {
+  color: #999;
+}
+.person .person-name {
+  margin: 0;
+}
+
+.person-without-image {
+  margin: 0;
+}
+.person-without-image .bio {
+  margin-left: 1em;
+}
+
+/* ######################################### NAVIGATION BAR ######################################### */
+/* Navbar container */
+/* Nav links */
+.nav-link {
+  font-weight: 600;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+/* Scale slightly on hover */
+.nav-link:hover {
+  background: #ffffff;
+  color: rgb(93, 105, 210) !important;
+}
+
+/* Active pill styling */
+.nav-pills .nav-link.active {
+  background: rgb(93, 105, 210) !important;
+  color: #ffffff !important;
+  border-radius: 0.8em;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* ######################################### HOME ######################################### */
+/* Front page BraiNavLab mission */
+.text-box-mission {
+  text-align: justify;
+  padding: 3em 1.5em;
+  font-size: 125%;
+  width: 100%;
+  border-radius: 1em;
+  position: relative; /* needed for overlay positioning */
+  z-index: 0;
+}
+
+/* background image with transparency */
+.text-box-mission::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 65%), url("../img/home_img/image_for_mission.png") center/contain no-repeat;
+  opacity: 0.13; /* only the image is transparent */
+  border-radius: 1em; /* match the container */
+  z-index: 0; /* behind text */
+  background-color: #ffffff;
+}
+
+.text-box-mission h1 {
+  position: relative;
+  z-index: 1;
+  color: rgb(93, 105, 210);
+  text-align: center;
+}
+
+.text-box-mission p {
+  position: relative;
+  z-index: 1;
+  color: rgb(90, 90, 90);
+  text-align: justify;
+  text-align-last: left; /* last line aligns left */
+}
+
+/* Front page collaborations */
+.networking h2 {
+  color: rgb(93, 105, 210);
+}
+
+.networking p {
+  color: rgb(90, 90, 90);
+  text-align: center;
+}
+
+/* Front page news. */
+.news-section h2 {
+  color: rgb(93, 105, 210);
+}
+
+.news-section p {
+  color: rgb(90, 90, 90);
+}
+
+.fa {
+  color: #999;
+}
+
+a > .fa {
+  display: inline;
+}
+
+ul.news {
+  color: rgb(90, 90, 90);
+}
+ul.news .date {
+  color: #999;
+  font-weight: bold;
+}
+ul.news > li {
+  margin-top: 1em;
+}
+
+/* ######################################### Group logo ######################################### */
+#logo {
+  width: 210px;
+  height: auto;
+  margin: 2px 0 8px 0;
+}
+
+/* ######################################### PEOPLE ######################################### */
+/* THE CARD FOR PEOPLE AND PROJECT IS DEFINED IN RESEARCH PROJECT*/
+.members-projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px; /* spacing between cards */
+  justify-items: center; /* center cards horizontally */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive: 1 card per row on small screens */
+@media (max-width: 768px) {
+  .members-projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+.collab-projects-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 30px; /* spacing between cards */
+  justify-items: center; /* center cards horizontally */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive: 1 card per row on small screens */
+@media (max-width: 768px) {
+  .collab-projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+.person-img {
+  aspect-ratio: 1/1; /* Force square ratio */
+  object-fit: cover; /* Crop/zoom instead of stretching */
+  width: 100%; /* Responsive fluid width */
+  max-width: 180px; /* Limit size on large screens */
+  border-radius: 50%; /* 0.8em for squared - 50% for circular */
+}
+
+.card-title {
+  color: #058EFE;
+}
+
+.display-role {
+  color: #ff6ec4 !important;
+}
+
+.email {
+  color: rgb(90, 90, 90); /* set your desired color */
+  /*font-weight: 500;       /* optional: make it slightly bolder */
+  /*font-size: 0.9rem;      /* optional: adjust size */
+}
+
+.title-people-lab {
+  color: rgb(90, 90, 90); /* set your desired color */
+}
+
+.button-person {
+  border-radius: 0.8em;
+  width: 75%;
+}
+
+/* ######################################### OPTION FOR HORIZONTAL LINES ######################################### */
+:root hr {
+  border: 0; /* remove default border */
+  height: 2px; /* thickness of the HR line */
+  border-top: 2px solid; /* same thickness */
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, transparent, var(--hr-color) calc(50% - var(--hr-line-offset)), var(--hr-color) calc(50% + var(--hr-line-offset)), transparent);
+}
+
+/* ######################################### PROJECT CARD ######################################### */
+.research-projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 30px; /* spacing between cards */
+  justify-items: center; /* center cards horizontally */
+  padding: 20px;
+}
+
+/* Responsive: 1 card per row on small screens */
+@media (max-width: 768px) {
+  .research-projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+.card-body h2 {
+  color: #058EFE;
+}
+
+.card-text {
+  text-align: justify;
+  text-align-last: left; /* last line aligns left */
+}
+
+.card-body a {
+  color: #00e0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.card-body a:hover {
+  text-decoration: underline;
+  color: #ff6ec4;
+}
+
+.card {
+  border-color: #ffffff;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(12px);
+  border-radius: 0.8em;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card .profile {
+  height: 40px;
+  width: 40px;
+  margin: 3px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+}
+
+/* ######################################### PUBLICATIONS ######################################### */
+.pubtitle {
+  color: #058EFE;
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+}
+
+/* ######################################### FUNDED PROJECTS ######################################### */
+.h1-funded-projects {
+  color: rgb(90, 90, 90);
+}
+
+.funded-projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 30px; /* spacing between cards */
+  justify-items: center; /* center cards horizontally */
+  padding: 20px;
+}
+
+/* Responsive: 1 card per row on small screens */
+@media (max-width: 768px) {
+  .funded-projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+.funded-project-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(12px);
+  border-radius: 0.8em;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.funded-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+}
+
+.funded-project-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #058EFE;
+}
+
+.funded-project-card p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.funded-project-card a {
+  color: #00e0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.funded-project-card a:hover {
+  text-decoration: underline;
+  color: #ff6ec4;
+}
+
+.status.active {
+  color: #4ade80; /* green */
+  font-weight: bold;
+}
+
+.status.closed {
+  color: #f87171; /* red */
+  font-weight: bold;
+}
+
+/* ######################################### CONTACT ######################################### */
+.h1-contact {
+  color: rgb(90, 90, 90);
+}
+
+.contacts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* Contact Card */
+.contact-card {
+  padding-top: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%; /* card width */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.8em;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Image section */
+.contact-image {
+  object-fit: cover; /* Crop/zoom instead of stretching */
+  width: 100%; /* Responsive fluid width */
+  max-width: 180px; /* Limit size on large screens */
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/1; /* Force square ratio */
+  border-radius: 50%;
+}
+
+/* Info section */
+.contact-info {
+  padding: 20px;
+  text-align: center;
+  color: rgb(90, 90, 90);
+}
+
+.contact-info h2 {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  color: #058EFE;
+}
+
+.contact-info h4 {
+  margin: 0 0 15px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.contact-info a {
+  color: #00e0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #ff6ec4;
+  text-decoration: underline;
+}
+
+/* Links section */
+.contact-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-links a {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-links a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Responsive: stack cards on mobile */
+@media (max-width: 768px) {
+  .contacts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.map-container {
+  margin: 50px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.map-container h2 {
+  margin-bottom: 20px;
+  color: rgb(93, 105, 210);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 0.8em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2em;
+}
+
+/*# sourceMappingURL=group.css.map */

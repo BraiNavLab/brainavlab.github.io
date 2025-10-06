@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-body">
+
+    {% if person.image %}
+      <img src="{{ person.image }}" alt="{{ person.display_name }}" 
+          class="img-fluid mb-3 person-img">
+    {% endif %}
+
+    <h5 class="card-title">{{ person.display_name }}</h5>
+    <p class="card-subtitle display-role">{{ person.display_role }}</p>
+    <p class="card-subtitle email">{{ person.email }}</p>
+
+    {% if person.bio %}
+      <!-- Button triggers modal -->
+      <button class="btn btn-sm btn-outline-primary mt-3 button-person" type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#bioModal-{{ id | slugify }}">
+        Show Bio
+      </button>
+    {% endif %}
+
+  </div>
+</div>
+
+<!-- Modal -->
+{% if person.bio %}
+<div class="modal fade" id="bioModal-{{ id | slugify }}" tabindex="-1" aria-labelledby="bioModalLabel-{{ id | slugify }}" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content text-center">
+      <div class="modal-header border-0">
+        <h4 class="modal-title w-100" id="bioModalLabel-{{ id | slugify }}">{{ person.display_name }} - Biography</h4>
+      </div>
+      <div class="modal-body">
+        {{ person.bio }}
+        <button type="button" class="btn btn-secondary mt-3 w-100" data-bs-dismiss="modal">
+          Close Bio
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

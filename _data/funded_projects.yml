@@ -1,0 +1,54 @@
+####################### FUNDED PROJECTS #######################
+- proj001:
+  project_name: "AI in Healthcare"
+  PI: "Dr. John Smith"
+  people: ["Alice Brown", "Bob White", "Charlie Green"]
+  reference_code: "AIH2025"
+  partners: ["TechCorp", "HealthInstitute"]
+  money: "$500,000"
+  description: "Applying AI to improve patient diagnosis and treatment efficiency."
+  funded_agency: "National Science Foundation"
+  link: "https://www.univr.it/"
+  status: "Active"
+  start: "01-2023"
+  end: "12-2025"
+
+- proj002:
+  project_name: "Renewable Energy Optimization"
+  PI: "Dr. Emily Johnson"
+  people: ["David Black", "Eve Blue"]
+  reference_code: "REO2025"
+  partners: ["GreenTech", "EnergyLabs"]
+  money: "$750,000"
+  description: "Optimizing renewable energy sources using advanced modeling techniques."
+  funded_agency: "Department of Energy"
+  status: "Closed"
+  start: "01-2023"
+  end: "12-2025"
+
+- proj003:
+  project_name: "Urban Mobility Analytics"
+  PI: "Dr. Michael Lee"
+  people: ["Sophia White", "Liam Brown"]
+  reference_code: "UMA2025"
+  partners: ["CityTransport", "UrbanTech"]
+  money: "$300,000"
+  description: "Analyzing urban traffic patterns to improve mobility and reduce congestion. Analyzing urban traffic patterns to improve mobility and reduce congestion. Analyzing urban traffic patterns to improve mobility and reduce congestion. Analyzing urban traffic patterns to improve mobility and reduce congestion. Analyzing urban traffic patterns to improve mobility and reduce congestion. Analyzing urban traffic patterns to improve mobility and reduce congestion."
+  funded_agency: "Smart Cities Initiative"
+  link: "https://www.univr.it/"
+  status: "Active"
+  start: "01-2023"
+  end: "12-2025"
+
+- proj004:
+  project_name: "Renewable Energy Optimization"
+  PI: "Dr. Emily Johnson"
+  people: ["David Black", "Eve Blue"]
+  reference_code: "REO2025"
+  partners: ["GreenTech", "EnergyLabs"]
+  money: "$750,000"
+  description: "Optimizing renewable energy sources using advanced modeling techniques."
+  funded_agency: "Department of Energy"
+  status: "Closed"
+  start: "01-2023"
+  end: "12-2025"

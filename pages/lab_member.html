@@ -1,0 +1,44 @@
+---
+layout: default
+title: People
+notitle: true
+---
+
+<!-- Active Members -->
+<h1 class="mt-2 text-center title-people-lab">BraiNavLab Members</h1>
+<hr>
+<div class="members-projects-container">
+  {% for person_entry in site.data.people %}
+    {% assign id = person_entry[0] %}
+    {% assign person = person_entry[1] %}
+    {% if person.status_group == "active" %}
+      {% include person-card.html person=person id=id %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Collaborators -->
+<h1 class="mt-2 text-center title-people-lab">Collaborators</h1>
+<hr>
+<div class="collab-projects-container">
+  {% for person_entry in site.data.people %}
+    {% assign id = person_entry[0] %}
+    {% assign person = person_entry[1] %}
+    {% if person.status_group == "collab" %}
+      {% include person-card.html person=person id=id %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Alumni -->
+<h1 class="mt-2 text-center title-people-lab">Alumni</h1>
+<hr>
+<div class="members-projects-container">
+  {% for person_entry in site.data.people %}
+    {% assign id = person_entry[0] %}
+    {% assign person = person_entry[1] %}
+    {% if person.status_group == "alumni" %}
+      {% include person-card.html person=person id=id %}
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,33 @@
+---
+layout: default
+title: Funded Projects
+notitle: true
+---
+
+<h1 class="h1-funded-projects">Funded Projects</h1>
+<hr>
+
+
+<div class="funded-projects-container">
+  {% for project in site.data.funded_projects %}
+    <div class="funded-project-card">
+      <h2>{{ project.project_name }}</h2>
+      <p><strong>Status:</strong> 
+        <span class="status {{ project.status | downcase }}">
+          {{ project.status | capitalize }}
+        </span>
+      </p>
+      <p><strong>Duration:</strong> {{ project.start }} - {{ project.end }}</p>
+      <p><strong>PI:</strong> {{ project.PI }}</p>
+      <p><strong>People:</strong> {{ project.people | join: ", " }}</p>
+      <p><strong>Reference Code:</strong> {{ project.reference_code }}</p>
+      <p><strong>Partners:</strong> {{ project.partners | join: ", " }}</p>
+      <p><strong>Funding:</strong> {{ project.money }}</p>
+      <p><strong>Description:</strong> {{ project.description }}</p>
+      <p><strong>Funded Agency:</strong> {{ project.funded_agency }}</p>
+      {% if project.link %}
+        <p><strong>Website:</strong> <a href="{{ project.link }}" target="_blank">{{ project.link }}</a></p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
