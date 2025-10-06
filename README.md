@@ -1,5 +1,9 @@
-Research Group Web Site Template
+BrainNavigationLab Web Site
 ================================
+
+This website has been created starting from a template which description and credits are provided below.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 This is a [Jekyll][]-based Web site intended for research groups. Your group should be able to get up and running with minimal fuss.
 
