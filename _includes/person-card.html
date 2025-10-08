@@ -20,14 +20,20 @@
     {% endif %}
 
     {% if person.links %}
-      <div class="person-links">
-        {% for l in person.links %}
+    <div class="person-links">
+      {% for l in person.links %}
+        {% if l.url %}
           <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}">
-            <img src="{{ l.img }}" alt="{{ l.label }} logo" class="person-icon">
+            {% if l.img %}
+              <img src="{{ l.img }}" alt="{{ l.label }} logo" class="person-icon">
+            {% else %}
+              {{ l.label }}
+            {% endif %}
           </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
 
   </div>
 </div>
