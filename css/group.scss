@@ -239,14 +239,12 @@ section {
     text-align: center;
 }
 
-.networking collaborations{
-    width: 100%;
-    /*max-width: 1200px;  optional, set a max size */
-    height: auto;
-    border-radius: 10px; /* optional, gives soft edges */
+.networking img{
+    width: 100%;              /* image fills container width */
+    height: auto;             /* keeps aspect ratio */
     display: block;
-    margin: 0 auto;
-}
+    border-radius: 10px;      /* optional rounded corners */
+  }
 
 /* Front page news. */
 .news-section h2{
