@@ -19,29 +19,7 @@
       </button>
     {% endif %}
 
-  </div>
-</div>
-
-<!-- Modal -->
-{% if person.bio %}
-<div class="modal fade" id="bioModal-{{ id | slugify }}" tabindex="-1" aria-labelledby="bioModalLabel-{{ id | slugify }}" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content text-center">
-      <div class="modal-header border-0">
-        <h4 class="modal-title w-100" id="bioModalLabel-{{ id | slugify }}">{{ person.display_name }} - Biography</h4>
-      </div>
-      <div class="modal-body">
-        {{ person.bio }}
-        <button type="button" class="btn btn-secondary mt-3 w-100" data-bs-dismiss="modal">
-          Close Bio
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
-
-{% if person.links %}
+    {% if person.links %}
   <ul class="person-links">
     {% for l in person.links %}
       <li>
@@ -70,3 +48,26 @@
     {% endfor %}
   </ul>
 {% endif %}
+
+  </div>
+</div>
+
+<!-- Modal -->
+{% if person.bio %}
+<div class="modal fade" id="bioModal-{{ id | slugify }}" tabindex="-1" aria-labelledby="bioModalLabel-{{ id | slugify }}" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content text-center">
+      <div class="modal-header border-0">
+        <h4 class="modal-title w-100" id="bioModalLabel-{{ id | slugify }}">{{ person.display_name }} - Biography</h4>
+      </div>
+      <div class="modal-body">
+        {{ person.bio }}
+        <button type="button" class="btn btn-secondary mt-3 w-100" data-bs-dismiss="modal">
+          Close Bio
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
