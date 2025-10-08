@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ site.base }}/css/group.css">
         <link rel="icon" type="image/x-icon" href="{{ site.base }}/img/LogoBrainavLab_only_brain.png">
         <link rel="shortcut icon" type="image/x-icon" href="{{ site.base }}/img/LogoBrainavLab_only_brain.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymIY9z…(snip)…" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     </head>
     <body>
         <div class="container-fluid">
@@ -43,17 +44,23 @@
                         {% endif %}
 
                         <li class="nav-item">
+                            {% assign is_external = item.link contains '://' %}
                             <a class="nav-link
-                            {% if item.title == "GitHub" %}github-link{% endif %}"
-                            href="{{ site.base }}{{ item.link }}"
-                            {% if item.title == "GitHub" %}target="_blank"{% endif %}>
-
-                            {% if item.title == "GitHub" %}
-                                <i class="fab fa-github"></i>
-                            {% else %}
+                                {% if item.title == "GitHub" or item.title == "LinkedIn" %}social-link{% endif %}"
+                                href="{% if is_external %}{{ item.link }}{% else %}{{ site.base }}{{ item.link }}{% endif %}"
+                                {% if is_external %}target="_blank" rel="noopener"{% endif %}>
+                            
+                                {% if item.title == "GitHub" %}
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span class="sr-only">GitHub</span>
+                                {% elsif item.title == "LinkedIn" %}
+                                {# Try fa-linkedin first; if your FA build uses the 'in' logo, use fa-linkedin-in #}
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                {# <i class="fab fa-linkedin-in" aria-hidden="true"></i> #}
+                                <span class="sr-only">LinkedIn</span>
+                                {% else %}
                                 {{ item.title }}
-                            {% endif %}
-
+                                {% endif %}
                             </a>
                         </li>
                     {% endfor %}
