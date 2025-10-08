@@ -107,7 +107,7 @@ virginia_filippi:
     status_group: active
     email: virginia.filippi@univr.it
     image: /img/people/virginia_filippi.jpg
-    bio: XXX
+    bio: N/A
 
 silvia_saglia:
     display_name: "Silvia Saglia"
@@ -118,7 +118,7 @@ silvia_saglia:
     status_group: active
     email: silvia.saglia@univr.it
     image: /img/people/silvia_saglia.jpeg
-    bio: XXX
+    bio: Silvia Saglia completed her M.Sc. in Neuroscience and Neuropsychological Rehabilitation at the University of Padova in 2020. She then focused on neuroimaging and computational methods. From 2021 to 2024 she worked at the IRCCS Centro San Giovanni di Dio Fatebenefratelli in Brescia on a Ministry of Health-funded clinical trial using network-based TMS in individuals at risk for Alzheimer’s disease. Her work focused on participant coordination and the processing and analysis of multimodal MRI data. She joined the BraiNAVLab in 2024 as a research fellow, working on large-scale neuroimaging, brain connectivity, MRI/PET integration, imaging-genetics, and AI methods applied to Alzheimer’s and Parkinson’s disease.
 
 
 ####################### COLLABORATORS #######################
@@ -147,7 +147,7 @@ walter_riviera:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: Collaborator <br> XXX
+    display_role: Collaborator <br> Content Creator & Popularizer
     status_group: collab
     image: /img/people/walter_riviera.png
     #bio: Walter Riviera received his B.S. in Multimedia Information Technology and his M.S. in Visual Computing and Pattern Recognition both at University of Verona, respectively in 2012 and 2014. He then won two research grants respectively focused on Information Retrieval and Data Mining techniques. He is now working as Technical EMEA lead for AI at Intel Corporation, while pursuing his Ph.D. In federated learning and distributed systems. He mainly focuses on applied research at different level from testing novel scientific approaches, to tackle production and deployment challenges. The main research area concern the Medical environment, but eventually includes collaborations on many other segments.
@@ -167,7 +167,7 @@ nikolina_popadic:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: MSc Student <br> University of Verona
+    display_role: M.Sc. Student <br> University of Verona
     status_group: collab
     image: /img/people/nikolina_popadic.jpg
     #bio: XXX
@@ -177,7 +177,7 @@ michela_franceschi:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: MSc Student <br> University of Verona
+    display_role: M.Sc. Student <br> University of Verona
     status_group: collab
     image: /img/people/michela_franceschi.jpeg
     #bio: Michela Franceschi received her Bachelor's degree in Bioinformatics from the University of Verona in October 2023. Her thesis, titled "Implementation of Tests for Validating Radar's Functionalities - a Web Application for Collecting Reports of Suspected Adverse Drug Reactions" . Currently, she is engaged in research assistant at the University of Verona, collaborating with the BraiNAVlab group.
@@ -187,7 +187,7 @@ elena_soriato:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: Collaborator <br> XXX
+    display_role: Ph.D. Student <br> University of 
     status_group: collab
     image: /img/people/elena_soriato.png
     #bio: Elena Soriato received her Bachelor's degree in Bioinformatics in July 2021 where she focused on liver diseases using multiple regression. Then, she finished her Master's degree in March 2024 where she focused on finding pairs of genetic patterns that could act as fingerprints for bacteria and using them to classify different species. She is currently working as a research assistant at the University of Verona, teaming up with the BraiNAVlab group.
