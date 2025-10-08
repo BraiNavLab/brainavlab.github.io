@@ -212,7 +212,7 @@ virginia_filippi:
     status_group: active
     email: virginia.filippi@univr.it
     image: /img/people/virginia_filippi.jpg
-    bio: N/A
+    bio: Virginia Filippi obtained both her M.Sc. in Artificial Intelligence and B.Sc. in Bioinformatics cum laude from the University of Verona, where she is currently pursuing a PhD in Intelligent Systems Engineering. Her research investigates the use of machine learning and deep learning in neuroimaging, focusing on brain connectivity, graph signal processing, and interpretable AI for studying the relationship between brain structure and function in the context of neurodegenerative disorders such as Alzheimer's disease.
     links:
         - label: "IRIS"
           icon: "iris"
@@ -313,26 +313,30 @@ elena_soriato:
 
 ####################### ALUMNI #######################
 
-alum-a:
-    display_name: "Alum A"
+federica_cruciani:
+    display_name: "Federica Cruciani"
     role: alum
     status_group: alumni
+    image: /img/people/elena_soriato.png
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
-alum-b:
-    display_name: "Alum B"
+ahmed_mahdee_abdo_salih:
+    display_name: "Ahmed Mahdee Abdo Salih"
     role: alum
     status_group: alumni
+    image: /img/people/elena_soriato.png
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
-alum-c:
-    display_name: "Alum C"
+jacopo_tessadori:
+    display_name: "Jacopo Tessadori"
     role: alum
     status_group: alumni
+    image: /img/people/elena_soriato.png
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
-alum-d:
-    display_name: "Alum D"
+theo_biardeau:
+    display_name: "Theo Biardeau"
     role: alum
     status_group: alumni
+    image: /img/people/elena_soriato.png
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
