@@ -19,14 +19,23 @@
       </button>
     {% endif %}
 
-    {% if person.links %}
-      <div class="person-links">
-        {% for l in person.links %}
-          <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}">
-            <img src="{{ l.img }}" alt="{{ l.label }} logo" class="person-icon">
-          </a>
+    {% assign links = person.links | default: nil %}
+    {% if links and links.size > 0 %}
+      <ul class="person-links">
+        {% for l in links %}
+          {% if l.url and l.url != '' %}
+            <li>
+              <a href="{{ l.url | escape }}" target="_blank" rel="noopener" title="{{ l.label | escape }}">
+                {% if l.img and l.img != '' %}
+                  <img src="{{ l.img | relative_url }}" alt="{{ l.label | escape }} logo" class="person-icon">
+                {% else %}
+                  {{ l.label }}
+                {% endif %}
+              </a>
+            </li>
+          {% endif %}
         {% endfor %}
-      </div>
+      </ul>
     {% endif %}
 
   </div>

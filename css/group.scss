@@ -101,29 +101,18 @@ section {
 }
 
 .person-links {
+    list-style: none;
+    margin: .5rem 0 0;
+    padding: 0;
     display: flex;
-    justify-content: center;   /* centers the icons */
-    align-items: center;
-    gap: 0.75rem;               /* space between icons */
-    margin-top: 0.5rem;
-  }
-
-  .person-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-  }
-  
-  .person-links a:hover {
-    transform: scale(1.1);
-  }
-  
-  .person-icon {
-    width: 28px;     /* adjust size */
-    height: 28px;
-    object-fit: contain;
-  }
+    gap: .75rem;
+    flex-wrap: wrap;
+    justify-content: center; /* center inside the card */
+}
+.person-links li { display: inline-block; }
+.person-links a { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.person-links a:hover { transform: scale(1.06); }
+.person-icon { width: 28px; height: 28px; object-fit: contain; }
 
 /* ######################################### NAVIGATION BAR ######################################### */
 /* Navbar container */
