@@ -141,7 +141,7 @@ ettore_cinquetti:
     - label: "Google Scholar"
         icon: "scholar"
         img: "/img/icons/scholar.png"
-        url: ""
+        url: "https://orcid.org/0000-0002-4153-3749"
 
 edoardo_paolini:
     display_name: "Edoardo Paolini"
@@ -209,11 +209,11 @@ irene_treccani:
     - label: "IRIS"
         icon: "iris"
         img: "/img/icons/iris.png"
-        url: ""
+        url: "https://orcid.org/0000-0002-4153-3749"
     - label: "Google Scholar"
         icon: "scholar"
         img: "/img/icons/scholar.png"
-        url: ""
+        url: "https://orcid.org/0000-0002-4153-3749"
 
 virginia_filippi:
     display_name: "Virginia Filippi"
@@ -229,7 +229,7 @@ virginia_filippi:
     - label: "ORCID"
         icon: "orcid"
         img: "/img/icons/orcid.png"
-        url: ""
+        url: "https://orcid.org/0000-0002-4153-3749"
     - label: "IRIS"
         icon: "iris"
         img: "/img/icons/iris.png"
@@ -261,7 +261,7 @@ silvia_saglia:
     - label: "Google Scholar"
         icon: "scholar"
         img: "/img/icons/scholar.png"
-        url: ""
+        url: "https://orcid.org/0000-0002-4153-3749"
 
 ####################### COLLABORATORS #######################
 ilaria_siviero:
