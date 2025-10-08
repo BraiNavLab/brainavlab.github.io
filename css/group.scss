@@ -136,6 +136,11 @@ section {
     position: relative;
 }
 
+.nav-link i {
+    font-size: 1.25em;
+    vertical-align: middle;
+}
+
 /* Scale slightly on hover */
 .nav-link:hover {
     // transform: scale(1.05);
