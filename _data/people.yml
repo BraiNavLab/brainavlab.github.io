@@ -67,7 +67,7 @@ ettore_cinquetti:
 
 edoardo_paolini:
     display_name: "Edoardo Paolini"
-    #webpage: "http://en.wikipedia.org/wiki/Professor_X"
+    webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: phd_student
     display_role: Ph.D. Student
