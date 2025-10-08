@@ -138,6 +138,7 @@ ettore_cinquetti:
         icon: "iris"
         img: "/img/icons/iris.png"
         url: "https://iris.univr.it/cris/rp/rp68936"
+    - label: []
 
 edoardo_paolini:
     display_name: "Edoardo Paolini"
@@ -202,6 +203,8 @@ irene_treccani:
         icon: "scholar"
         img: "/img/icons/scholar.png"
         url: "https://scholar.google.com/citations?user=8PAejEEAAAAJ&hl=it&oi=ao"
+    - label: []
+    - label: []
 
 virginia_filippi:
     display_name: "Virginia Filippi"
@@ -222,6 +225,7 @@ virginia_filippi:
         icon: "scholar"
         img: "/img/icons/scholar.png"
         url: "https://scholar.google.com/citations?user=10pT9iMAAAAJ&hl=it&oi=ao"
+    - label: []
 
 silvia_saglia:
     display_name: "Silvia Saglia"
@@ -238,6 +242,8 @@ silvia_saglia:
         icon: "orcid"
         img: "/img/icons/orcid.png"
         url: "https://orcid.org/0000-0003-0680-2832"
+    - label: []
+    - label: []
 
 ####################### COLLABORATORS #######################
 ilaria_siviero:
