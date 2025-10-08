@@ -20,14 +20,14 @@
     {% endif %}
 
     {% if person.links %}
-    <div class="person-links">
-      {% for l in person.links %}
-        <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}">
-          <img src="{{ l.img }}" alt="{{ l.label }} logo" class="person-icon">
-        </a>
-      {% endfor %}
-    </div>
-  {% endif %}
+      <div class="person-links">
+        {% for l in person.links %}
+          <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}">
+            <img src="{{ l.img }}" alt="{{ l.label }} logo" class="person-icon">
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
 
   </div>
 </div>

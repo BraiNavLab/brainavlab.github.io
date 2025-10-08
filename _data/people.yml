@@ -16,10 +16,11 @@ gloria_menegaz:
           url: "https://orcid.org/0000-0001-5920-943X"
         - label: "IRIS"
           icon: "iris"
-          img: "/img/icons/orcid.png"
+          img: "/img/icons/iris.png"
           url: "https://iris.univr.it/cris/rp/rp06455"
         - label: "Google Scholar"
           icon: "scholar"
+          img: "/img/icons/scholar.png"
           url: "https://scholar.google.com/citations?user=hd5zn0YAAAAJ&hl=it&oi=ao"
 
 silvia_francesca_storti:
