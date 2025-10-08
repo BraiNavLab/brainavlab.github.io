@@ -9,6 +9,16 @@ gloria_menegaz:
     email: gloria.menegaz@univr.it
     image: /img/people/gloria_menegaz.jpg
     bio: "Gloria Menegaz is Professor of Bioengineering at the Dept. of Engineering for Innovation Medicine, University of Verona (Italy) and head the BraiNAVLab. She holds a PhD in Applied Sciences (EPFL 2000) a MSc in Electronic Engineer (1993) and a post-grade Master's in information technology (1995) (Politecnico di Milano, Italy). From 2000 to 2002 she was first research assistant at the Telecommunications Lab (LCAV) of EPFL, headed by Prof. Martin Vetterli, that she left to join the Computer Science Dept. of the University of Fribourg (Switzerland) as an Assistant Professor. In 2004 she was awarded the Rita Levi Montalcini grant by the Italian Ministry of University and Research (MIUR)(DM 20/03/2003 n. 501) and joined the Dept. of Information Engineering of the University of Siena (Italy) as an Assistant Professor. In 2007 she joined the Dept. of Computer Science of the University of Verona (Italy) as an Associate Professor and became full Professor in 2017. Prof. Menegaz is a Senior Member of the IEEE, the Signal Processing Society (SPS), Liason representative of the IEEE-SPS and member of the steering committee of the IEEE Transactions on Medical Imaging (TMI), member of the Challenges and Data Collection Technical Committee of the SPS, Chair of the Technical Committee for Challenges and Data Collections of the IEEE Bioimaging and Signal Processing (BISP) Committee of the IEEE (Co-chair Prof. Vince Calhoun, Georgia Institute of Technology), and member of the IEEE Woman in Engineering. She is also a member of Member of the Medical Image Computing and Computer Assisted Intervention Society (MICCAI) Special Interest Group on Biomedical Image Analysis Challenges (SIG-BIAC), of the Ad Hoc Group (AHG) on Digital Media Storage using DNA (JPEG-DNA) and Observer for the DICOM WG-32 (Neurophysiology data). She is Associate Editor of the IEEE Transactions on Medical Imaging and Scientific Reports (Nature), has served as Guest Editor of the IEEE-SPM and for other venues. She has been Vice-Chair for the FET-REA and the MSCA-IF for many years and Independent Expert for many international Institutions including European Science Foundation (ESF), SKF, Sweden, among others. She authored more than 130 publications in international journals and conference proceedings and has been chair, area chair and technical committee member of many international conferences, especially of the IEEE."
+    links:
+        - label: "ORCID"
+          icon: "orcid"
+          url: "https://orcid.org/0000-0001-5920-943X"
+        - label: "IRIS"
+          icon: "iris"
+          url: "https://iris.univr.it/cris/rp/rp06455"
+        - label: "Google Scholar"
+          icon: "scholar"
+          url: "https://scholar.google.com/citations?user=hd5zn0YAAAAJ&hl=it&oi=ao"
 
 silvia_francesca_storti:
     display_name: "Silvia Francesca Storti"

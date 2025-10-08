@@ -40,3 +40,33 @@
   </div>
 </div>
 {% endif %}
+
+{% if person.links %}
+  <ul class="person-links">
+    {% for l in person.links %}
+      <li>
+        <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}">
+          {% case l.icon %}
+          {% when "orcid" %}
+            <!-- ORCID SVG -->
+            <svg viewBox="0 0 256 256" width="18" height="18" aria-hidden="true">
+              <circle cx="128" cy="128" r="128" fill="#A6CE39"></circle>
+              <path fill="#fff" d="M86 200h-20V56h20v144zm46.9-117.2c-23.5 0-42.6 19.1-42.6 42.6s19.1 42.6 42.6 42.6 42.6-19.1 42.6-42.6-19.1-42.6-42.6-42.6zm0 70.2c-15.2 0-27.6-12.3-27.6-27.6s12.3-27.6 27.6-27.6 27.6 12.3 27.6 27.6-12.4 27.6-27.6 27.6z"/>
+            </svg>
+          {% when "iris" %}
+            <!-- IRIS icon (generic database symbol) -->
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#0057b8" aria-hidden="true">
+              <path d="M3 3h18v2H3V3zm0 8h18v2H3v-2zm0 8h18v2H3v-2z"/>
+            </svg>
+          {% when "scholar" %}
+            <!-- Google Scholar "hat" icon -->
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#4285F4" aria-hidden="true">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 8.9L5.07 9 12 5.1 18.93 9 12 11.9z"/>
+            </svg>
+          {% endcase %}
+          <span class="sr-only">{{ l.label }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
