@@ -51,11 +51,13 @@ navigation:
     link: /pages/lab_member.html
   - title: Research Topics
     link: /pages/research_projects.html
-  - title: Publications
-    link: /pages/publications.html
+  # - title: Publications
+  #   link: /pages/publications.html
   - title: Funded Projects
     link: /pages/funded_projects.html
   - title: Contacts
     link: /pages/contacts.html
   - title: GitHub
     link: https://github.com/orgs/BraiNavLab
+  - title: LinkedIn
+    link: https://www.linkedin.com/company/brainavlab  

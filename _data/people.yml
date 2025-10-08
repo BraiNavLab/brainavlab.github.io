@@ -324,19 +324,19 @@ ahmed_mahdee_abdo_salih:
     display_name: "Ahmed Mahdee Abdo Salih"
     role: alum
     status_group: alumni
-    image: /img/people/ahmed_salih.png
+    image: /img/people/ahmed_salih.jpg
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
 jacopo_tessadori:
     display_name: "Jacopo Tessadori"
     role: alum
     status_group: alumni
-    image: /img/people/jacopo_tessadori.png
+    image: /img/people/jacopo_tessadori.jpg
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
 theo_biardeau:
     display_name: "Theo Biardeau"
     role: alum
     status_group: alumni
-    image: /img/people/theo_biardeau.png
+    image: /img/people/theo_biardeau.jpg
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
