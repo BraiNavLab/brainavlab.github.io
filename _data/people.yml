@@ -12,9 +12,11 @@ gloria_menegaz:
     links:
         - label: "ORCID"
           icon: "orcid"
+          img: "/img/icons/orcid.png"
           url: "https://orcid.org/0000-0001-5920-943X"
         - label: "IRIS"
           icon: "iris"
+          img: "/img/icons/orcid.png"
           url: "https://iris.univr.it/cris/rp/rp06455"
         - label: "Google Scholar"
           icon: "scholar"
