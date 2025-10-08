@@ -625,9 +625,11 @@ ul.news {
     margin-bottom: 2em;
 }
 
-img {
-    max-width: 100%;
+.collaborations img {
+    width: 100%;
+    max-width: 1200px; /* optional, set a max size */
     height: auto;
+    border-radius: 10px; /* optional, gives soft edges */
     display: block;
     margin: 0 auto;
-  }
+}
