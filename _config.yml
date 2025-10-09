@@ -59,5 +59,7 @@ navigation:
     link: /pages/contacts.html
   - title: GitHub
     link: https://github.com/orgs/BraiNavLab
+    external: true
   - title: LinkedIn
     link: https://www.linkedin.com/company/brainavlab  
+    external: true
