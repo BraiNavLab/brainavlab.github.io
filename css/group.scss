@@ -708,62 +708,59 @@ ul.news {
 
 /* ############ For DropDown Table in Mobile View ####################### */
 
-/* Accessibility utility (if you don't already have it) */
 /* ============ HAMBURGER MENU ============ */
 
-/* =========== NAVBAR / HAMBURGER =========== */
-
-.topnav {
-    position: relative;
-    z-index: 1000;
-}
-  
-  /* Hide hamburger on desktop */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 10px;
-}
-  
-.bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-  
-  /* Cross animation */
-.hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active .bar:nth-child(2) { opacity: 0; }
-.hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-  
-  /* ---------- Mobile behavior ---------- */
 @media (max-width: 768px) {
-    .hamburger { display: flex; }                   /* show hamburger */
-    .topnav .nav.nav-pills { display: none !important; } /* hide desktop list by default */
+
+    /* Center the whole button */
+    .hamburger {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin: 0 auto;                /* centers it horizontally */
+      margin-top: 10px;
+      width: 32px;
+      height: 24px;
+      z-index: 1100;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    /* Make sure bars are visible */
+    .hamburger .bar {
+      width: 100%;
+      height: 3px;
+      background-color: white !important; /* ensures visibility */
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  
+    /* Cross animation when active */
+    .hamburger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  
+    /* Ensure dropdown is positioned nicely below */
     .topnav .nav.nav-pills.open {
-      display: flex !important;                     /* show when opened */
+      display: flex !important;
       flex-direction: column;
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(10px);
       border-radius: 10px;
       position: absolute;
-      top: 45px;
-      right: 10px;
+      top: 55px;     /* slightly lower to avoid overlap */
       left: 10px;
+      right: 10px;
       padding: 10px 0;
-    }
-    .topnav .nav-link {
-      text-align: center;
-      padding: 10px;
-      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 }
