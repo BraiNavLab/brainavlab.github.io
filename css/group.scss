@@ -540,15 +540,12 @@ ul.news {
 }
 
 .contacts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* flexible columns */
-    justify-content: center;     /* center grid as a whole */
-    justify-items: center;       /* center items within cells */
-    gap: 30px;
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* optional: center vertically */
     padding: 20px;
     text-align: center;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 @media (max-width: 768px) {
