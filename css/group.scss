@@ -541,19 +541,16 @@ ul.news {
 
 .contacts-container {
     display: grid;
-    grid-template-columns: 1fr;         /* one card per row by default */
-    justify-items: center;              /* center horizontally */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 30px;
-    margin: 0 auto;
-    max-width: 1200px;
+    justify-items: center;
+    padding: 20px;
     text-align: center;
-  }
-  
-/* On larger screens (if you ever add more cards, this will handle it automatically) */
-@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .contacts-container {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
   
@@ -561,7 +558,7 @@ ul.news {
 .contact-card {
     box-sizing: border-box;
     width: 100%;
-    max-width: 600px;                   /* keeps the single card nicely sized */
+    max-width: 600px;
     padding-top: 0.8em;
     display: flex;
     flex-direction: column;
