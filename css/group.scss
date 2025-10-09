@@ -705,3 +705,64 @@ ul.news {
       max-width: 100%;
     }
 }
+
+/* For DropDown Table in Mobile View */
+
+/* Navbar styling consistent with site look */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 1rem;
+}
+  
+  /* Navbar brand text */
+.custom-navbar .navbar-brand {
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+  
+  /* Navbar links */
+.custom-navbar .nav-link {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+  
+  /* Hover effect */
+.custom-navbar .nav-link:hover {
+    color: #ffcc00; /* accent color (change if you prefer) */
+    transform: scale(1.05);
+}
+  
+  /* Active link */
+.custom-navbar .nav-link.active {
+    color: #ffcc00;
+    font-weight: 600;
+}
+  
+  /* Toggler (hamburger) color fix for light backgrounds */
+.navbar-toggler {
+    border: none;
+}
+  
+.navbar-toggler-icon {
+    filter: invert(1); /* makes icon visible on dark background */
+}
+  
+  /* Dropdown menu (when open on mobile) */
+@media (max-width: 767px) {
+    .custom-navbar .navbar-collapse {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 1rem 0;
+    }
+  
+    .custom-navbar .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+}
