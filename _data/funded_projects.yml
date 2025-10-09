@@ -19,7 +19,7 @@
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "202292PHR2"
   partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
-  money: "€ 258'872"
+  money: "€ 258'872.00"
   description: "Part of AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging. The aim of this project is to contribute to the decryption and modeling of the aging process by focusing on a specific aspect, the brain-heart axis, and relying on XAI as the enabling technology. This is a hot topic that has only recently started to be investigated, mainly in vascular disorders. The availability of large amount of multi-modal data (novel magnetic resonance imaging sequences, clinical, behavioral and genetic data) on the same cohorts and the substantially increased computational power open new perspectives by enabling large scale studies as well as the possibility to mine hidden factors that only advanced AI methods might reveal. "
   funded_agency: "MIUR D.M. 737/2021 (PRIN)"
   link: "https://www.mur.gov.it/sites/default/files/2023-06/Decreto%20Direttoriale%20n.%20861%20PE6_AllegatoA.pdf"
@@ -43,11 +43,11 @@
 
 - proj004:
   project_name: "MNESYS - WP4 / T4.5"
-  PI: "Prof. Silvia Francesca Storti"
-  people: ["Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
-  reference_code: ""
+  PI: ""
+  people: ["Silvia Francesca Storti" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
+  reference_code: "DN. 1553 11.10.2022."
   partners: [""]
-  money: "€ 24'000.00 + 2 Research Fellowships"
+  money: "€ 24'000.00 + 2 Funded Research Fellowships"
   description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Participation to Spoke 2, Silvia F. Storti task leader for UniVR in Work Package 4 - T4.5. Neural dynamics and plasticity. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
   funded_agency: "MIUR-NRRP"
   link: " https://tto.mnesys.eu/it/mnesys"
@@ -59,12 +59,12 @@
   project_name: "FISM"
   PI: "Prof. Marialuisa Gandolfi"
   people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
-  reference_code: ""
+  reference_code: "2023/R-Multi/010"
   partners: [""]
   money: "€ 240'600.00"
   description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in pwMS at Units 1 and 2."
   funded_agency: "Multiple Sclerosis Italian Foundation (FISM)"
-  link: " https://tto.mnesys.eu/it/mnesys"
+  link: "https://www.dnbm.univr.it/?ent=progetto&id=6095"
   status: "Active"
   start: "Nov 2022"
   end: "Dec 2025"
