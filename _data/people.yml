@@ -100,7 +100,7 @@ nicola_vale:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: post_doc
-    display_role: Post-DOC
+    display_role: PostDoc
     status_group: active
     email: nicola.vale@univr.it
     image: /img/people/nicola_vale.jpeg
@@ -245,7 +245,7 @@ ilaria_siviero:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: Postdoc <br> PANDA Lab - University of Verona
+    display_role: PostDoc <br> PANDA Lab - University of Verona
     status_group: collab
     image: /img/people/ilaria_siviero.jpg
     #bio: Ilaria Siviero received her B.S. in biomedical engineering and M.S. in bioengineering from the University of Padova in 2021. She is currently a PhD student in Computer Science at the University of Verona (Programma Operativo Nazionale “Ricerca e Innovazione” 2014-2020 - PON). Her Ph.D. project title is "AI4Health - empowering Telemedicing through explainable AI methods for personalized diagnosis, monitoring and treatment" and the main research interests are i) biological signal processing; ii) brain computer interface; iii) eXplainable Artificial Intelligence clinical applications.
@@ -273,7 +273,7 @@ walter_riviera:
 federica_cruciani:
     display_name: "Federica Cruciani"
     role: collab
-    display_role: Postdoc AI Researcher in Medical Imaging <br> Istituto Fondazione di Oncologia Molecolare ETS (IFOM)
+    display_role: PostDoc AI Researcher in Medical Imaging <br> Istituto Fondazione di Oncologia Molecolare ETS (IFOM)
     status_group: collab
     image: /img/people/federica_cruciani.png
     #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
