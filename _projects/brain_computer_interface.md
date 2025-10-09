@@ -2,7 +2,7 @@
 title: Brain Computer Interface
 
 description: |
-  Qualcosa in generale su BCI che poi viene divisa in attiva e passiva
+  This project advances Brain–Computer Interface (BCI) technologies through two complementary approaches. The active BCI focuses on decoding brain activity during motor imagery using EEG and deep learning methods to improve the translation of neural signals into real-time control commands for external devices. The passive BCI monitors mental states such as vigilance and workload to detect fatigue or inattention during prolonged tasks. Together, these systems enhance human–machine interaction and workplace safety by enabling adaptive interfaces that respond dynamically to the user’s cognitive state.
 
 people:
   - silvia_francesca_storti
