@@ -538,18 +538,30 @@ ul.news {
 .h1-contact {
     color: rgb(90, 90, 90);
 }
+
 .contacts-container {
-    margin: 0 auto;
-    max-width: 1200px;
     display: grid;
+    grid-template-columns: 1fr;         /* one card per row by default */
+    justify-items: center;              /* center horizontally */
     gap: 30px;
     padding: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    align-items: stretch;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
   }
   
+/* On larger screens (if you ever add more cards, this will handle it automatically) */
+@media (min-width: 768px) {
+    .contacts-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+  
+/* Contact Card */
 .contact-card {
     box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;                   /* keeps the single card nicely sized */
     padding-top: 0.8em;
     display: flex;
     flex-direction: column;
@@ -562,7 +574,13 @@ ul.news {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
   
-.contact-card img { max-width: 100%; height: auto; display: block; }
+/* Ensure any image inside scales nicely */
+.contact-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.8em 0.8em 0 0;
+}
 
 .contact-card:hover {
     transform: translateY(-8px);
