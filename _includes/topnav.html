@@ -1,4 +1,6 @@
-<ul class="nav nav-pills justify-content-center">
+<nav class="topnav">
+  <!-- DESKTOP menu: your original UL -->
+  <ul id="mainMenu" class="nav nav-pills justify-content-center">
     {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
   
     {% for item in site.navigation %}
