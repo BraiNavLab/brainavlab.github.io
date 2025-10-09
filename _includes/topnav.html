@@ -1,43 +1,35 @@
-<nav class="navbar navbar-expand-md custom-navbar">
-  <div class="container">
-    <!-- Optional logo or site title -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-      {{ site.title | default: "Research Group" }}
-    </a>
+<nav class="topnav">
+  <!-- Mobile toggle button (hidden on desktop) -->
+  <button class="menu-toggle" aria-controls="mainMenu" aria-expanded="false">
+    <span class="menu-icon"></span>
+    <span class="sr-only">Menu</span>
+  </button>
 
-    <!-- Hamburger button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Your existing menu (unchanged) -->
+  <ul id="mainMenu" class="nav nav-pills justify-content-center">
+    {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
+    {% for item in site.navigation %}
+      {% assign itemshorturl = item.link | replace:'.html','' %}
+      {% assign is_active = '' %}
+      {% if itemshorturl == shorturl %}
+        {% assign is_active = 'active' %}
+      {% endif %}
+      {% assign is_external = item.external | default: false %}
 
-    <!-- Collapsible menu (desktop + mobile) -->
-    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
-      <ul class="navbar-nav text-center">
-        {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-        {% for item in site.navigation %}
-          {% assign itemshorturl = item.link | replace:'.html','' %}
-          {% assign is_active = '' %}
-          {% if itemshorturl == shorturl %}
-            {% assign is_active = 'active' %}
+      <li class="nav-item">
+        <a class="nav-link {{ is_active }} {% if item.title == 'GitHub' or item.title == 'LinkedIn' %}social-link{% endif %}"
+           href="{% if is_external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
+           {% if is_external %}target="_blank" rel="noopener"{% endif %}>
+
+          {% if item.title == 'GitHub' %}
+            <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+          {% elsif item.title == 'LinkedIn' %}
+            <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+          {% else %}
+            {{ item.title }}
           {% endif %}
-          {% assign is_external = item.external | default: false %}
-
-          <li class="nav-item mx-2">
-            <a class="nav-link {{ is_active }} {% if item.title == 'GitHub' or item.title == 'LinkedIn' %}social-link{% endif %}"
-               href="{% if is_external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
-               {% if is_external %}target="_blank" rel="noopener"{% endif %}>
-              {% if item.title == 'GitHub' %}
-                <i class="fab fa-github"></i>
-              {% elsif item.title == 'LinkedIn' %}
-                <i class="fab fa-linkedin"></i>
-              {% else %}
-                {{ item.title }}
-              {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </nav>
