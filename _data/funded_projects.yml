@@ -13,26 +13,6 @@
   start: "Oct 2024"
   end: "Apr 2027"
 
-  <div class="funded-project-card">
-      <h2></h2>
-      <p><strong>Status:</strong> 
-        <span class="status active">
-          Active
-        </span>
-      </p>
-      <p><strong>Duration:</strong> Oct 2024-Apr 2027 (31 months)</p>
-      <p><strong>PI:</strong> </p>
-      <p><strong>People:</strong> Alice Brown, Bob White, Charlie Green</p>
-      <!-- <p><strong>Reference Code:</strong> AIH2025</p> -->
-      <!-- <p><strong>Partners:</strong> TechCorp, HealthInstitute</p> -->
-      <p><strong>Funding:</strong> € 378000</p>
-      <p><strong>Description:</strong> Tecnologie Intelligenti per la Medicina di Innovazione. Funding of research and development projects carried out by Regional Innovative Networks and Industrial Districts (DGR n. 729 del 26 giugno 2024)</p>
-      <p><strong>Funded Agency:</strong> </p>
-      
-        <p><strong>Website:</strong> <a href="https://www.univr.it/" target="_blank">https://www.univr.it/</a></p>
-      
-    </div>
-
 - proj002:
   project_name: "Renewable Energy Optimization"
   PI: "Dr. Emily Johnson"
