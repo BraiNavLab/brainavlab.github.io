@@ -43,23 +43,22 @@
                             {% assign maybe-active = 'active' %}
                         {% endif %}
 
+                        {% assign href = item.link %}
+                        {% assign is_external = href contains '://' %}
+
                         <li class="nav-item">
-                            {% assign is_external = item.link contains '://' %}
-                            <a class="nav-link
-                                {% if item.title == "GitHub" or item.title == "LinkedIn" %}social-link{% endif %}"
-                                href="{% if is_external %}{{ item.link }}{% else %}{{ site.base }}{{ item.link }}{% endif %}"
-                                {% if is_external %}target="_blank" rel="noopener"{% endif %}>
-                            
-                                {% if item.title == "GitHub" %}
-                                <i class="fab fa-github" aria-hidden="true"></i>
-                                <span class="sr-only">GitHub</span>
-                                {% elsif item.title == "LinkedIn" %}
-                                <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                <span class="sr-only">LinkedIn</span>
-                                {% else %}
-                                {{ item.title }}
-                                {% endif %}
-                            </a>
+                        <a class="nav-link {% if item.title == "GitHub" or item.title == "LinkedIn" %}social-link{% endif %}"
+                            href="{% if is_external %}{{ href }}{% else %}{{ href | relative_url }}{% endif %}"
+                            {% if is_external %}target="_blank" rel="noopener"{% endif %}>
+
+                            {% if item.title == "GitHub" %}
+                            <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+                            {% elsif item.title == "LinkedIn" %}
+                            <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+                            {% else %}
+                            {{ item.title }}
+                            {% endif %}
+                        </a>
                         </li>
                     {% endfor %}
 
