@@ -548,6 +548,8 @@ ul.news {
     text-align: center;
     margin: 0 auto;
     max-width: 1200px;
+    display: flex !important;
+    justify-content: center !important;
 }
 
 @media (max-width: 768px) {
