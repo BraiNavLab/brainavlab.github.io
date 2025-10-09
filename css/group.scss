@@ -711,15 +711,29 @@ ul.news {
 /* ============ HAMBURGER MENU ============ */
 
 @media (max-width: 768px) {
-    /* === Hamburger centered below the logo === */
-    .hamburger {
+    /* Make header vertical and centered */
+    .header {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  
+    /* Center the logo */
+    #logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px; /* optional, to keep size reasonable */
+    }
+  
+    /* Hamburger centered below logo */
+    .header .hamburger {
+      order: 2; /* ensures it comes after logo in flex order */
       display: flex !important;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      position: relative;        /* relative so it flows below the logo */
-      margin: 12px auto 0 auto;  /* centers it horizontally */
-      width: 38px;               /* larger for tap comfort */
+      margin-top: 10px;
+      width: 40px;
       height: 26px;
       background: none;
       border: none;
@@ -727,40 +741,26 @@ ul.news {
       z-index: 3000;
     }
   
-    /* Dark bars for visibility on light background */
-    .hamburger .bar {
+    .header .hamburger .bar {
       width: 100%;
-      height: 3px;
-      background-color: #222 !important;
+      height: 4px;
+      background-color: #222;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
   
-    /* Cross animation */
-    .hamburger.active .bar:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-  
-    /* Hide desktop nav by default */
+    /* Dropdown menu styling */
     .topnav .nav.nav-pills {
       display: none !important;
     }
   
-    /* Show dropdown when active */
     .topnav .nav.nav-pills.open {
       display: flex !important;
       flex-direction: column;
       align-items: center;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 10px;
-      position: relative;
-      margin-top: 10px;          /* gap between hamburger and dropdown */
+      margin-top: 12px;
       padding: 10px 0;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
