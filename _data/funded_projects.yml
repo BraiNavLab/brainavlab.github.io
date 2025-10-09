@@ -32,7 +32,7 @@
   PI: "Prof. Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "1695-0009-553-20"
-  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin", "EB Neuro S.p.A" e "CENTAI S.p.A"]
+  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin", "EB Neuro S.p.A", "CENTAI S.p.A"]
   money: ""
   description: "Aging and artificial intelligence (AI) are key concepts in today’s socio-economic context. Aging is accompanied by structural and functional degeneration that affects quality of life. The goal of AntIAGING is to contribute to the understanding and modeling of this process, focusing on the heart–brain axis. Cardiovascular and neurodegenerative diseases are among the leading causes of death in aging populations and have the greatest socio-economic impact. It is now evident that these conditions are closely connected, making the study of their interactions one of the central topics in biomedical research. To identify characteristic patterns of the aging process, factors derived from brain imaging (neuroimaging) and genetic determinants from omics data will be analyzed and integrated using explainable AI (XAI) methods, which make it possible to decode the behavior of computational architectures and interpret their results. AntIAGING is promoted by a multidisciplinary consortium including the University of Turin, CENTAI Spa, and EBNeuro Spa — leading companies in the fields of AI and biomedical instrumentation — ensuring the exploitation and practical application of the project outcomes."
   funded_agency: "PR Veneto FSE+ 2021-2027"
