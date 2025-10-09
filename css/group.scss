@@ -540,12 +540,14 @@ ul.news {
 }
 
 .contacts-container {
-    display: flex;
-    justify-content: center;   /* center horizontally */
-    align-items: center;       /* optional: center vertically */
+    display: grid;
+    grid-template-columns: 1fr;      /* one column */
+    place-items: center;             /* centers both horizontally & vertically */
+    gap: 30px;
     padding: 20px;
     text-align: center;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 @media (max-width: 768px) {
