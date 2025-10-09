@@ -1,7 +1,7 @@
 ####################### FUNDED PROJECTS #######################
 - proj001:
-  project_name: "2024-27 INTELLI-MI"
-  PI: "Prof. Gloria Menegaz"
+  project_name: "INTELLI-MI"
+  PI: "Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   #reference_code: "AIH2025"
   partners: ["RIR Tech4Life", "InnovatiVE"]
@@ -15,7 +15,7 @@
 
 - proj002:
   project_name: "AI4HEALTH: empowering neurosciences with eXplainable AI methods"
-  PI: "Prof. Gloria Menegaz"
+  PI: "Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "202292PHR2"
   partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
@@ -29,7 +29,7 @@
 
 - proj003:
   project_name: "AntIAGING: Artificial Intelligence for Healthy Aging"
-  PI: "Prof. Gloria Menegaz"
+  PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "1695-0009-553-20"
   partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin", "EB Neuro S.p.A", "CENTAI S.p.A"]
@@ -43,12 +43,12 @@
 
 - proj004:
   project_name: "MNESYS"
-  PI: ""
-  people: ["Silvia Francesca Storti" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
+  PI: "Our group participates in the MNESYS Extended Partnership on Neuroscience (Spoke 2), funded under the Italian PNRR framework."
+  people: ["Silvia Francesca Storti (task leader in WP4-Spoke2)" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
   reference_code: "DN. 1553 11.10.2022."
   partners: [""]
   money: "€ 24'000.00 + 2 Funded Research Fellowships"
-  description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Participation to Spoke 2, Silvia F. Storti task leader for UniVR in Work Package 4 - T4.5. Neural dynamics and plasticity. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
+  description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Spoke 2, WP4. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
   funded_agency: "MIUR-NRRP"
   link: " https://tto.mnesys.eu/it/mnesys"
   status: "Active"
@@ -57,7 +57,7 @@
 
 - proj005:
   project_name: "FISM"
-  PI: "Prof. Marialuisa Gandolfi"
+  PI: "Marialuisa Gandolfi"
   people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
   reference_code: "2023/R-Multi/010"
   partners: [""]
@@ -68,3 +68,45 @@
   status: "Active"
   start: "Nov 2022"
   end: "Dec 2025"
+
+- proj006:
+  project_name: "Brain-RESTORE"
+  PI: "Silvia Francesca Storti"
+  people: ["Nicola Valè", "Ilaria Siviero", "Ettore Cinquetti"]
+  reference_code: "2023/R-Multi/010"
+  partners: [""]
+  money: "€ 38'900.00"
+  description: "Brain-connectivity based computer interfaces: An enhanced technology for restoring motor function in stroke survivors. This research was supported by the funding initiative of the University of Verona, Ricerca di Base 2022, for projects positively evaluated in the Prin call but not funded"
+  funded_agency: "Ricerca di Base, UniVR"
+  link: ""
+  status: "Closed"
+  start: "Nov 2023"
+  end: "Nov 2024"
+
+- proj007:
+  project_name: "OPERA"
+  PI: "Davide Quaglia"
+  people: ["Silvia Francesca Storti", "Gloria Menegaz", "Ilaria Siviero", "Ettore Cinquetti"]
+  reference_code: ""
+  partners: ["Department of Computer Science (University of Verona)"]
+  money: "€ 100'000.00"
+  description: "Osservazione dei processi lavorativi, con garanzie oggettive di tutela della Privacy, per la prevenzione di Errori e situazioni di Rischio in maniera Automatica ai tempi di Industria 4.0 (OPERA 4.0). Work Package: MA2 Intelligent systems"
+  funded_agency: "Fondazione Cariverona"
+  link: ""
+  status: "Closed"
+  start: "2021"
+  end: "2022"
+
+- proj008:
+  project_name: "EDIPO"
+  PI: "Gloria Menegaz"
+  people: ["Ilaria Boscolo Galazzo", "Silvia Francesca Storti", "Lorenza Brusini"]
+  reference_code: "2023/R-Multi/010"
+  partners: ["Department of Computer Science (University of Verona)", "Imaging Genetics Center (IGC) of the University of Southern California (USC)", "French National Institute of Research in Informatics and Automation (INRIA)"]
+  money: "€ 180'000.00"
+  description: "A computational solution for bringing neuroimaging genetic into translational research (EDIPO)"
+  funded_agency: "Fondazione Cariverona"
+  link: ""
+  status: "Closed"
+  start: "2020"
+  end: "2022"

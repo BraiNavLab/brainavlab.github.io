@@ -2,7 +2,7 @@
 title: EEG Microstates
 
 description: |
-  Qualcosa in generale su Microstates
+  Coming Soon...
 
 people:
   - silvia_francesca_storti
@@ -17,4 +17,4 @@ last-updated: 2022-09-02
 image: ../img/projects_img/image_test.png
 ---
 
-Microstates...
+Coming Soon...
