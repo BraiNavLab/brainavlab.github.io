@@ -183,6 +183,32 @@ section {
 // }
 
 /* ######################################### HOME ######################################### */
+
+/* Front page Lab Group Picture */
+.home-group {
+    max-width: 1100px;     /* limit width like the other sections */
+    margin: 0 auto;         /* center horizontally */
+    padding: 1rem;          /* optional spacing */
+    text-align: center;     /* center image horizontally */
+  }
+  
+  .home-group-picture {
+    width: 100%;
+    max-width: 1000px;      /* optional limit */
+    height: auto;
+    border-radius: 10px;    /* optional rounded corners */
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .home-group {
+      padding: 0.5rem;
+    }
+    .home-group-picture {
+      max-width: 100%;
+    }
+  }
+
 /* Front page BraiNavLab mission */
 .text-box-mission {
     text-align: justify;
