@@ -540,6 +540,8 @@ ul.news {
 }
 
 .contacts-container {
+    margin: 0 auto;
+    max-width: 1200px;  /* keeps layout centered and neat */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -561,6 +563,21 @@ ul.news {
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Make contact cards responsive */
+@media (min-width: 768px) {
+    .contact-card {
+      flex: 1 1 calc(33.333% - 60px);  /* 3 cards per row on larger screens */
+      max-width: calc(33.333% - 60px);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .contact-card {
+      flex: 1 1 100%;  /* full width on mobile */
+      max-width: 100%;
+    }
+  }
 
 .contact-card:hover {
     transform: translateY(-8px);
