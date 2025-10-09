@@ -221,7 +221,25 @@ section {
 }
 
 /* background image with transparency */
-
+/*
+.text-box-mission::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background: url("../img/home_img/image_for_mission.png") center/cover no-repeat;
+    //background: 
+    //    radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 65%),
+    //    url("../img/home_img/image_for_mission.png") center/contain no-repeat;
+    background: none;
+    opacity: 0.13;      
+    border-radius: 1em; 
+    z-index: 0;        
+    background-color: #ffffff;
+}
+*/
 
 .text-box-mission h1 {
     position: relative;
