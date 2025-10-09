@@ -708,34 +708,21 @@ ul.news {
 
 /* ############ For DropDown Table in Mobile View ####################### */
 
-/* Accessibility utility (if you don't already have it) */
+/* hide mobile dropdown by default */
+.mobile-nav-wrap { display: none; }
+
+/* minimal accessible label helper (if you don't already have .sr-only) */
 .sr-only {
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0,0,0,0);
-    white-space: nowrap; border: 0;
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;
 }
-  
-  /* Default: show desktop UL, hide mobile select */
-  .topnav .mobile-nav-wrap,
-  #mobileNav {
-    display: none;
-  }
-  
-  /* On small screens: hide desktop UL, show mobile select */
+
+/* mobile behavior */
 @media (max-width: 768px) {
-    .topnav .nav.nav-pills {
-      display: none !important;   /* hide desktop pills */
-    }
-    .topnav .mobile-nav-wrap {
-      display: block !important;  /* show mobile wrapper */
-      padding: 8px 12px;
-    }
-    #mobileNav.mobile-nav {
-      display: block !important;  /* show mobile select */
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-    }
+  .topnav .nav { display: none; }        /* hide your desktop UL on mobile */
+  .mobile-nav-wrap { display: block; padding: 8px 12px; }
+  .mobile-nav {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
 }
