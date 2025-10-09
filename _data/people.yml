@@ -245,7 +245,7 @@ ilaria_siviero:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: Post-DOC <br> PANDA Lab
+    display_role: Postdoc <br> PANDA Lab - University of Verona
     status_group: collab
     image: /img/people/ilaria_siviero.jpg
     #bio: Ilaria Siviero received her B.S. in biomedical engineering and M.S. in bioengineering from the University of Padova in 2021. She is currently a PhD student in Computer Science at the University of Verona (Programma Operativo Nazionale “Ricerca e Innovazione” 2014-2020 - PON). Her Ph.D. project title is "AI4Health - empowering Telemedicing through explainable AI methods for personalized diagnosis, monitoring and treatment" and the main research interests are i) biological signal processing; ii) brain computer interface; iii) eXplainable Artificial Intelligence clinical applications.
@@ -269,6 +269,22 @@ walter_riviera:
     status_group: collab
     image: /img/people/walter_riviera.png
     #bio: Walter Riviera received his B.S. in Multimedia Information Technology and his M.S. in Visual Computing and Pattern Recognition both at University of Verona, respectively in 2012 and 2014. He then won two research grants respectively focused on Information Retrieval and Data Mining techniques. He is now working as Technical EMEA lead for AI at Intel Corporation, while pursuing his Ph.D. In federated learning and distributed systems. He mainly focuses on applied research at different level from testing novel scientific approaches, to tackle production and deployment challenges. The main research area concern the Medical environment, but eventually includes collaborations on many other segments.
+
+federica_cruciani:
+    display_name: "Federica Cruciani"
+    role: collab
+    display_role: Postdoc AI Researcher in Medical Imaging <br> Istituto Fondazione di Oncologia Molecolare ETS (IFOM)
+    status_group: collab
+    image: /img/people/federica_cruciani.png
+    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
+
+ahmed_mahdee_abdo_salih:
+    display_name: "Ahmed Mahdee Abdo Salih"
+    role: collab
+    display_role: Research Associate <br> University of Leicester
+    status_group: collab
+    image: /img/people/ahmed_salih.jpg
+    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
 emma_maria_sole_tosato:
     display_name: "Emma M. S. Tosato"
@@ -305,7 +321,7 @@ elena_soriato:
     #webpage: "http://en.wikipedia.org/wiki/Professor_X"
     #github: profx
     role: collab
-    display_role: Ph.D. Student <br> University of 
+    display_role: Ph.D. Student <br> Fraunhofer Institute for Algorithms and Scientific Computing (SCAI)
     status_group: collab
     image: /img/people/elena_soriato.png
     #bio: Elena Soriato received her Bachelor's degree in Bioinformatics in July 2021 where she focused on liver diseases using multiple regression. Then, she finished her Master's degree in March 2024 where she focused on finding pairs of genetic patterns that could act as fingerprints for bacteria and using them to classify different species. She is currently working as a research assistant at the University of Verona, teaming up with the BraiNAVlab group.
@@ -313,30 +329,16 @@ elena_soriato:
 
 ####################### ALUMNI #######################
 
-federica_cruciani:
-    display_name: "Federica Cruciani"
-    role: alum
-    status_group: alumni
-    image: /img/people/federica_cruciani.png
-    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
+#jacopo_tessadori:
+#    display_name: "Jacopo Tessadori"
+#    role: alum
+#    status_group: alumni
+#    image: /img/people/jacopo_tessadori.jpg
+#    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
 
-ahmed_mahdee_abdo_salih:
-    display_name: "Ahmed Mahdee Abdo Salih"
-    role: alum
-    status_group: alumni
-    image: /img/people/ahmed_salih.jpg
-    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
-
-jacopo_tessadori:
-    display_name: "Jacopo Tessadori"
-    role: alum
-    status_group: alumni
-    image: /img/people/jacopo_tessadori.jpg
-    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
-
-theo_biardeau:
-    display_name: "Theo Biardeau"
-    role: alum
-    status_group: alumni
-    image: /img/people/theo_biardeau.jpg
-    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"
+#theo_biardeau:
+#    display_name: "Theo Biardeau"
+#    role: alum
+#    status_group: alumni
+#    image: /img/people/theo_biardeau.jpg
+#    #bio: "Project title/Supervisor/Year/MSc or BSc/ School"

@@ -6,7 +6,6 @@ description: |
 
 people:
   - silvia_francesca_storti
-  - edoardo_paolini
   - nicola_vale
   - ilaria_siviero
 

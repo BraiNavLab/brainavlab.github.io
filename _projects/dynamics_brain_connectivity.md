@@ -10,7 +10,15 @@ people:
   - gloria_menegaz
   - silvia_francesca_storti
   - ilaria_boscolo_galazzo
-  #- XXX
+  - lorenza_brusini
+  - nicola_vale
+  - ettore_cinquetti
+  - edoardo_paolini
+  - giorgio_dolci
+  - irene_treccani
+  - virginia_filippi
+  - silvia_saglia
+
 
 #image: XXX
 #status: inactive

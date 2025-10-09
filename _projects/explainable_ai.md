@@ -6,8 +6,9 @@ description: |
 
 people:
   - gloria_menegaz
-  # - xxx
-  # - xxx
+  - ilaria_boscolo_galazzo
+  - lorenza_brusini
+  - giorgio_dolci
 
 #image: XXX
 #status: inactive
