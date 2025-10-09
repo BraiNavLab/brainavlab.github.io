@@ -61,14 +61,12 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
               const burger = document.querySelector(".hamburger");
-              const menu = document.querySelector(".topnav ul");
+              const menu   = document.querySelector(".topnav .nav");
               if (!burger || !menu) return;
             
               burger.addEventListener("click", () => {
                 burger.classList.toggle("active");
                 menu.classList.toggle("open");
-            
-                // Accessibility
                 const expanded = burger.classList.contains("active");
                 burger.setAttribute("aria-expanded", expanded);
               });

@@ -1,34 +1,31 @@
 <nav class="topnav">
-
-  <!-- Hamburger button for mobile -->
+  <!-- Hamburger for mobile -->
   <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
   </button>
 
-  <!-- DESKTOP menu: your original UL -->
-  <ul id="mainMenu" class="nav nav-pills justify-content-center">
+  <!-- Desktop / mobile menu list -->
+  <ul class="nav nav-pills justify-content-center">
     {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-  
     {% for item in site.navigation %}
       {% assign itemshorturl = item.link | replace:'.html','' %}
       {% assign is_active = '' %}
       {% if itemshorturl == shorturl %}
         {% assign is_active = 'active' %}
       {% endif %}
-  
       {% assign is_external = item.external | default: false %}
-  
+
       <li class="nav-item">
         <a class="nav-link {{ is_active }} {% if item.title == 'GitHub' or item.title == 'LinkedIn' %}social-link{% endif %}"
            href="{% if is_external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
            {% if is_external %}target="_blank" rel="noopener"{% endif %}>
-  
+
           {% if item.title == 'GitHub' %}
-            <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+            <i class="fab fa-github" aria-hidden="true"></i>
           {% elsif item.title == 'LinkedIn' %}
-            <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
           {% else %}
             {{ item.title }}
           {% endif %}
@@ -36,7 +33,4 @@
       </li>
     {% endfor %}
   </ul>
-
-  <!-- Mobile dropdown (shown only on small screens) -->
-  
 </nav>
