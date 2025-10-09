@@ -1,4 +1,12 @@
 <nav class="topnav">
+
+  <!-- Hamburger button for mobile -->
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
   <!-- DESKTOP menu: your original UL -->
   <ul id="mainMenu" class="nav nav-pills justify-content-center">
     {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
@@ -30,22 +38,5 @@
   </ul>
 
   <!-- Mobile dropdown (shown only on small screens) -->
-  <div class="mobile-nav-wrap">
-    <label class="sr-only" for="mobileNav">Menu</label>
-    <select id="mobileNav" class="mobile-nav" aria-label="Menu">
-      {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-      {% for item in site.navigation %}
-        {% assign itemshorturl = item.link | replace:'.html','' %}
-        {% if item.external %}
-          {% assign href = item.link %}
-        {% else %}
-          {% assign href = item.link | relative_url %}
-        {% endif %}
-        <option value="{{ href }}" data-external="{{ item.external | default: false }}"
-          {% if itemshorturl == shorturl %}selected{% endif %}>
-          {{ item.title }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
+  
 </nav>

@@ -709,33 +709,72 @@ ul.news {
 /* ############ For DropDown Table in Mobile View ####################### */
 
 /* Accessibility utility (if you don't already have it) */
-.sr-only {
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0,0,0,0);
-    white-space: nowrap; border: 0;
-}
-  
-  /* Default: show desktop UL, hide mobile select */
-  .topnav .mobile-nav-wrap,
-  #mobileNav {
-    display: none;
+/* ============ HAMBURGER MENU ============ */
+
+/* Base nav */
+.topnav {
+    position: relative;
+    z-index: 1000;
   }
   
-  /* On small screens: hide desktop UL, show mobile select */
-@media (max-width: 768px) {
-    .topnav .nav.nav-pills {
-      display: none !important;   /* hide desktop pills */
+  /* Hamburger button (hidden on desktop) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 10px;
+    z-index: 1100;
+  }
+  
+  /* The 3 bars */
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animation when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  /* Mobile menu hidden by default */
+  @media (max-width: 768px) {
+    .hamburger { display: flex; } /* show hamburger */
+    .topnav ul {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      left: 10px;
+      padding: 10px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    .topnav .mobile-nav-wrap {
-      display: block !important;  /* show mobile wrapper */
-      padding: 8px 12px;
+    .topnav ul.open {
+      display: flex;
     }
-    #mobileNav.mobile-nav {
-      display: block !important;  /* show mobile select */
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
+  
+    .topnav .nav-link {
+      text-align: center;
+      padding: 10px;
+      color: white;
     }
-}
+  }
