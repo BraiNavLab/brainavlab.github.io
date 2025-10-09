@@ -14,7 +14,7 @@
   end: "Apr 2027"
 
 - proj002:
-  project_name: "AI for Health"
+  project_name: "AI4HEALTH"
   PI: "Prof. Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: ""
@@ -56,7 +56,7 @@
   end: ""
 
 - proj005:
-  project_name: "MNESYS"
+  project_name: "MNESYS - WP4 / T4.5"
   PI: "Prof. Silvia Francesca Storti"
   people: ["Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
   reference_code: ""
@@ -82,3 +82,31 @@
   status: "Active"
   start: "Nov 2022"
   end: "Dec 2025"
+
+- proj006:
+  project_name: "AI4BRAVE"
+  PI: "Prof. Gloria Menegaz"
+  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
+  reference_code: ""
+  partners: [""]
+  money: ""
+  description: ""
+  funded_agency: ""
+  link: ""
+  status: "Active"
+  start: ""
+  end: ""
+
+- proj007:
+  project_name: "OPERA 4.0"
+  PI: "Prof. Gloria Menegaz"
+  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
+  reference_code: ""
+  partners: [""]
+  money: ""
+  description: ""
+  funded_agency: ""
+  link: ""
+  status: "Active"
+  start: ""
+  end: ""
