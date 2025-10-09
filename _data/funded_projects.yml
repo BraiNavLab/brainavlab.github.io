@@ -1,17 +1,37 @@
 ####################### FUNDED PROJECTS #######################
 - proj001:
-  project_name: "AI in Healthcare"
-  PI: "Dr. John Smith"
+  project_name: "2024-27 INTELLI-MI"
+  PI: "Prof. Gloria Menegaz"
   people: ["Alice Brown", "Bob White", "Charlie Green"]
-  reference_code: "AIH2025"
+  #reference_code: "AIH2025"
   partners: ["TechCorp", "HealthInstitute"]
-  money: "$500,000"
-  description: "Applying AI to improve patient diagnosis and treatment efficiency."
-  funded_agency: "National Science Foundation"
+  money: "€3780000"
+  description: "Tecnologie Intelligenti per la Medicina di Innovazione. Funding of research and development projects carried out by Regional Innovative Networks and Industrial Districts (DGR n. 729 del 26 giugno 2024)"
+  funded_agency: "Regione Veneto - PR Veneto FESR 2021-2027"
   link: "https://www.univr.it/"
   status: "Active"
-  start: "01-2023"
-  end: "12-2025"
+  start: "Oct 2024"
+  end: "Apr 2027"
+
+  <div class="funded-project-card">
+      <h2></h2>
+      <p><strong>Status:</strong> 
+        <span class="status active">
+          Active
+        </span>
+      </p>
+      <p><strong>Duration:</strong> Oct 2024-Apr 2027 (31 months)</p>
+      <p><strong>PI:</strong> </p>
+      <p><strong>People:</strong> Alice Brown, Bob White, Charlie Green</p>
+      <!-- <p><strong>Reference Code:</strong> AIH2025</p> -->
+      <!-- <p><strong>Partners:</strong> TechCorp, HealthInstitute</p> -->
+      <p><strong>Funding:</strong> € 378000</p>
+      <p><strong>Description:</strong> Tecnologie Intelligenti per la Medicina di Innovazione. Funding of research and development projects carried out by Regional Innovative Networks and Industrial Districts (DGR n. 729 del 26 giugno 2024)</p>
+      <p><strong>Funded Agency:</strong> </p>
+      
+        <p><strong>Website:</strong> <a href="https://www.univr.it/" target="_blank">https://www.univr.it/</a></p>
+      
+    </div>
 
 - proj002:
   project_name: "Renewable Energy Optimization"
