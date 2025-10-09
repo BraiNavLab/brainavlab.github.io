@@ -708,60 +708,34 @@ ul.news {
 
 /* ############ For DropDown Table in Mobile View ####################### */
 
-/* ============ HAMBURGER MENU ============ */
-
-/* --- DESKTOP: hide hamburger, ensure desktop menu shows --- */
-@media (min-width: 769px) {
-    .hamburger { display: none !important; }
-    .topnav .nav.nav-pills { display: flex !important; } /* keep your normal PC menu */
+/* Accessibility utility (if you don't already have it) */
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
 }
   
-  /* --- MOBILE: stack logo + hamburger nicely --- */
+  /* Default: show desktop UL, hide mobile select */
+  .topnav .mobile-nav-wrap,
+  #mobileNav {
+    display: none;
+  }
+  
+  /* On small screens: hide desktop UL, show mobile select */
 @media (max-width: 768px) {
-    /* Make header stack and center children */
-    .header { flex-direction: column !important; align-items: center !important; }
-  
-    /* Hamburger: centered under logo, fixed size, no layout change on click */
-    .hamburger {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 40px; height: 26px;
-      margin-top: 10px;
-      background: none; border: none; outline: none;
-      position: relative; z-index: 3000;
-      cursor: pointer;
+    .topnav .nav.nav-pills {
+      display: none !important;   /* hide desktop pills */
     }
-    .hamburger .bar {
-      width: 100%; height: 4px;
-      background-color: #222;
-      border-radius: 2px;
-      transition: transform .3s ease, opacity .3s ease;
+    .topnav .mobile-nav-wrap {
+      display: block !important;  /* show mobile wrapper */
+      padding: 8px 12px;
     }
-    /* Cross animation – does not change button size */
-    .hamburger.active .bar:nth-child(1){ transform: rotate(45deg) translate(6px, 6px); }
-    .hamburger.active .bar:nth-child(2){ opacity: 0; }
-    .hamburger.active .bar:nth-child(3){ transform: rotate(-45deg) translate(7px, -7px); }
-  
-    /* Hide desktop UL by default on mobile */
-    .topnav { position: relative; } /* anchor for the overlay */
-    .topnav .nav.nav-pills { display: none !important; }
-  
-    /* OPEN state: overlay menu (absolute) so it doesn't push hamburger = no jump */
-    .topnav .nav.nav-pills.open {
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: calc(100% + 10px);    /* sits below the hamburger */
-      left: 50%; transform: translateX(-50%);
-      width: calc(100vw - 20px); max-width: 420px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 10px;
-      padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,.2);
-      z-index: 2500;
+    #mobileNav.mobile-nav {
+      display: block !important;  /* show mobile select */
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
     }
-    .topnav .nav-link { padding: 10px; color: #222; text-align: center; }
 }
