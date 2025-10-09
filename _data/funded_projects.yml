@@ -56,29 +56,29 @@
   end: ""
 
 - proj005:
-project_name: "MNESYS"
-PI: "Prof. Silvia Francesca Storti"
-people: ["Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
-reference_code: ""
-partners: [""]
-money: "€ 24'000.00 + 2 Research Fellowships"
-description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Participation to Spoke 2, Silvia F. Storti task leader for UniVR in Work Package 4 - T4.5. Neural dynamics and plasticity. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
-funded_agency: "MIUR-NRRP"
-link: " https://tto.mnesys.eu/it/mnesys"
-status: "Active"
-start: "Nov 2022"
-end: "Dec 2025"
+  project_name: "MNESYS"
+  PI: "Prof. Silvia Francesca Storti"
+  people: ["Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
+  reference_code: ""
+  partners: [""]
+  money: "€ 24'000.00 + 2 Research Fellowships"
+  description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Participation to Spoke 2, Silvia F. Storti task leader for UniVR in Work Package 4 - T4.5. Neural dynamics and plasticity. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
+  funded_agency: "MIUR-NRRP"
+  link: " https://tto.mnesys.eu/it/mnesys"
+  status: "Active"
+  start: "Nov 2022"
+  end: "Dec 2025"
 
 - proj005:
-project_name: "Project on Multiple Sclerosis"
-PI: "Prof. Marialuisa Gandolfi"
-people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
-reference_code: ""
-partners: [""]
-money: "€ 240'600.00"
-description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in pwMS at Units 1 and 2."
-funded_agency: "Multiple Sclerosis Italian Foundation (FISM)"
-link: " https://tto.mnesys.eu/it/mnesys"
-status: "Active"
-start: "Nov 2022"
-end: "Dec 2025"
+  project_name: "Project on Multiple Sclerosis"
+  PI: "Prof. Marialuisa Gandolfi"
+  people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
+  reference_code: ""
+  partners: [""]
+  money: "€ 240'600.00"
+  description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in pwMS at Units 1 and 2."
+  funded_agency: "Multiple Sclerosis Italian Foundation (FISM)"
+  link: " https://tto.mnesys.eu/it/mnesys"
+  status: "Active"
+  start: "Nov 2022"
+  end: "Dec 2025"
