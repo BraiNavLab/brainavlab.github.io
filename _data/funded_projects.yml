@@ -14,13 +14,13 @@
   end: "Apr 2027"
 
 - proj002:
-  project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging; Participants"
+  project_name: "AI4HEALTH: empowering neurosciences with eXplainable AI methods"
   PI: "Prof. Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "202292PHR2"
   partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
   money: "€ 258'872"
-  description: "AI4HEALTH: empowering neurosciences with eXplainable AI methods. The aim of this project is to contribute to the decryption and modeling of the aging process by focusing on a specific aspect, the brain-heart axis, and relying on XAI as the enabling technology. This is a hot topic that has only recently started to be investigated, mainly in vascular disorders. The availability of large amount of multi-modal data (novel magnetic resonance imaging sequences, clinical, behavioral and genetic data) on the same cohorts and the substantially increased computational power open new perspectives by enabling large scale studies as well as the possibility to mine hidden factors that only advanced AI methods might reveal. "
+  description: "Part of AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging. The aim of this project is to contribute to the decryption and modeling of the aging process by focusing on a specific aspect, the brain-heart axis, and relying on XAI as the enabling technology. This is a hot topic that has only recently started to be investigated, mainly in vascular disorders. The availability of large amount of multi-modal data (novel magnetic resonance imaging sequences, clinical, behavioral and genetic data) on the same cohorts and the substantially increased computational power open new perspectives by enabling large scale studies as well as the possibility to mine hidden factors that only advanced AI methods might reveal. "
   funded_agency: "MIUR D.M. 737/2021 (PRIN)"
   link: "https://www.mur.gov.it/sites/default/files/2023-06/Decreto%20Direttoriale%20n.%20861%20PE6_AllegatoA.pdf"
   status: "Active"
