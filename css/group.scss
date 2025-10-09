@@ -711,26 +711,62 @@ ul.news {
 /* ============ HAMBURGER MENU ============ */
 
 @media (max-width: 768px) {
+    /* Centered, larger hamburger after logo */
     .hamburger {
       display: flex !important;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      position: relative;       /* no absolute positioning */
-      margin: 0 auto;           /* centers horizontally */
-      width: 40px;              /* bigger size */
-      height: 28px;
+      position: absolute;
+      top: 12px;
+      left: 50%;               /* center horizontally */
+      transform: translateX(-50%);  /* perfect centering */
+      width: 38px;             /* a bit larger */
+      height: 26px;
       background: none;
       border: none;
       cursor: pointer;
       z-index: 3000;
     }
   
+    /* Dark bars (visible on light background) */
     .hamburger .bar {
       width: 100%;
-      height: 4px;              /* thicker bars */
+      height: 3px;
       background-color: #222 !important;
-      border-radius: 3px;
+      border-radius: 2px;
       transition: all 0.3s ease;
     }
-  }
+  
+    /* Cross animation when active */
+    .hamburger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  
+    /* Dropdown stays the same */
+    .topnav .nav.nav-pills.open {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      position: absolute;
+      top: 60px; /* slightly lower now */
+      right: 10px;
+      left: 10px;
+      padding: 10px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  
+    .topnav .nav-link {
+      text-align: center;
+      padding: 10px;
+      color: #222;
+    }
+}
