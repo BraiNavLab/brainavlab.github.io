@@ -708,69 +708,21 @@ ul.news {
 
 /* ############ For DropDown Table in Mobile View ####################### */
 
-/* Keep desktop look unchanged */
-.topnav {
-    position: relative;
+/* hide mobile dropdown by default */
+.mobile-nav-wrap { display: none; }
+
+/* minimal accessible label helper (if you don't already have .sr-only) */
+.sr-only {
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;
 }
-  
-  /* Hide the toggle on desktop */
-.menu-toggle {
-    display: none;
-}
-  
-  /* Mobile styles */
+
+/* mobile behavior */
 @media (max-width: 768px) {
-    /* Show the toggle button */
-    .menu-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: transparent;
-      border: 0;
-      cursor: pointer;
-      margin: 8px;
-    }
-    /* Simple “hamburger” icon */
-    .menu-icon {
-      position: relative;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      display: inline-block;
-    }
-    .menu-icon::before,
-    .menu-icon::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-    }
-    .menu-icon::before { top: -6px; }
-    .menu-icon::after  { top:  6px; }
-  
-    /* Turn the UL into a vertical dropdown; hidden by default */
-    .topnav .nav {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(8px);
-      border-radius: 10px;
-      padding: 8px 0;
-      margin: 0 8px 8px;
-    }
-    /* When open, show the menu */
-    .topnav .nav.open {
-      display: flex;
-    }
-    /* Make links easier to tap */
-    .topnav .nav .nav-link {
-      display: block;
-      padding: 10px 16px;
-      text-align: center;
-    }
+  .topnav .nav { display: none; }        /* hide your desktop UL on mobile */
+  .mobile-nav-wrap { display: block; padding: 8px 12px; }
+  .mobile-nav {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
 }
