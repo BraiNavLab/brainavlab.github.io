@@ -538,24 +538,22 @@ ul.news {
 .h1-contact {
     color: rgb(90, 90, 90);
 }
-
 .contacts-container {
     margin: 0 auto;
-    max-width: 1200px;  /* keeps layout centered and neat */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    max-width: 1200px;
+    display: grid;
     gap: 30px;
     padding: 30px;
-}
-
-/* Contact Card */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
+  }
+  
 .contact-card {
+    box-sizing: border-box;
     padding-top: 0.8em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;           /* card width */
     background: rgba(255, 255, 255, 0.08);
     border-radius: 0.8em;
     overflow: hidden;
@@ -563,21 +561,8 @@ ul.news {
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Make contact cards responsive */
-@media (min-width: 768px) {
-    .contact-card {
-      flex: 1 1 calc(33.333% - 60px);  /* 3 cards per row on larger screens */
-      max-width: calc(33.333% - 60px);
-    }
-  }
   
-  @media (max-width: 767px) {
-    .contact-card {
-      flex: 1 1 100%;  /* full width on mobile */
-      max-width: 100%;
-    }
-  }
+.contact-card img { max-width: 100%; height: auto; display: block; }
 
 .contact-card:hover {
     transform: translateY(-8px);
