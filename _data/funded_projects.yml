@@ -14,46 +14,32 @@
   end: "Apr 2027"
 
 - proj002:
-  project_name: "AI4HEALTH"
+  project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging; Participants"
   PI: "Prof. Gloria Menegaz"
-  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: ""
-  partners: [""]
-  money: ""
-  description: ""
-  funded_agency: ""
-  link: "https://www.tech4life.it/progetti/intelli-mi/"
+  people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
+  reference_code: "202292PHR2"
+  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
+  money: "€ 258'872"
+  description: "AI4HEALTH: empowering neurosciences with eXplainable AI methods. The aim of this project is to contribute to the decryption and modeling of the aging process by focusing on a specific aspect, the brain-heart axis, and relying on XAI as the enabling technology. This is a hot topic that has only recently started to be investigated, mainly in vascular disorders. The availability of large amount of multi-modal data (novel magnetic resonance imaging sequences, clinical, behavioral and genetic data) on the same cohorts and the substantially increased computational power open new perspectives by enabling large scale studies as well as the possibility to mine hidden factors that only advanced AI methods might reveal. "
+  funded_agency: "MIUR D.M. 737/2021 (PRIN)"
+  link: "https://www.mur.gov.it/sites/default/files/2023-06/Decreto%20Direttoriale%20n.%20861%20PE6_AllegatoA.pdf"
   status: "Active"
-  start: ""
-  end: ""
+  start: "Jun 2023"
+  end: "Ongoing"
 
 - proj003:
-  project_name: "PRIN"
+  project_name: "AntIAGING: Artificial Intelligence for Healthy Aging"
   PI: "Prof. Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: ""
-  partners: [""]
+  reference_code: "1695-0009-553-20"
+  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin", "EB Neuro S.p.A" e "CENTAI S.p.A"]
   money: ""
-  description: ""
-  funded_agency: ""
-  link: "https://www.tech4life.it/progetti/intelli-mi/"
+  description: "Aging and artificial intelligence (AI) are key concepts in today’s socio-economic context. Aging is accompanied by structural and functional degeneration that affects quality of life. The goal of AntIAGING is to contribute to the understanding and modeling of this process, focusing on the heart–brain axis. Cardiovascular and neurodegenerative diseases are among the leading causes of death in aging populations and have the greatest socio-economic impact. It is now evident that these conditions are closely connected, making the study of their interactions one of the central topics in biomedical research. To identify characteristic patterns of the aging process, factors derived from brain imaging (neuroimaging) and genetic determinants from omics data will be analyzed and integrated using explainable AI (XAI) methods, which make it possible to decode the behavior of computational architectures and interpret their results. AntIAGING is promoted by a multidisciplinary consortium including the University of Turin, CENTAI Spa, and EBNeuro Spa — leading companies in the fields of AI and biomedical instrumentation — ensuring the exploitation and practical application of the project outcomes."
+  funded_agency: "PR Veneto FSE+ 2021-2027"
+  link: "https://www.tech4life.it/news/iniziativaantiaging-artificial-intelligence-for-healthy-aging/"
   status: "Active"
-  start: ""
-  end: ""
-
-- proj004:
-  project_name: "FSE"
-  PI: "Prof. Gloria Menegaz"
-  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: ""
-  partners: [""]
-  money: ""
-  description: ""
-  funded_agency: ""
-  link: "https://www.tech4life.it/progetti/intelli-mi/"
-  status: "Active"
-  start: ""
-  end: ""
+  start: "Jan 2023"
+  end: "Ongoing"
 
 - proj005:
   project_name: "MNESYS - WP4 / T4.5"
@@ -70,7 +56,7 @@
   end: "Dec 2025"
 
 - proj005:
-  project_name: "Project on Multiple Sclerosis"
+  project_name: "FISM"
   PI: "Prof. Marialuisa Gandolfi"
   people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
   reference_code: ""
@@ -82,31 +68,3 @@
   status: "Active"
   start: "Nov 2022"
   end: "Dec 2025"
-
-- proj006:
-  project_name: "AI4BRAVE"
-  PI: "Prof. Gloria Menegaz"
-  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: ""
-  partners: [""]
-  money: ""
-  description: ""
-  funded_agency: ""
-  link: ""
-  status: "Active"
-  start: ""
-  end: ""
-
-- proj007:
-  project_name: "OPERA 4.0"
-  PI: "Prof. Gloria Menegaz"
-  people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: ""
-  partners: [""]
-  money: ""
-  description: ""
-  funded_agency: ""
-  link: ""
-  status: "Active"
-  start: ""
-  end: ""

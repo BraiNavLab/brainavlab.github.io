@@ -6,8 +6,6 @@ description: |
 
 people:
   - silvia_francesca_storti
-  - nicola_vale
-  - ilaria_siviero
 
 #image: XXX
 #status: inactive
