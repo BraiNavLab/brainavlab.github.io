@@ -15,7 +15,7 @@ people:
 #link: XXX
 layout: project
 last-updated: 2022-09-02
-image: ../img/projects_img/image_test.png
+image: ../img/projects_img/bci.png
 ---
 
 <h4>Active BCI</h4>
