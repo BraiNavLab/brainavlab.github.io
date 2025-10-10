@@ -62,18 +62,18 @@
   reference_code: "2023/R-Multi/010"
   partners: [""]
   money: "€ 240'600.00"
-  description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in pwMS at Units 1 and 2."
-  funded_agency: "Multiple Sclerosis Italian Foundation (FISM)"
+  description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in PwMS at Units 1 and 2."
+  funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
   link: "https://www.dnbm.univr.it/?ent=progetto&id=6095"
   status: "Active"
-  start: "Nov 2022"
-  end: "Dec 2025"
+  start: "Sept 2024"
+  end: "Aug 2026"
 
 - proj006:
   project_name: "Brain-RESTORE"
   PI: "Silvia Francesca Storti"
   people: ["Nicola Valè", "Ilaria Siviero", "Ettore Cinquetti"]
-  reference_code: "2023/R-Multi/010"
+  reference_code: "2022K4EJRM"
   partners: [""]
   money: "€ 38'900.00"
   description: "Brain-connectivity based computer interfaces: An enhanced technology for restoring motor function in stroke survivors. This research was supported by the funding initiative of the University of Verona, Ricerca di Base 2022, for projects positively evaluated in the Prin call but not funded"
@@ -92,7 +92,7 @@
   money: "€ 100'000.00"
   description: "Osservazione dei processi lavorativi, con garanzie oggettive di tutela della Privacy, per la prevenzione di Errori e situazioni di Rischio in maniera Automatica ai tempi di Industria 4.0 (OPERA 4.0). Work Package: MA2 Intelligent systems"
   funded_agency: "Fondazione Cariverona"
-  link: ""
+  link: "https://www.di.univr.it/?ent=progetto&id=5557"
   status: "Closed"
   start: "2021"
   end: "2022"
