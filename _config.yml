@@ -3,6 +3,13 @@ url: http://127.0.0.1:5000/
 
 exclude: [bibble, README.md, Makefile]
 
+# to find the website on Google
+title: "BraiNavLab"
+description: "Research in neuroimaging, neurophysiology, brain connectivity and AI"
+url: "https://brainavlab.github.io"
+plugins:
+  - jekyll-seo-tag
+
 # colorize code snippets with the pygments module
 highlighter: pygments
 
