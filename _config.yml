@@ -8,7 +8,9 @@ title: "BraiNavLab"
 description: "Research in neuroimaging, neurophysiology, brain connectivity and AI"
 url: "https://brainavlab.github.io"
 plugins:
+plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # colorize code snippets with the pygments module
 highlighter: pygments
