@@ -16,7 +16,8 @@ notitle: true
 
 <div class="funded-projects-container">
   {% for project in site.data.funded_projects %}
-    <div class="funded-project-card">
+  {% assign s = project.status | default: "active" | strip | downcase %}
+    <div class="funded-project-card" data-status="{{ s }}">
       <h2>{{ project.project_name }}</h2>
       <p><strong>Status:</strong> 
         <span class="status {{ project.status | downcase }}">
