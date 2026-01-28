@@ -22,12 +22,14 @@
     </p>
 
     <div class="news-actions">
-      {% assign t = post.type | default: "" | strip | downcase %}
-      {% if t == "publication" and post.paper_url %}
-        <a class="news-link" href="{{ post.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
-      {% else %}
-        <a class="news-link" href="{{ post.url | relative_url }}">Read more</a>
-      {% endif %}
+        {% assign t = post.type | default: "" | strip | downcase %}
+        {% if t == "publication" and item.paper_url %}
+            <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+        {% elsif t == "award" and item.article_url %}
+            <a class="news-link" href="{{ item.article_url }}" target="_blank" rel="noopener">Read Article</a>
+        {% else %}
+            <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+        {% endif %}
     </div>
   </div>
 </div>
