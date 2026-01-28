@@ -95,5 +95,28 @@
             });
         </script>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.funded-projects-filter-btn');
+            const cards = document.querySelectorAll('.funded-project-card[data-status]');
+            if (!buttons.length || !cards.length) return;
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+            
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            
+                cards.forEach(card => {
+                    const s = (card.getAttribute('data-status') || '').toLowerCase();
+                    const show = (filter === 'all') || (s === filter);
+                    card.style.display = show ? '' : 'none';
+                });
+                });
+            });
+            });
+        </script>
+
     </body>
 </html>
