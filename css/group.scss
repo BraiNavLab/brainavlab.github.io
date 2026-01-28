@@ -802,6 +802,28 @@ ul.news {
     text-decoration:none;
 }
 
+.news-filter{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin: 10px 0 18px;
+  }
+  
+  .news-filter-btn{
+    border: 0;
+    border-radius: 999px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.12);
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  .news-filter-btn.active{
+    background: rgba(255,255,255,0.28);
+    font-weight: 600;
+  }
+
 /* ############ For DropDown Table in Mobile View ####################### */
 
 /* hide mobile dropdown by default */

@@ -4,10 +4,18 @@ title: News
 notitle: true
 ---
 
+<div class="news-filter">
+    <button type="button" class="news-filter-btn active" data-filter="all">All</button>
+    <button type="button" class="news-filter-btn" data-filter="publication">Publications</button>
+    <button type="button" class="news-filter-btn" data-filter="award">Awards</button>
+    <button type="button" class="news-filter-btn" data-filter="event">Events</button>
+</div>
+
 <div class="news-container">
   {% assign items = site.news | sort: "date" | reverse %}
   {% for item in items %}
-    <div class="news-card">
+  {% assign t = item.type | default: "" | strip | downcase %}
+    <div class="news-card" data-type="{{ t }}">
       {% if item.image %}
         <img class="news-image" src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
       {% endif %}

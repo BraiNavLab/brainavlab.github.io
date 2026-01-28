@@ -70,5 +70,30 @@
             });
         </script>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.news-filter-btn');
+            const cards = document.querySelectorAll('.news-card[data-type]');
+            if (!buttons.length || !cards.length) return;
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+            
+                // button state
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            
+                // card filtering
+                cards.forEach(card => {
+                    const t = card.getAttribute('data-type') || '';
+                    const show = (filter === 'all') || (t === filter);
+                    card.style.display = show ? '' : 'none';
+                });
+                });
+            });
+            });
+        </script>
+
     </body>
 </html>
