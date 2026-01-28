@@ -28,6 +28,17 @@ notitle: true
           <p class="news-text">{{ item.content | strip_html | truncate: 220 }}</p>
         {% endif %}
 
+        {% assign t = item.type | default: "" | strip | downcase %}
+        <div class="news-actions">
+        {% if t == "publication" and item.paper_url %}
+            <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+        {% elsif t == "award" and item.article_url %}
+            <a class="news-link" href="{{ item.article_url }}" target="_blank" rel="noopener">Read Article</a>
+        {% else %}
+            <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+        {% endif %}
+        </div>
+
       </div>
 
     </div>
