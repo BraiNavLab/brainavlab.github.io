@@ -28,12 +28,21 @@ notitle: true
           <p class="news-text">{{ item.content | strip_html | truncate: 220 }}</p>
         {% endif %}
 
-        {% if item.paper_url %}
-            <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read paper</a>
-        {% endif %}
+        <div class="news-actions">
+            {% if item.type == "Publication" and item.paper_url %}
+              <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+            {% else %}
+              <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+            {% endif %}
+        </div>
+
+        <!--{% if item.paper_url %} -->
+        <!--    <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read paper</a> -->
+        <!--{% endif %} -->
 
         <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
       </div>
+
     </div>
   {% endfor %}
 </div>
