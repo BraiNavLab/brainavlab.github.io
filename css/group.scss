@@ -710,7 +710,6 @@ ul.news {
 
 .news-container{
     margin: 0 auto;
-    max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 per riga */
     gap: 30px;
