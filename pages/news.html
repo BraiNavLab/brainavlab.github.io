@@ -29,9 +29,6 @@ notitle: true
         {% endif %}
 
         {% assign t = item.type | default: "" | strip | downcase %}
-        {% if item.type %}
-        <span class="news-badge news-badge-{{ t }}">{{ item.type }}</span>
-        {% endif %}
         <div class="news-actions">
         {% if t == "publication" and item.paper_url %}
             <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
