@@ -7,6 +7,12 @@ notitle: true
 <h1 class="h1-funded-projects">Funded Projects</h1>
 <hr>
 
+<div class="news-filter">
+  <button type="button" class="news-filter-btn active" data-filter="all">All</button>
+  <button type="button" class="news-filter-btn" data-filter="publication">Publications</button>
+  <button type="button" class="news-filter-btn" data-filter="award">Awards</button>
+  <button type="button" class="news-filter-btn" data-filter="event">Events</button>
+</div>
 
 <div class="funded-projects-container">
   {% for project in site.data.funded_projects %}
