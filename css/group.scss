@@ -709,16 +709,17 @@ ul.news {
 /* ############ For News ####################### */
 
 .news-container{
+    max-width: 1300px;      /* tweak 1200–1400 */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 per riga */
-    gap: 30px;
-    padding: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;              /* slightly tighter than 30 */
+    padding: 12px 12px;     /* reduce big margins */
   }
 
-  .news-actions { margin-top: auto; }
+.news-actions { margin-top: auto; }
   
-  .news-card{
+.news-card{
     width:100%;
     background: rgba(255,255,255,0.08);
     border-radius: 0.8em;
@@ -727,58 +728,58 @@ ul.news {
     backdrop-filter: blur(10px);
     display:flex;
     flex-direction:column;
-  }
+}
   
-  .news-image{
+.news-image{
     width:100%;
     height: 180px;
     object-fit: cover;
     display:block;
-  }
+}
   
-  .news-body{
+.news-body{
     padding: 16px 18px 18px;
     display:flex;
     flex-direction:column;
     gap:10px;
-  }
+}
   
-  .news-meta{
+.news-meta{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:10px;
     opacity:0.9;
-  }
+}
   
-  .news-badge{
+.news-badge{
     font-size: 0.8rem;
     padding: 4px 10px;
     border-radius: 999px;
     background: rgba(255,255,255,0.18);
-  }
+}
   
-  .news-date{
+.news-date{
     font-size: 0.85rem;
     opacity: 0.85;
-  }
+}
   
-  .news-title{
+.news-title{
     margin:0;
     font-size: 1.05rem;
-  }
+}
   
-  .news-text{
+.news-text{
     margin:0;
     opacity:0.95;
     line-height:1.4;
-  }
+}
   
-  .news-link{
+.news-link{
     margin-top:auto;
     font-weight:600;
     text-decoration:none;
-  }
+}
 
 /* ############ For DropDown Table in Mobile View ####################### */
 
