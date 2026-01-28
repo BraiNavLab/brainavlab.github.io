@@ -51,11 +51,16 @@ base: ''
 collections:
   projects:
     output: true
+  news:
+    output: true
+    permalink: /news/:name/
 
 # Navigation bar links.
 navigation:
   - title: Home
     link: /
+  - title: "News"
+    link: /pages/news.html
   - title: People
     link: /pages/lab_member.html
   - title: Research Topics

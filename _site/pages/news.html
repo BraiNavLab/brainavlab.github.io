@@ -1,0 +1,35 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+
+<div class="news-container">
+  {% assign items = site.news | sort: "date" | reverse %}
+  {% for item in items %}
+    <div class="news-card">
+      {% if item.image %}
+        <img class="news-image" src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
+      {% endif %}
+
+      <div class="news-body">
+        <div class="news-meta">
+          {% if item.type %}<span class="news-badge">{{ item.type }}</span>{% endif %}
+          {% if item.date %}<span class="news-date">{{ item.date | date: "%d %b %Y" }}</span>{% endif %}
+        </div>
+
+        {% if item.title %}
+          <h3 class="news-title">{{ item.title }}</h3>
+        {% endif %}
+
+        {% if item.excerpt %}
+          <p class="news-text">{{ item.excerpt }}</p>
+        {% else %}
+          <p class="news-text">{{ item.content | strip_html | truncate: 220 }}</p>
+        {% endif %}
+
+        <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
