@@ -710,20 +710,14 @@ ul.news {
 
 .news-container{
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 per riga */
     gap: 30px;
     padding: 20px;
   }
-  
-  @media (max-width: 1024px){
-    .news-container{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-  
-  @media (max-width: 768px){
-    .news-container{ grid-template-columns: 1fr; }
-  }
+
+  .news-actions { margin-top: auto; }
   
   .news-card{
     width:100%;
