@@ -1,54 +1,33 @@
+{% assign post = include.item %}
 
-{% assign item = include.item %}
-{% if item.icon %}
-{% assign icon = item.icon %}
-{% assign class = "shortnews" %}
-{% else %}
-{% assign icon = "newspaper-o" %}
-{% endif %}
+<div class="news-card">
+  {% if post.image %}
+    <img class="news-image" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+  {% endif %}
 
-{% capture news %}
-    <div>
-        {% if post.shortnews %}
-            {{ post.content | markdownify | remove: '<p>' | remove: '</p>' }}
-        {% else %}
-            <h5> <a href="{{ site.base }}{{ post.url }}"> {{ post.title }} </a> </h5>
-            {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}
-            <br>
-            <a href="{{ site.base }}{{ post.url }}"> Read more &raquo;</a>
-        {% endif %}
+  <div class="news-body">
+    <div class="news-meta">
+      {% if post.type %}<span class="news-badge">{{ post.type }}</span>{% endif %}
+      {% if post.date %}<span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>{% endif %}
     </div>
-{% endcapture %}
 
-{% capture header %}
-<span class="fa fa-fw fa-{{ icon }}"></span>
-<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-{% endcapture %}
+    {% if post.title %}<h3 class="news-title">{{ post.title }}</h3>{% endif %}
 
-<li class="{{ class }}">
-    {% if post.image %}
+    <p class="news-text">
+      {% if post.excerpt %}
+        {{ post.excerpt | strip_html | truncate: 220 }}
+      {% else %}
+        {{ post.content | strip_html | truncate: 220 }}
+      {% endif %}
+    </p>
 
-        {% capture img %}
-            <img class="img-fluid d-block mx-auto"
-                 style="{{ post.image_style }}"
-                 src="{{ post.image }}">
-        {% endcapture %}
-
-        <div class="row">
-            <div class="col-sm-10">
-                {{ header }}
-                {{ news }}
-            </div>
-            <div class="col-sm-2">
-                {% if post.image_link %}
-                    <a href="{{ post.image_link }}">{{ img }}</a>
-                {% else %}
-                    {{ img }}
-                {% endif %}
-            </div>
-        </div>
-     {% else %}
-        {{ header }}
-        {{ news }}
-    {% endif %}
-</li>
+    <div class="news-actions">
+      {% assign t = post.type | default: "" | strip | downcase %}
+      {% if t == "publication" and post.paper_url %}
+        <a class="news-link" href="{{ post.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+      {% else %}
+        <a class="news-link" href="{{ post.url | relative_url }}">Read more</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
