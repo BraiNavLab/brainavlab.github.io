@@ -709,12 +709,26 @@ ul.news {
 /* ############ For News ####################### */
 
 .news-container{
-    max-width: 1300px;      /* tweak 1200–1400 */
+    max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;              /* slightly tighter than 30 */
-    padding: 12px 12px;     /* reduce big margins */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* desktop: 3 */
+    gap: 24px;
+    padding: 12px 12px;
+  }
+  
+  /* tablet: 2 cards per row */
+  @media (max-width: 1024px){
+    .news-container{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  /* mobile: 1 card per row */
+  @media (max-width: 768px){
+    .news-container{
+      grid-template-columns: 1fr;
+    }
   }
 
 .news-actions { margin-top: auto; }
