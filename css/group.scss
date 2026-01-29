@@ -899,11 +899,11 @@ body{
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("/img/bg/logo_brainavlab.svg");
+    background-image: url("/img/bg/brain_background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60vmin;   /* change size */
-    opacity: 0.04;             /* very high transparency */
+    opacity: 0.1;             /* very high transparency */
     pointer-events: none;
     z-index: -1;
   }
