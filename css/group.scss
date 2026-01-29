@@ -899,11 +899,11 @@ body{
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("/img/bg/brain_background.png");
+    background-image: url("../img/bg/brain_background.png"); /* adjust path */
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60vmin;   /* change size */
-    opacity: 0.1;             /* very high transparency */
+    background-position: center center;
+    background-size: cover;      /* fills width+height */
+    opacity: 0.06;               /* keep it subtle */
     pointer-events: none;
     z-index: -1;
   }
