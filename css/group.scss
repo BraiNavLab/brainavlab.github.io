@@ -886,3 +886,24 @@ html, body { overflow-x: hidden; }
 
 /* images should never exceed card width */
 .funded-project-card img { max-width: 100%; height: auto; display: block; }
+
+
+/* Each Page BACKGROUND */
+
+body{
+    position: relative;
+  }
+  
+  /* subtle fixed watermark background */
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("/img/bg/logo_brainavlab.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60vmin;   /* change size */
+    opacity: 0.04;             /* very high transparency */
+    pointer-events: none;
+    z-index: -1;
+  }
