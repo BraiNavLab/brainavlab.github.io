@@ -2,7 +2,7 @@
 title: "New Publication on IEEE Transactions on Neural Systems and Rehabilitation Engineering"
 date: 2026-01-12
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard.png
+image: /img/news/publication_standard_ieee.png
 paper_url: "https://ieeexplore.ieee.org/abstract/document/11342313"   
 ---
 

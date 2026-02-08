@@ -17,17 +17,31 @@
   project_name: "AI4HEALTH: empowering neurosciences with eXplainable AI methods"
   PI: "Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
+  reference_code: ""
+  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
+  money: "Approximately €200k"
+  description: "Scientific objectives include exploring brain connectivity and microstructure modeling through explainable AI techniques in both healthy individuals and patients (e.g., cancer), and generalizing the developed methodology to other conditions, including neurodegenerative diseases (e.g., Parkinson’s and Alzheimer’s) and neurological disorders (e.g., stroke and epilepsy). Funding are used to support one RTD-A position (ING-INF/06) and two one-year research fellowships (Assegni di Ricerca; ING-INF/05 and INF/01)."
+  funded_agency: "MIUR D.M. 737/2021 (PRIN)"
+  link: ""
+  status: "Closed"
+  start: "2022"
+  end: "2025"
+
+  - proj003:
+  project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging"
+  PI: "Gloria Menegaz"
+  people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "202292PHR2"
   partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
-  money: "€ 258'872.00"
-  description: "Part of AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging. The aim of this project is to contribute to the decryption and modeling of the aging process by focusing on a specific aspect, the brain-heart axis, and relying on XAI as the enabling technology. This is a hot topic that has only recently started to be investigated, mainly in vascular disorders. The availability of large amount of multi-modal data (novel magnetic resonance imaging sequences, clinical, behavioral and genetic data) on the same cohorts and the substantially increased computational power open new perspectives by enabling large scale studies as well as the possibility to mine hidden factors that only advanced AI methods might reveal. "
-  funded_agency: "MIUR D.M. 737/2021 (PRIN)"
+  money: "€ 209'995.00 (out of € 258'872.00)"
+  description: "The aim of this project is to contribute to modeling the aging process, focusing specifically on the heart–brain axis. These models will be based on endogenous and exogenous factors spanning micro- to macro-scale levels, and will leverage explainable AI as an enabling technology in both healthy and pathological subjects. The evaluation is carried out by the Evaluation Committee (from five to fifteen scientific experts) appointed by the National Committee for Research Evaluation."
+  funded_agency: "MUR (PRIN 2022)"
   link: "https://www.mur.gov.it/sites/default/files/2023-06/Decreto%20Direttoriale%20n.%20861%20PE6_AllegatoA.pdf"
   status: "Active"
-  start: "Jun 2023"
-  end: "Ongoing"
+  start: "Sept 2023"
+  end: "Feb 2026"
 
-- proj003:
+- proj004:
   project_name: "AntIAGING: Artificial Intelligence for Healthy Aging"
   PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
@@ -37,11 +51,11 @@
   description: "Aging and artificial intelligence (AI) are key concepts in today’s socio-economic context. Aging is accompanied by structural and functional degeneration that affects quality of life. The goal of AntIAGING is to contribute to the understanding and modeling of this process, focusing on the heart–brain axis. Cardiovascular and neurodegenerative diseases are among the leading causes of death in aging populations and have the greatest socio-economic impact. It is now evident that these conditions are closely connected, making the study of their interactions one of the central topics in biomedical research. To identify characteristic patterns of the aging process, factors derived from brain imaging (neuroimaging) and genetic determinants from omics data will be analyzed and integrated using explainable AI (XAI) methods, which make it possible to decode the behavior of computational architectures and interpret their results. AntIAGING is promoted by a multidisciplinary consortium including the University of Turin, CENTAI Spa, and EBNeuro Spa — leading companies in the fields of AI and biomedical instrumentation — ensuring the exploitation and practical application of the project outcomes."
   funded_agency: "PR Veneto FSE+ 2021-2027"
   link: "https://www.tech4life.it/news/iniziativaantiaging-artificial-intelligence-for-healthy-aging/"
-  status: "Active"
+  status: "Closed"
   start: "Jan 2023"
-  end: "Ongoing"
+  end: "2025"
 
-- proj004:
+- proj005:
   project_name: "MNESYS"
   PI: "Our group participates in the MNESYS Extended Partnership on Neuroscience (Spoke 2), funded under the Italian PNRR framework."
   people: ["Silvia Francesca Storti (task leader in WP4-Spoke2)" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
@@ -55,7 +69,7 @@
   start: "Nov 2022"
   end: "Feb 2026"
 
-- proj005:
+- proj006:
   project_name: "FISM"
   PI: "Marialuisa Gandolfi"
   people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
@@ -69,7 +83,7 @@
   start: "Sept 2024"
   end: "Aug 2026"
 
-- proj006:
+- proj007:
   project_name: "Brain-RESTORE"
   PI: "Silvia Francesca Storti"
   people: ["Nicola Valè", "Ilaria Siviero", "Ettore Cinquetti"]
@@ -83,7 +97,7 @@
   start: "Nov 2023"
   end: "Nov 2024"
 
-- proj007:
+- proj008:
   project_name: "OPERA"
   PI: "Davide Quaglia"
   people: ["Silvia Francesca Storti", "Gloria Menegaz", "Ilaria Siviero", "Ettore Cinquetti"]
@@ -97,7 +111,7 @@
   start: "2021"
   end: "2022"
 
-- proj008:
+- proj009:
   project_name: "EDIPO"
   PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Silvia Francesca Storti", "Lorenza Brusini"]
