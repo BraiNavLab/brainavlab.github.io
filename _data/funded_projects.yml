@@ -27,7 +27,7 @@
   start: "2022"
   end: "2025"
 
-  - proj003:
+- proj003:
   project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging"
   PI: "Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
