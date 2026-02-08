@@ -44,11 +44,14 @@ notitle: true
           {% if t == "publication" and item.paper_url %}
             <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
 
-          {% elsif (t == "award" or t == "event") and item.article_url %}
+          {% elsif t == "award" and item.article_url %}
             <a class="news-link" href="{{ item.article_url }}" target="_blank" rel="noopener">Read Article</a>
 
+          {% elsif t == "event" and item.event_url %}
+            <a class="news-link" href="{{ item.event_url }}" target="_blank" rel="noopener">See the Event</a>
+
           {% elsif t == "award" or t == "event" %}
-            <!-- no button if article_url missing -->
+            <!-- no button if external link missing -->
 
           {% else %}
             <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
