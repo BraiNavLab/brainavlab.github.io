@@ -101,7 +101,7 @@
   project_name: "OPERA"
   PI: "Davide Quaglia"
   people: ["Silvia Francesca Storti", "Gloria Menegaz", "Ilaria Siviero", "Ettore Cinquetti"]
-  reference_code: ""
+  reference_code: [""]
   partners: ["Department of Computer Science (University of Verona)"]
   money: "€ 100'000.00"
   description: "Osservazione dei processi lavorativi, con garanzie oggettive di tutela della Privacy, per la prevenzione di Errori e situazioni di Rischio in maniera Automatica ai tempi di Industria 4.0 (OPERA 4.0). Work Package: MA2 Intelligent systems"
@@ -120,7 +120,7 @@
   money: "€ 180'000.00"
   description: "A computational solution for bringing neuroimaging genetic into translational research (EDIPO)"
   funded_agency: "Fondazione Cariverona"
-  link: ""
+  link: [""]
   status: "Closed"
   start: "2020"
   end: "2022"
