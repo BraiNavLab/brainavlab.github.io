@@ -464,6 +464,18 @@ ul.news {
     background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.15));
 }
 
+.page-hero{
+    width: 100%;        /* on mobile: fill available width */
+    height: auto;
+    max-width: 900px;   /* on desktop: large but not full-width */
+  }
+  
+  @media (max-width: 768px){
+    .page-hero{
+      max-width: 100%;  /* ensures it never exceeds the screen */
+    }
+  }
+
 /* ######################################### PUBLICATIONS ######################################### */
 .pubtitle {
     color: #058EFE;
