@@ -2,7 +2,7 @@
 title: "New Publication on Wiley - Human Brain Mapping"
 date: 2025-11-08
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard_wiley.png
+image: /img/news/publication/publication_standard_wiley.png
 paper_url: "https://onlinelibrary.wiley.com/doi/10.1002/hbm.70406"   
 ---
 

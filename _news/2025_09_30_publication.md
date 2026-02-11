@@ -2,7 +2,7 @@
 title: "New Publication on IOP - Journal of Neural Engineering"
 date: 2025-09-30
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard_iop.png
+image: /img/news/publication/publication_standard_iop.png
 paper_url: "https://iopscience.iop.org/article/10.1088/1741-2552/ae087d/meta"   
 ---
 

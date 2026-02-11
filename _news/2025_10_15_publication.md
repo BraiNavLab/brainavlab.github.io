@@ -2,7 +2,7 @@
 title: "New Publication on Elsevier - NeuroImage"
 date: 2025-10-15
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard_elsevier.png
+image: /img/news/publication/publication_standard_elsevier.png
 paper_url: "https://www.sciencedirect.com/science/article/pii/S1053811925004513"   
 ---
 

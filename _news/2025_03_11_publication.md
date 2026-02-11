@@ -2,7 +2,7 @@
 title: "New Publication on Elsevier - Neurobiology of Disease"
 date: 2025-03-11
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard_elsevier.png
+image: /img/news/publication/publication_standard_elsevier.png
 paper_url: "https://www.sciencedirect.com/science/article/pii/S0969996125000828"   
 ---
 

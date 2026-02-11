@@ -2,7 +2,7 @@
 title: "New Publication on IEEE Signal Processing Magazine"
 date: 2025-12-22
 type: "Publication"   # Award | Publication | Event
-image: /img/news/publication_standard_ieee.png
+image: /img/news/publication/publication_standard_ieee.png
 paper_url: "https://ieeexplore.ieee.org/document/11306228"   
 ---
 
