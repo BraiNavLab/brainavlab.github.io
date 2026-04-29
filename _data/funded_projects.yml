@@ -1,15 +1,15 @@
 ####################### FUNDED PROJECTS #######################
 
 - proj001:
-  project_name: "FISM"
+  project_name: "FISM (2025)"
   PI: "Nicola Valè"
   people: ["Nicola Valè", "Silvia Francesca Storti", "Marialuisa Gandolfi"]
   reference_code: "2025/BS/004"
   partners: ["Dept. of Engineering for Innovation Medicine, University of Verona, Italy; Dept. of Neurosciences, Biomedicine and Movement Sciences, University of Verona, Italy"]
   money: "€ 103'600.00"
-  description: "TODO"
+  description: "This project aims to investigate the neurophysiological correlates of motor-cognitive interference in people with and without Multiple Sclerosis using portable, wearable EEG. A second phase will assess the feasibility of a rehabilitative intervention targeting motor-cognitive integration, evaluating outcomes at both the motor and neural level."
   funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
-  link: "https://www.dimi.univr.it/?ent=iniziativa&id=14961"
+  link: "https://www.aism.it/bando_annuale_fism"
   status: "Active"
   start: "Sept 2026"
   end: "Sept 2029"
@@ -85,7 +85,7 @@
   end: "Feb 2026"
 
 - proj007:
-  project_name: "FISM"
+  project_name: "FISM (2023)"
   PI: "Marialuisa Gandolfi"
   people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
   reference_code: "2023/R-Multi/010"
