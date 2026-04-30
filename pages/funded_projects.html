@@ -34,6 +34,9 @@ notitle: true
       {% if project.link %}
         <p><strong>Website:</strong> <a href="{{ project.link }}" target="_blank">{{ project.link }}</a></p>
       {% endif %}
+      {% if project.article %}
+        <p><strong>Article:</strong> <a href="{{ project.article }}" target="_blank">{{ project.article }}</a></p>
+      {% endif %}
     </div>
   {% endfor %}
 </div>
