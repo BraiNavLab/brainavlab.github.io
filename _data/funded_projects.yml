@@ -9,7 +9,7 @@
   money: "€ 103'600.00"
   description: "This project aims to investigate the neurophysiological correlates of motor-cognitive interference in people with and without Multiple Sclerosis using portable, wearable EEG. A second phase will assess the feasibility of a rehabilitative intervention targeting motor-cognitive integration, evaluating outcomes at both the motor and neural level."
   funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
-  link: "https://www.aism.it/bando_annuale_fism"
+  link: ["https://www.aism.it/bando_annuale_fism","https://www.dimi.univr.it/?ent=iniziativa&id=14961"]
   status: "Active"
   start: "Sept 2026"
   end: "Sept 2029"
