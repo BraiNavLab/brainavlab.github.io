@@ -23,13 +23,39 @@
 
     {% assign t = post.type | default: "" | strip | downcase %}
     <div class="news-actions">
-        {% if t == "publication" and item.paper_url %}
-            <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
-        {% elsif t == "award" and item.article_url %}
-            <a class="news-link" href="{{ item.article_url }}" target="_blank" rel="noopener">Read Article</a>
+        
+        {% if post.video %}
+          <a href="#" class="news-link" data-toggle="modal" data-target="#videoModal{{ post.title | slugify }}">Watch Video</a>
+        {% endif %}
+
+        {% if t == "publication" and post.paper_url %}
+            <a class="news-link" href="{{ post.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+        {% elsif t == "award" and post.article_url %}
+            <a class="news-link" href="{{ post.article_url }}" target="_blank" rel="noopener">Read Article</a>
         {% else %}
-            <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+            <a class="news-link" href="{{ post.url | relative_url }}">Read more</a>
         {% endif %}
     </div>
   </div>
 </div>
+
+{% if post.video %}
+<div class="modal fade" id="videoModal{{ post.title | slugify }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ post.title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <video width="100%" controls>
+          <source src="{{ site.baseurl }}{{ post.video }}" type="video/mp4">
+          Il tuo browser non supporta il tag video.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
