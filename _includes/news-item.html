@@ -59,3 +59,30 @@
   </div>
 </div>
 {% endif %}
+
+<script>
+  // Aspetta che la pagina sia pronta e caricata
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    // Trova tutte le finestre a comparsa (Modal) sulla pagina
+    var modals = document.querySelectorAll('.modal');
+    
+    modals.forEach(function(modal) {
+      // Ascolta l'evento di chiusura di Bootstrap
+      modal.addEventListener('hidden.bs.modal', function () {
+        
+        // Cerca il player video all'interno di questa specifica finestra
+        var video = this.querySelector('video');
+        
+        // Se trova un video, lo mette in pausa
+        if (video) {
+          video.pause();
+          
+          // OPZIONALE: Se vuoi che quando si riapre parta da zero, 
+          // togli i due slash (//) dalla riga qui sotto:
+          // video.currentTime = 0; 
+        }
+      });
+    });
+  });
+</script>
