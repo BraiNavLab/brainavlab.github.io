@@ -40,7 +40,7 @@ notitle: true
         <div class="news-actions">
           
           {% if item.video %}
-            <a href="#" class="news-link" data-toggle="modal" data-target="#videoModal{{ item.title | slugify }}">Watch Video</a>
+            <a href="#" class="news-link" data-bs-toggle="modal" data-bs-target="#videoModal{{ item.title | slugify }}">Watch Video</a>
           {% endif %}
 
           {% if t == "publication" and item.paper_url %}
@@ -64,7 +64,7 @@ notitle: true
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">{{ item.title }}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
