@@ -4,6 +4,21 @@ title: News
 notitle: true
 ---
 
+<style>
+  /* Sfoca lo sfondo scuro del Modal e lo rende un po' più intenso */
+  .modal-backdrop.show {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1 !important;
+  }
+  
+  /* Assicura che la pagina dietro sia completamente bloccata */
+  body.modal-open {
+    overflow: hidden !important;
+    touch-action: none;
+  }
+</style>
+
 <div class="news-filter">
     <button type="button" class="news-filter-btn active" data-filter="all">All</button>
     <button type="button" class="news-filter-btn" data-filter="publication">Publications</button>
@@ -69,7 +84,7 @@ notitle: true
             </button>
           </div>
           <div class="modal-body p-0">
-            <video width="100%" controls>
+            <video width="100%" controls controlsList="nodownload" oncontextmenu="return false;">
               <source src="{{ site.baseurl }}{{ item.video }}" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
