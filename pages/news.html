@@ -84,7 +84,7 @@ notitle: true
             </button>
           </div>
           <div class="modal-body p-0">
-            <video width="100%" controls controlsList="nodownload" oncontextmenu="return false;">
+            <video width="100%" controls controlsList="nodownload" oncontextmenu="return false;" playsinline webkit-playsinline preload="metadata">
               <source src="{{ site.baseurl }}{{ item.video }}" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
@@ -98,16 +98,24 @@ notitle: true
 </div>
 
 <script>
-  // Ascolta l'evento di chiusura di QUALSIASI modal in tutta la pagina
-  document.addEventListener('hidden.bs.modal', function (event) {
-    
-    // 'event.target' indica esattamente la finestra che l'utente ha appena chiuso
+  // FORZA IL VIDEO A PARTIRE QUANDO IL MODAL È COMPLETAMENTE APERTO (Ottimo per Mobile)
+  document.addEventListener('shown.bs.modal', function (event) {
     var video = event.target.querySelector('video');
-    
-    // Se viene trovato un video dentro quella finestra, lo mettiamo in pausa
+    if (video) {
+      video.play().catch(function(error) {
+        // I browser mobile bloccano l'autoplay se il video non è mutato, 
+        // questo catch evita che il sito si blocchi in caso di restrizioni severe.
+        console.log("Riproduzione automatica bloccata dal browser mobile, richiede click manuale.");
+      });
+    }
+  });
+
+  // FERMA IL VIDEO QUANDO SI CHIUDE IL MODAL
+  document.addEventListener('hidden.bs.modal', function (event) {
+    var video = event.target.querySelector('video');
     if (video) {
       video.pause();
-      video.currentTime = 0; // Opzionale: resetta il video all'inizio per la prossima volta
+      video.currentTime = 0;
     }
   });
 </script>
