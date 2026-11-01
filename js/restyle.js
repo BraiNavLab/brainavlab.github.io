@@ -73,6 +73,18 @@ document.querySelectorAll('.funded-description').forEach((description) => {
     });
 });
 
+// World map: the markers drop in the first time the map enters the screen.
+const worldMap = document.querySelector('.world-map');
+if (worldMap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    worldMap.classList.add('pins-waiting');
+    const mapObserver = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        worldMap.classList.replace('pins-waiting', 'pins-drop');
+        mapObserver.disconnect();
+    }, { threshold: 0.35 });
+    mapObserver.observe(worldMap);
+}
+
 // Sections and cards fade in the first time they enter the screen, to guide the eye down the page.
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const items = document.querySelectorAll(

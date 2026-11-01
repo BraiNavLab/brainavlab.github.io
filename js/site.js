@@ -94,3 +94,54 @@ document.querySelectorAll('.news-carousel').forEach((carousel) => {
         if (onScreen && !inUse && !document.hidden) next();
     }, 6000);
 });
+
+// World map: each marker is a <details>, so it opens its pop-up by itself. Here: the country and its name on the map
+// work like the marker, a click elsewhere or Esc closes the pop-up, and the pop-up stays inside the map and on screen.
+document.querySelectorAll('.world-map').forEach((map) => {
+    const markers = [...map.querySelectorAll('.map-location')];
+    const areas = [...map.querySelectorAll('.map-area')];
+    const smallScreen = window.matchMedia('(max-width: 1024px)');   // $tablet in css/group.scss
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const areaOf = (marker) => areas.find((area) => area.dataset.location === marker.dataset.location);
+    const markerOf = (area) => markers.find((marker) => marker.dataset.location === area.dataset.location);
+
+    markers.forEach((marker) => {
+        const pin = marker.querySelector('.map-pin');
+        const popup = marker.querySelector('.map-popup');
+        pin.addEventListener('pointerenter', () => areaOf(marker).classList.add('is-hot'));
+        pin.addEventListener('pointerleave', () => areaOf(marker).classList.remove('is-hot'));
+
+        marker.addEventListener('toggle', () => {
+            areaOf(marker).classList.toggle('is-active', marker.open);
+            if (!marker.open) return;
+            popup.style.removeProperty('--shift');
+            if (!smallScreen.matches) {
+                const box = popup.getBoundingClientRect();
+                const frame = map.getBoundingClientRect();
+                const shift = Math.max(0, frame.left - box.left) - Math.max(0, box.right - frame.right);
+                popup.style.setProperty('--shift', `${shift}px`);
+            }
+            popup.scrollIntoView({ block: 'nearest', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        });
+    });
+
+    areas.forEach((area) => {
+        area.addEventListener('click', () => {
+            const marker = markerOf(area);
+            marker.open = !marker.open;
+        });
+        area.addEventListener('pointerenter', () => markerOf(area).classList.add('is-hot'));
+        area.addEventListener('pointerleave', () => markerOf(area).classList.remove('is-hot'));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (smallScreen.matches || event.target.closest('.map-location, .map-area')) return;
+        markers.forEach((marker) => { marker.open = false; });
+    });
+    document.addEventListener('keydown', (event) => {
+        const open = markers.find((marker) => marker.open);
+        if (event.key !== 'Escape' || !open) return;
+        open.open = false;
+        open.querySelector('.map-pin').focus();
+    });
+});

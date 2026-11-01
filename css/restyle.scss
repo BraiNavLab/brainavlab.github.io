@@ -4,7 +4,7 @@
 // It only overrides group.scss. With "restyle: false" in _config.yml this file can be deleted.
 // Rule for shapes: cards and images have rounded corners, every button is a pill.
 // These classes in the HTML exist only for this layer and do nothing without it:
-// map-link, mission-text, social-section, project-page, project-team, funded-description, news-date, email.
+// mission-text, social-section, project-page, project-team, funded-description, news-date, email.
 
 $ink: #1e293b;
 $body: #475569;
@@ -21,6 +21,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 $content: 1256px;
 $desktop: 992px;
 $mobile: 768px;
+$tablet: 1024px;        // same value as in group.scss
 $nav-collapse: 1020px;   // same value as in group.scss
 $small: 576px;
 
@@ -325,7 +326,7 @@ section {
 .text-box-mission {
     display: grid;
     grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     column-gap: 56px;
     padding: 64px 0;
     border-top: 1px solid $hairline;
@@ -348,8 +349,19 @@ section {
 
     .mission-text {
         grid-column: 2;
-        grid-row: 1 / span 2;
+        grid-row: 1 / span 3;
         max-width: 40rem;
+    }
+
+    .brain-mesh {
+        grid-column: 1;
+        max-width: none;
+        margin: 0;
+
+        @media (max-width: $desktop) {
+            max-width: 440px;
+            margin: 0 auto 1rem;
+        }
     }
 
     p {
@@ -450,11 +462,60 @@ section {
         order: 3;
     }
 
-    .map-link {
+    .world-map {
         order: 4;
         width: 100%;
-        max-width: 1120px;
-        margin: 1rem auto 0;
+    }
+}
+
+.world-map-hint {
+    color: $muted;
+    text-align: left;
+}
+
+.map-label {
+    fill: $ink;
+}
+
+.map-popup-title {
+    border-bottom-color: $hairline;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+// Markers drop in the first time the map enters the screen (see js/restyle.js)
+@media (min-width: #{$tablet + 1}) {
+    .pins-waiting .map-pin {
+        opacity: 0;
+    }
+
+    .pins-drop .map-pin {
+        animation: pin-drop 0.45s $ease backwards;
+        animation-delay: calc(var(--i) * 70ms);
+    }
+
+    .map-popup {
+        border: 1px solid $hairline;
+        border-radius: $radius-card;
+        box-shadow: $shadow-hover;
+
+        &::after {
+            border-right: 1px solid $hairline;
+            border-bottom: 1px solid $hairline;
+        }
+    }
+
+    .map-location-below .map-popup::after {
+        border: 0;
+        border-left: 1px solid $hairline;
+        border-top: 1px solid $hairline;
+    }
+}
+
+@keyframes pin-drop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -28px);
     }
 }
 

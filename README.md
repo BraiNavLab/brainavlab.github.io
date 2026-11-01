@@ -7,3 +7,5 @@ The site is built with [Jekyll](https://jekyllrb.com/) and published by GitHub P
 ## Credits
 
 This site started from the [research-group-web](https://github.com/uwsampa/research-group-web) template by the University of Washington's SAMPA group, licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see [LICENSE](LICENSE)).
+
+The cortical surface on the home page is the ICBM152 template of [BrainNet Viewer](https://www.nitrc.org/projects/bnv/), provided by Prof. Alan C. Evans (Montreal Neurological Institute).

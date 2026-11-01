@@ -1,82 +1,116 @@
-# Partner logos scrolling on the home page, in this order.
-# logo: file in img/partners/. height: display height in pixels (default 56), to balance the logos visually.
+# Partners of the lab. The logos scroll on the home page in this order: Italy, United States, then the rest of Europe by country.
+# name: shown on the world map and in its pop-ups. url: their website (without it, the name and the logo are not links).
+# logo: file in img/partners/ (without it, the partner appears only on the map).
+# height: display height of the logo in pixels (default 56), to balance the logos visually.
+# location: marker of the world map, see _data/map_locations.yml. city: optional, shown in the pop-up.
 
-- name: "Boston Children's Hospital"
-  logo: /img/partners/boston_childrens_hospital.svg
-  url: https://www.childrenshospital.org/
-  height: 44
-
+# ---------- Italy ----------
 - name: "CENTAI Institute"
   logo: /img/partners/centai.svg
-  url: https://centai.eu
   height: 64
-
-- name: "EPFL"
-  logo: /img/partners/epfl.svg
-  url: https://www.epfl.ch/
-  height: 32
-
-- name: "Harvard Medical School"
-  logo: /img/partners/harvard_medical_school.png
-  url: https://hms.harvard.edu/
-  height: 56
-
-- name: "Inria"
-  logo: /img/partners/inria.svg
-  url: https://www.inria.fr/
-  height: 40
-
-- name: "TReNDS Center"
-  logo: /img/partners/trends_center.png
-  url: https://trendscenter.org/
-  height: 64
-
-- name: "University College London"
-  logo: /img/partners/ucl.svg
-  url: https://www.ucl.ac.uk/
-  height: 40
-
-- name: "Universitat de Barcelona"
-  logo: /img/partners/universitat_barcelona.png
-  url: https://www.ub.edu/
-  height: 60
-
-- name: "University of Bordeaux"
-  logo: /img/partners/bordeaux.svg
-  url: https://www.u-bordeaux.fr/
-  height: 52
+  location: italy
+  city: "Turin"
 
 - name: "University of Milan"
   logo: /img/partners/milano.png
   url: https://www.unimi.it
   height: 60
-
-- name: "University of Oxford"
-  logo: /img/partners/oxford.svg
-  url: https://www.ox.ac.uk/
-  height: 52
+  location: italy
 
 - name: "University of Padua"
   logo: /img/partners/padova.png
   url: https://www.unipd.it
   height: 70
-
-- name: "University of Poitiers"
-  logo: /img/partners/poitiers.png
-  url: https://www.univ-poitiers.fr/
-  height: 60
+  location: italy
 
 - name: "University of Trieste"
   logo: /img/partners/trieste.png
   url: https://portale.units.it
   height: 60
-
-- name: "University of Tübingen"
-  logo: /img/partners/tubingen.png
-  url: https://uni-tuebingen.de/
-  height: 56
+  location: italy
 
 - name: "University of Turin"
   logo: /img/partners/torino.svg
   url: https://www.unito.it
   height: 60
+  location: italy
+
+# ---------- United States ----------
+- name: "Boston Children's Hospital"
+  logo: /img/partners/boston_childrens_hospital.svg
+  url: https://www.childrenshospital.org/
+  height: 44
+  location: united_states
+  city: "Boston, MA"
+
+- name: "FNNDSC"
+  url: https://www.fnndsc.org/
+  location: united_states
+  city: "Boston, MA"
+
+- name: "Harvard Medical School"
+  logo: /img/partners/harvard_medical_school.png
+  url: https://hms.harvard.edu/
+  height: 56
+  location: united_states
+  city: "Boston, MA"
+
+- name: "TReNDS Center"
+  logo: /img/partners/trends_center.png
+  url: https://trendscenter.org/
+  height: 64
+  location: united_states
+  city: "Atlanta, GA"
+
+# ---------- France ----------
+- name: "Inria Sophia Antipolis"
+  logo: /img/partners/inria.svg
+  url: https://www.inria.fr/
+  height: 40
+  location: france
+
+- name: "University of Bordeaux"
+  logo: /img/partners/bordeaux.svg
+  url: https://www.u-bordeaux.fr/
+  height: 52
+  location: france
+
+- name: "University of Poitiers"
+  logo: /img/partners/poitiers.png
+  url: https://www.univ-poitiers.fr/
+  height: 60
+  location: france
+
+# ---------- Germany ----------
+- name: "University of Tübingen"
+  logo: /img/partners/tubingen.png
+  url: https://uni-tuebingen.de/
+  height: 56
+  location: germany
+
+# ---------- Spain ----------
+- name: "Universitat de Barcelona"
+  logo: /img/partners/universitat_barcelona.png
+  url: https://www.ub.edu/
+  height: 60
+  location: spain
+
+# ---------- Switzerland ----------
+- name: "École Polytechnique Fédérale de Lausanne (EPFL)"
+  logo: /img/partners/epfl.svg
+  url: https://www.epfl.ch/
+  height: 32
+  location: switzerland
+
+# ---------- United Kingdom ----------
+- name: "University College London"
+  logo: /img/partners/ucl.svg
+  url: https://www.ucl.ac.uk/
+  height: 40
+  location: united_kingdom
+
+- name: "University of Oxford"
+  logo: /img/partners/oxford.svg
+  url: https://www.ox.ac.uk/
+  height: 52
+  location: united_kingdom

@@ -1,0 +1,62 @@
+{% comment %}
+Interactive world map of the home page. Base image, then countries and labels in an SVG on top of it, then the markers.
+Each marker is a <details> element: it opens its pop-up by itself, js/site.js adds closing it and linking it to its country.
+Data: _data/map_locations.yml (markers), _data/partners.yml (institutions), _data/map_shapes.yml (country outlines).
+{% endcomment %}
+<div class="world-map">
+    <div class="world-map-hint">Select a location to see the institutions and visit their websites.</div>
+    <div class="world-map-stage">
+        <div class="world-map-image">
+            <img src="{{ '/img/home_img/world_map_base.png' | relative_url }}" alt="World map of the institutions collaborating with BraiNavLab" width="2400" height="1286" loading="lazy">
+            <svg viewBox="0 0 2400 1286" aria-hidden="true">
+                <symbol id="map-pin-shape" viewBox="0 0 89 102">
+                    <path d="M72.5 15.4C88.5 30.9 89 56.4 73.5 72.5 64.2 82.1 54.9 91.8 45.5 101.5 35.9 92.2 26.2 82.8 16.5 73.5 .5 58.1 0 32.6 15.5 16.5 30.9 .5 56.4 0 72.5 15.4Z"/>
+                    <circle cx="44.4" cy="44.9" r="18" fill="#fff"/>
+                </symbol>
+                {% for location in site.data.map_locations %}
+                    {% assign institutions = site.data.partners | where: "location", location.id %}
+                    {% assign shape = site.data.map_shapes[location.id] %}
+                    <g class="map-area" data-location="{{ location.id }}">
+                        {% if shape %}<path class="map-country" d="{{ shape }}"/>{% endif %}
+                        <polyline class="map-line" points="{{ location.line }}"/>
+                        <text class="map-label" x="{{ location.label_x }}" y="{{ location.label_y }}">
+                            <tspan class="map-label-title">{{ location.name }}</tspan>
+                            {% for partner in institutions %}
+                                <tspan x="{{ location.label_x }}" dy="34">• {{ partner.name }}</tspan>
+                            {% endfor %}
+                        </text>
+                        <use class="map-dot" href="#map-pin-shape" x="{{ location.x | minus: 24 }}" y="{{ location.y | minus: 55 }}" width="48" height="55"/>
+                    </g>
+                {% endfor %}
+            </svg>
+        </div>
+
+        <div class="world-map-locations">
+            {% for location in site.data.map_locations %}
+                {% assign institutions = site.data.partners | where: "location", location.id %}
+                <details class="map-location{% if location.popup == "below" %} map-location-below{% endif %}" name="world-map" data-location="{{ location.id }}" style="--x: {{ location.x }}; --y: {{ location.y }}; --i: {{ forloop.index0 }}">
+                    <summary class="map-pin">
+                        <svg viewBox="0 0 89 102" aria-hidden="true"><use href="#map-pin-shape"/></svg>
+                        <span class="map-pin-name">{{ location.name }}</span>
+                        <i class="map-pin-chevron fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="map-popup">
+                        <div class="map-popup-title">{{ location.name }}</div>
+                        <ul>
+                            {% for partner in institutions %}
+                                <li>
+                                    {% if partner.url %}
+                                        <a href="{{ partner.url }}" target="_blank" rel="noopener">{{ partner.name }} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                    {% else %}
+                                        <span class="map-popup-name">{{ partner.name }}</span>
+                                    {% endif %}
+                                    {% if partner.city %}<span class="map-popup-city">{{ partner.city }}</span>{% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+</div>

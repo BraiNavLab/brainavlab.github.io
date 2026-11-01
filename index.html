@@ -15,6 +15,7 @@ notitle: true
 <section class="text-box-mission">
     <h2>Mission</h2>
     <hr>
+    {% if site.brain_mesh %}<canvas class="brain-mesh" data-mesh="{{ '/img/home_img/brain_mesh.bin' | relative_url }}" aria-hidden="true"></canvas>{% endif %}
     <div class="mission-text">
         <p>
         The mission of <b>BraiNavLab</b> is to <b>explore, model, and understand</b> the intricate
@@ -90,21 +91,25 @@ notitle: true
             {% for round in (1..2) %}
                 <ul class="logo-marquee-group"{% if round == 2 %} aria-hidden="true"{% endif %}>
                     {% for partner in site.data.partners %}
+                        {% if partner.logo %}
                         <li>
-                            <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if round == 2 %} tabindex="-1"{% endif %}>
+                            {% if partner.url %}
+                                <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if round == 2 %} tabindex="-1"{% endif %}>
+                                    <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">
+                                </a>
+                            {% else %}
                                 <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">
-                            </a>
+                            {% endif %}
                         </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             {% endfor %}
         </div>
     </div>
 
-    {% comment %} The link opens the full image, where the labels can be read on a phone. {% endcomment %}
-    <a class="map-link" href="{{ '/img/home_img/world_collaborations.png' | relative_url }}">
-        <img src="{{ '/img/home_img/world_collaborations.png' | relative_url }}" alt="World map of the institutions collaborating with BraiNavLab" class="section-image" width="2400" height="1286" loading="lazy">
-    </a>
+    {% include world-map.html %}
+
     <p>
         <b>BraiNavLab</b> collaborates with <b>leading national and international institutions</b> and
         <b>organizations</b>, fostering <b>innovation</b> and <b>rigorous research</b> to advance the
@@ -128,3 +133,5 @@ notitle: true
 </section>
 
 {% include video-modal.html %}
+
+{% if site.brain_mesh %}<script src="{{ '/js/brain-mesh.js' | relative_url }}" defer></script>{% endif %}

@@ -25,7 +25,8 @@ and open <http://127.0.0.1:4000>. The page reloads by itself when you save a fil
 | Research topics | `_projects/` |
 | People | `_data/people.yml` |
 | Funded projects | `_data/funded_projects.yml` |
-| Partner logos on the home page | `_data/partners.yml` and `img/partners/` |
+| Partner logos and world map on the home page | `_data/partners.yml`, `_data/map_locations.yml`, `img/partners/` |
+| 3D brain under Mission (trial) | `brain_mesh` in `_config.yml`, `js/brain-mesh.js`, `img/home_img/brain_mesh.bin` |
 | Styles | `css/group.scss` |
 | Scripts | `js/site.js` |
 | Optional restyling | `css/restyle.scss`, `js/restyle.js`, `_includes/home-hero.html`, `fonts/` (`restyle: false` in `_config.yml` turns it off; to remove it for good, set that first, then delete these files) |
@@ -72,9 +73,13 @@ Add a file to `_projects/`, copying an existing one. The `order` field sets its 
 
 Add a block to `_data/funded_projects.yml`. When a project ends, change its `status` to `"Closed"`.
 
-### Add a partner logo
+### Add a partner
 
-Put the logo in `img/partners/` (SVG if possible) and add a block to `_data/partners.yml`. The world map on the home page is `img/home_img/world_collaborations.png`; its editable sources are in `img/_sources/map/`.
+Add a block to `_data/partners.yml` (without `url`, the logo and the name are simply not links). The logos scroll in the order of that file: Italy, United States, then the rest of Europe by country. Put the logo in `img/partners/` (SVG if possible); without a logo, the partner appears only on the map.
+
+The field `location` decides the marker of the world map: the name appears on the map and in the pop-up of that marker, with the link to the website.
+
+For a country not yet on the map, also add a block to `_data/map_locations.yml`: `x` and `y` are the pixels of the tip of the marker on `img/home_img/world_map_base.png`, which you can read with any image viewer. The source of that image is in `img/_sources/map/`.
 
 ## Images
 
