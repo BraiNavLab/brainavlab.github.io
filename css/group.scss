@@ -1,14 +1,127 @@
 ---
 ---
+// Main stylesheet, compiled by Jekyll into /css/group.css.
+// GitHub Pages compiles it with Ruby Sass 3.7: no @use, no math.div, no min()/max() and no "rgb(0 0 0 / 50%)".
 
-$gray: #999;
-$light-gray: #EEE;
+// ######################################### VARIABLES #########################################
+$text: rgb(90, 90, 90);
+$gray: #5f6871;
+$light-gray: #eee;
+$blue-dark: #0f2b6b;    // titles and links: light blue text on white is not readable
+$blue-hover: #1f4fb3;
+$pink: #c0267d;
+$green: #15803d;
+$red: #b91c1c;
+$radius: 0.8em;
+$mobile: 768px;
+$nav-collapse: 1020px;   // below this width the menu becomes a dropdown
+$tablet: 1024px;
 
-/* Space out content a bit */
+// ######################################### MIXINS #########################################
+// Frosted card shared by people, research topics, funded projects, news and contacts.
+@mixin frosted-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(12px);
+    border-radius: $radius;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@mixin lift-on-hover {
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// Grid of cards: $columns per row on desktop, one per row on mobile.
+@mixin card-grid($columns) {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax(0, 1fr));
+    gap: 30px;
+    padding: 20px;
+
+    @media (max-width: $mobile) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+// ######################################### GENERAL #########################################
+:root {
+    --bs-body-color: #{$text};
+    --bs-body-color-rgb: 90, 90, 90;
+    // $blue-dark and $blue-hover as r, g, b: change them together with the variables
+    --bs-link-color-rgb: 15, 43, 107;
+    --bs-link-hover-color-rgb: 31, 79, 179;
+}
+
 body {
     padding-top: 20px;
-    --hr-line-offset: 25%;
-    --hr-color: #058EFE;
+}
+
+// Subtle brain watermark behind every page
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../img/bg/brain_background.jpg") center / cover no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Links inside running text stay underlined: the color alone does not set them apart
+main p a {
+    text-decoration: underline;
+}
+
+// Bootstrap's own focus shadow is too pale to be seen
+.nav-link:focus-visible,
+.btn:focus-visible,
+.btn-close:focus-visible {
+    outline: 2px solid $blue-dark;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+// Gradient line under the section titles
+hr {
+    height: 2px;
+    border: 0;
+    opacity: 1;
+    background: linear-gradient(to right, transparent, $blue-dark 25%, $blue-dark 75%, transparent);
+}
+
+.section-title {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 2.5rem;
+
+    @media (max-width: $mobile) {
+        font-size: 1.75rem;
+    }
+}
+
+.container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @media (max-width: $mobile) {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
 }
 
 .header {
@@ -16,73 +129,595 @@ body {
     padding-bottom: 10px;
     margin-bottom: 20px;
     text-align: center;
+
+    @media (min-width: $mobile) {
+        align-items: center;
+    }
 }
 
 .footer {
-    /* padding-top: 19px; */
     color: $gray;
     border-top: 1px solid $light-gray;
     text-align: center;
     font-size: 0.8em;
+    padding: 2em;
 
-    a:link, a:visited {
+    a {
         color: $gray;
     }
-    padding: 2em;
 }
 
-/* Customize container */
-.container-fluid {
+#logo {
+    width: 210px;
+    height: auto;
+    margin: 2px 0 8px 0;
+}
+
+// Always the whole image, never larger than its own size: many have a title or a logo inside
+.page-hero {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 600px;
+}
+
+// Modal windows (biographies and videos): blurred backdrop
+.modal-backdrop.show {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+.modal-body video {
+    display: block;
+}
+
+// Filter buttons (News & Events, Funded Projects)
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0 18px;
+}
+
+.filter-btn {
+    border: 1px solid $blue-dark;
+    border-radius: 999px;
+    padding: 8px 18px;
+    background: transparent;
+    color: $blue-dark;
+    cursor: pointer;
+
+    &.active {
+        background: $blue-dark;
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+// ######################################### NAVIGATION BAR #########################################
+.nav-link {
+    font-weight: 600;
+    margin: 0 8px;
+    color: $blue-dark;
+
+    &:hover,
+    &:focus {
+        color: $blue-hover;
+        text-decoration: none;
+    }
+
+    i {
+        font-size: 1.15em;
+    }
+}
+
+// Items shown as an icon (GitHub, LinkedIn): screen readers get the name from their aria-label
+.nav-link-label {
+    display: none;
+}
+
+.nav-pills .nav-link.active {
+    background: $blue-dark;
+    color: #fff;
+    border-radius: $radius;
+}
+
+// Tighter labels keep the menu on one line on small laptops and tablets
+@media (max-width: 1400px) {
+    .nav-link {
+        margin: 0;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    #logo {
+        width: 160px;
+    }
+}
+
+// The dropdown replaces the menu on small screens
+.mobile-nav-wrap {
+    display: none;
+}
+
+@media (max-width: $nav-collapse) {
+    .topnav .nav {
+        display: none;
+    }
+
+    .mobile-nav-wrap {
+        display: block;
+        padding: 8px 12px;
+    }
+
+    .mobile-nav {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+    }
+}
+
+// ######################################### HOME #########################################
+.home-group {
+    max-width: 1100px;
+    margin: 0 auto 2em;
+    padding: 1rem;
+
+    @media (max-width: $mobile) {
+        padding: 0.5rem;
+    }
+}
+
+.home-group-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.home-title {
+    color: $blue-dark;
+    text-align: center;
+}
+
+.home-section {
+    padding: 1.5em 0;
+}
+
+.home-more {
+    text-align: center;
+    font-weight: 600;
+}
+
+.text-box-mission {
+    padding: 3em 1.5em;
+    font-size: 125%;
+
+    h2 {
+        color: $blue-dark;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    p {
+        text-align: justify;
+        text-align-last: left;
+
+        // In a narrow column justified text opens large gaps between the words
+        @media (max-width: $mobile) {
+            text-align: left;
+        }
+    }
+}
+
+.highlights-container {
+    @include card-grid(2);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+// News carousel: a row of cards that scrolls sideways and snaps to each card
+.news-carousel {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.news-carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 48px) / 3);
+    gap: 24px;
+    margin: 0 -12px;       // room for the shadows of the cards, which stay in line with the page
+    padding: 12px 12px 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 12px 20%;   // 12px: the first card rests at scrollLeft 0. 20%: a focused card barely showing on the right is brought into view
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .news-card {
+        scroll-snap-align: start;
+    }
+
+    @media (max-width: $tablet) {
+        grid-auto-columns: calc((100% - 24px) / 2);
+    }
+
+    @media (max-width: $mobile) {
+        grid-auto-columns: 85%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 80px;       // over the card images, away from their text
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: $blue-dark;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    &:hover {
+        background: $blue-dark;
+        color: #fff;
+    }
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.carousel-btn-prev {
+    left: -10px;
+}
+
+.carousel-btn-next {
+    right: -10px;
+}
+
+// On paper all the cards are printed, in rows
+@media print {
+    .news-carousel-track {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+}
+
+// Network section: scrolling partner logos, map and text
+.networking {
+    p {
+        text-align: center;
+    }
+
+    .section-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+// Logos on several rows instead of scrolling
+@mixin static-logos {
+    mask-image: none;
+    -webkit-mask-image: none;
+
+    .logo-marquee-track {
+        width: auto;
+        animation: none;
+    }
+
+    .logo-marquee-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px 32px;
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 8px;
+
+            img {
+                max-width: 38vw;
+                height: auto;
+                max-height: 44px;
+            }
+        }
+    }
+}
+
+.logo-marquee {
+    overflow: hidden;
+    margin: 1.5em 0;
+    background: #fff;
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+
+    // Only with a mouse: on a phone a tap would leave it stopped
+    @media (hover: hover) {
+        &:hover .logo-marquee-track {
+            animation-play-state: paused;
+        }
+    }
+
+    // With the keyboard: a logo that has scrolled away could not be seen when it gets the focus
+    &:has(a:focus-visible) {
+        @include static-logos;
+    }
+
+    @media (prefers-reduced-motion: reduce), print {
+        @include static-logos;
+    }
+}
+
+.logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: logo-scroll 60s linear infinite;
+}
+
+.logo-marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 56px;
     margin: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    color: rgb(90, 90, 90);
-}
-  
-@media (max-width: 768px) {
-    .container-fluid {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+    padding: 8px 28px;
+    list-style: none;
+
+    a,
+    img {
+        display: block;
     }
 }
 
-/* ######################################### GENERAL ######################################### */
-
-@media (min-width: 576px) {
-    .project-people { column-count: 2 }
-    .card-columns   { column-count: 2 }
-}
-
-@media (min-width: 768px) {
-    .role.grad      { column-count: 2 }
-    .project-people { column-count: 3 }
-    .card-columns   { column-count: 2 }
-}
-
-.title img {
-    max-width: 50%;
-}
-
-section {
-    margin-bottom: 2em;
-}
-
-.profile {
-    object-fit: cover; // makes sure it's cropped
-}
-
-.noprofile {
-    circle {
-        fill: $light-gray;
+@keyframes logo-scroll {
+    to {
+        transform: translateX(-50%);
     }
-    text {
-        font-weight: 700;
-        fill: white;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 1em 0 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border: 1px solid $blue-dark;
+        border-radius: 999px;
+        font-weight: 600;
+
+        &:hover {
+            background: $blue-dark;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+// ######################################### NEWS #########################################
+.news-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 12px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.news-card {
+    @include frosted-card;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.news-image {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+    // Taller when a card fills the width, otherwise photos are cut too much
+    @media (max-width: $mobile) {
+        height: clamp(180px, 40vw, 320px);
+    }
+}
+
+// Logos and banners, shown whole (image_fit: contain in the front matter)
+.news-image-contain {
+    padding: 10px;
+    background: #fff;
+    object-fit: contain;
+}
+
+.news-container .news-image-contain,
+.highlights-container .news-image-contain {
+    @media (max-width: $mobile) {
+        height: auto;
+        max-height: 240px;
+    }
+}
+
+.news-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 18px 18px;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.news-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba($blue-dark, 0.08);
+    color: $blue-dark;
+    font-size: 0.8rem;
+}
+
+.news-title {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.news-text {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.news-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.news-link {
+    font-weight: 600;
+}
+
+// Page of a single news item
+.post {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .date {
+        color: $gray;
+        text-align: center;
+    }
+
+    .news-actions {
+        margin-top: 1rem;
+    }
+}
+
+.post-back {
+    margin-top: 1.5rem;
+}
+
+// ######################################### PEOPLE #########################################
+.people-grid-members {
+    @include card-grid(3);
+    text-align: center;
+}
+
+.people-grid-others {
+    @include card-grid(4);
+    text-align: center;
+}
+
+// On tablets more columns would be too narrow for names and emails
+@media (min-width: #{$mobile + 1}) and (max-width: $tablet) {
+    .people-grid-members,
+    .people-grid-others {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.person-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 50%;
+}
+
+.display-role {
+    color: $pink;
+}
+
+.button-person {
+    --bs-btn-color: #{$blue-dark};
+    --bs-btn-border-color: #{$blue-dark};
+    --bs-btn-hover-bg: #{$blue-dark};
+    --bs-btn-hover-border-color: #{$blue-dark};
+    --bs-btn-active-bg: #{$blue-dark};
+    --bs-btn-active-border-color: #{$blue-dark};
+    border-radius: $radius;
+    width: 75%;
+}
+
+.person-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a:hover {
+        transform: scale(1.06);
+    }
+}
+
+.person-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+// People list on the page of a research topic
+.project-people {
+    @media (min-width: 576px) {
+        column-count: 2;
+    }
+
+    @media (min-width: $mobile) {
+        column-count: 3;
     }
 }
 
 .person {
-
     margin-bottom: 10px;
 
     .profile {
@@ -90,832 +725,181 @@ section {
         width: 70px;
     }
 
-    .bio {
-        color: $gray;
-    }
-
     .person-name {
         margin: 0;
     }
 }
 
-.person-without-image {
-    margin: 0;
+.profile {
+    object-fit: cover;
+}
 
-    .bio {
-        margin-left: 1em;
+// Initial shown when a person has no photo
+.noprofile {
+    circle {
+        fill: $light-gray;
+    }
+
+    text {
+        font-weight: 700;
+        fill: $blue-dark;
     }
 }
 
-.person-links {
-    list-style: none;
-    margin: .5rem 0 0;
-    padding: 0;
-    display: flex;
-    gap: .75rem;
-    flex-wrap: wrap;
-    justify-content: center; /* center inside the card */
-}
-.person-links li { display: inline-block; }
-.person-links a { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
-.person-links a:hover { transform: scale(1.06); }
-.person-icon { width: 28px; height: 28px; object-fit: contain; }
-
-/* ######################################### NAVIGATION BAR ######################################### */
-/* Navbar container */
-// .nav {
-//     backdrop-filter: blur(12px);
-//     background: rgba(255, 255, 255, 0.05); /* light translucent background */
-//     border-radius: 15px;
-//     padding: 10px 20px;
-//     display: flex;
-//     justify-content: center;
-//     flex-wrap: wrap; /* allows items to wrap instead of disappearing */
-// }
-
-/* Nav links */
-.nav-link {
-    font-weight: 600;
-    margin: 0 8px;
-    //color: #ffffff !important; /* ensure visibility */
-    text-decoration: none;
-    transition: transform 0.3s;
-    position: relative;
-}
-
-.nav-link i {
-    font-size: 1.25em;
-    vertical-align: middle;
-}
-
-/* Scale slightly on hover */
-.nav-link:hover {
-    // transform: scale(1.05);
-    // background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
-    // background-size: 600% 600%;
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // animation: gradientShift 3s ease infinite;
-    background: #ffffff;
-    color: rgb(93, 105, 210) !important;
-}
-
-/* Active pill styling */
-.nav-pills .nav-link.active {
-    background: rgb(93, 105, 210) !important;
-    color: #ffffff !important;
-    border-radius: 0.8em;
-}
-
-/* Gradient animation keyframes */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-// .nav-link:hover {
-//     background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
-//     background-size: 600% 600%;
-//     animation: gradientShift 4s ease infinite;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-// }
-
-// @keyframes gradientShift {
-//     0% { background-position: 0% 50%; }
-//     50% { background-position: 100% 50%; }
-//     100% { background-position: 0% 50%; }
-// }
-
-/* ######################################### HOME ######################################### */
-
-/* Front page Lab Group Picture */
-.home-group {
-    max-width: 1100px;     /* limit width like the other sections */
-    margin: 0 auto;         /* center horizontally */
-    padding: 1rem;          /* optional spacing */
-    text-align: center;     /* center image horizontally */
-  }
-  
-  .home-group-picture {
-    width: 100%;
-    //max-width: 1000px;      /* optional limit */
-    height: auto;
-    border-radius: 10px;    /* optional rounded corners */
-    display: inline-block;
-  }
-
-  @media (max-width: 768px) {
-    .home-group {
-      padding: 0.5rem;
-    }
-    .home-group-picture {
-      max-width: 100%;
-    }
-  }
-
-/* Front page BraiNavLab mission */
-.text-box-mission {
-    text-align: justify;
-    padding: 3em 1.5em;
-    font-size: 125%;
-    width: 100%;
-    border-radius: 1em;
-    position: relative; /* needed for overlay positioning */
-    z-index: 0;
-}
-
-/* background image with transparency */
-/*
-.text-box-mission::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    //background: url("../img/home_img/image_for_mission.png") center/cover no-repeat;
-    //background: 
-    //    radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 65%),
-    //    url("../img/home_img/image_for_mission.png") center/contain no-repeat;
-    background: none;
-    opacity: 0.13;      
-    border-radius: 1em; 
-    z-index: 0;        
-    background-color: #ffffff;
-}
-*/
-
-.text-box-mission h1 {
-    position: relative;
-    z-index: 1;
-    //color: rgb(183, 93, 210);
-    color: rgb(93, 105, 210);
-    text-align: center;
-}
-
-.text-box-mission p {
-    position: relative;
-    z-index: 1;
-    color: rgb(90, 90, 90);
-    text-align: justify;
-    text-align-last: left; /* last line aligns left */
-    // text-align: center;
-}
-
-/* Front page collaborations */
-.networking h2{
-    color: rgb(93, 105, 210);
-}
-
-.networking p{
-    color: rgb(90, 90, 90);
-    text-align: center;
-}
-
-.networking img{
-    width: 100%;              /* image fills container width */
-    height: auto;             /* keeps aspect ratio */
-    display: block;
-    border-radius: 10px;      /* optional rounded corners */
-  }
-
-/* Front page news. */
-.news-section h2{
-    color: rgb(93, 105, 210);
-}
-
-.news-section p{
-    color: rgb(90, 90, 90);
-}
-
-.fa {
-    color: $gray;
-}
-a > .fa {
-    // make sure that font-awesome icons are underlined in links
-    display: inline;
-}
-
-ul.news {
-    color: rgb(90, 90, 90);
-
-    .date {
-        color: $gray;
-        font-weight: bold;
-    }
-
-    > li {
-        margin-top: 1em;
-    }
-}
-
-/* ######################################### Group logo ######################################### */
-#logo {
-    width: 210px;
-    height: auto;
-    margin: 2px 0 8px 0;
-}
-
-/* ######################################### PEOPLE ######################################### */
-
-/* THE CARD FOR PEOPLE AND PROJECT IS DEFINED IN RESEARCH PROJECT*/
-
-.members-projects-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 30px;                              /* spacing between cards */
-    justify-items: center;                  /* center cards horizontally */
-    padding: 20px;
-    text-align: center;
-}
-
-/* Responsive: 1 card per row on small screens */
-@media (max-width: 768px) {
-    .members-projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-.collab-projects-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 cards per row */
-    gap: 30px;                              /* spacing between cards */
-    justify-items: center;                  /* center cards horizontally */
-    padding: 20px;
-    text-align: center;
-}
-
-/* Responsive: 1 card per row on small screens */
-@media (max-width: 768px) {
-    .collab-projects-container {
-        grid-template-columns: 1fr;
-    } 
-}
-
-.person-img {
-    aspect-ratio: 1 / 1;      /* Force square ratio */
-    object-fit: cover;        /* Crop/zoom instead of stretching */
-    width: 100%;              /* Responsive fluid width */
-    max-width: 180px;         /* Limit size on large screens */
-    border-radius: 50%;     /* 0.8em for squared - 50% for circular */
-}
-
-.card-title {
-    color: #058EFE;
-}
-
-.display-role {
-    color: #ff6ec4 !important /* set your desired color */
-    /*font-weight: 500; /* optional: make it slightly bolder */
-    /*font-size: 0.9rem; /* optional: adjust size */
-}
-
-.email {
-    color: rgb(90, 90, 90); /* set your desired color */
-    /*font-weight: 500;       /* optional: make it slightly bolder */
-    /*font-size: 0.9rem;      /* optional: adjust size */
-}
-
-.title-people-lab{
-    color: rgb(90, 90, 90); /* set your desired color */
-}
-
-.button-person {
-    border-radius: 0.8em;
-    width: 75%;
-}
-
-/* ######################################### OPTION FOR HORIZONTAL LINES ######################################### */
-:root hr {
-    border: 0;                  /* remove default border */
-    height: 2px;                /* thickness of the HR line */
-    border-top: 2px solid;      /* same thickness */
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-        to right,
-        transparent,
-        var(--hr-color) calc(50% - var(--hr-line-offset)),
-        var(--hr-color) calc(50% + var(--hr-line-offset)),
-        transparent
-    );
-}
-
-/* ######################################### PROJECT CARD ######################################### */
+// ######################################### RESEARCH TOPICS #########################################
 .research-projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap: 30px;                              /* spacing between cards */
-    justify-items: center;                  /* center cards horizontally */
-    padding: 20px;
-}
-
-/* Responsive: 1 card per row on small screens */
-@media (max-width: 768px) {
-    .research-projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-.card-body h2 {
-    color: #058EFE;
-}
-
-.card-text {
-    text-align: justify;
-    text-align-last: left; /* last line aligns left */
-}
-
-.card-body a {
-    color: #00e0ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.card-body a:hover {
-    text-decoration: underline;
-    color: #ff6ec4;
+    @include card-grid(2);
 }
 
 .card {
-    // background-color: #ffffff;
-    border-color: #ffffff;
-    
+    @include frosted-card;
+    @include lift-on-hover;
+    border-color: #fff;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+
     .profile {
         height: 40px;
         width: 40px;
         margin: 3px;
     }
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-    backdrop-filter: blur(12px);
-    border-radius: 0.8em;
-    padding: 25px;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.15));
+.card-title {
+    color: $blue-dark;
 }
 
-.page-hero{
-    width: 100%;        /* on mobile: fill available width */
-    height: auto;
-    max-width: 900px;   /* on desktop: large but not full-width */
-  }
-  
-  @media (max-width: 768px){
-    .page-hero{
-      max-width: 100%;  /* ensures it never exceeds the screen */
+.card-text {
+    text-align: justify;
+    text-align-last: left;
+
+    @media (max-width: $mobile) {
+        text-align: left;
     }
-  }
-
-/* ######################################### PUBLICATIONS ######################################### */
-.pubtitle {
-    color: #058EFE;
-    font-size: 1.1em;
-    margin-bottom: 0.2em;
 }
 
-/* ######################################### FUNDED PROJECTS ######################################### */
-.h1-funded-projects {
-    color: rgb(90, 90, 90);
+// "Read more" on a line of its own
+.card-body > a:last-child {
+    display: inline-block;
 }
 
+.project-subtitle {
+    color: $gray;
+    text-align: center;
+}
+
+// ######################################### FUNDED PROJECTS #########################################
 .funded-projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap: 30px;                              /* spacing between cards */
-    justify-items: center;                  /* center cards horizontally */
-    padding: 20px;
-}
-
-/* Responsive: 1 card per row on small screens */
-@media (max-width: 768px) {
-    .funded-projects-container {
-        grid-template-columns: 1fr;
-    }
+    @include card-grid(2);
 }
 
 .funded-project-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-    backdrop-filter: blur(12px);
-    border-radius: 0.8em;
+    @include frosted-card;
+    @include lift-on-hover;
     padding: 25px;
     width: 100%;
     height: 100%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    overflow-wrap: anywhere;
 
-.funded-project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.15));
-}
+    h2 {
+        margin: 0 0 12px;
+        color: $blue-dark;
+    }
 
-.funded-project-card h2 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    //background: linear-gradient(90deg, #ff6ec4, #7873f5, #058EFE);
-    color: #058EFE
-}
-
-.funded-project-card p {
-    margin: 6px 0;
-    line-height: 1.4;
-}
-
-.funded-project-card a {
-    color: #00e0ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.funded-project-card a:hover {
-    text-decoration: underline;
-    color: #ff6ec4;
-}
-
-.funded-projects-filter{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin: 10px 0 18px;
-  }
-  
-  .funded-projects-filter-btn{
-    border: 0;
-    border-radius: 999px;
-    padding: 8px 14px;
-    background: rgba(255,255,255,0.12);
-    color: inherit;
-    cursor: pointer;
-  }
-  
-  .funded-projects-filter-btn.active{
-    background: rgba(255,255,255,0.28);
-    font-weight: 600;
-  }
-
-.status.active {
-    color: #4ade80; /* green */
-    font-weight: bold;
-}
-
-.status.closed {
-    color: #f87171; /* red */
-    font-weight: bold;
-}
-
-/* ######################################### CONTACT ######################################### */
-.h1-contact {
-    color: rgb(90, 90, 90);
-}
-
-.contacts-container {
-    display: grid;
-    grid-template-columns: 1fr;      /* one column */
-    place-items: center;             /* centers both horizontally & vertically */
-    gap: 30px;
-    padding: 20px;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    display: flex !important;
-    justify-content: center !important;
-}
-
-@media (max-width: 768px) {
-    .contacts-container {
-        grid-template-columns: 1fr;
+    p {
+        margin: 6px 0;
+        line-height: 1.4;
     }
 }
-  
-/* Contact Card */
+
+.status {
+    font-weight: bold;
+
+    &.active {
+        color: $green;
+    }
+
+    &.closed {
+        color: $red;
+    }
+}
+
+// ######################################### CONTACTS #########################################
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
 .contact-card {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 600px;
-    padding-top: 0.8em;
+    @include frosted-card;
+    @include lift-on-hover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 0.8em;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-  
-/* Ensure any image inside scales nicely */
-.contact-card img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 0.8em 0.8em 0 0;
+    width: 100%;
+    max-width: 600px;
+    padding-top: 0.8em;
 }
 
-.contact-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-}
-
-/* Image section */
 .contact-image {
-    object-fit: cover;        /* Crop/zoom instead of stretching */
-    width: 100%;              /* Responsive fluid width */
-    max-width: 180px;         /* Limit size on large screens */
-    background-size: cover;
-    background-position: center;
-    aspect-ratio: 1 / 1;      /* Force square ratio */
+    width: 180px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
 }
 
-/* Info section */
 .contact-info {
     padding: 20px;
-    text-align: center;
-    color: rgb(90, 90, 90);
-}
 
-.contact-info h2 {
-    margin: 10px 0 5px;
-    font-size: 1.5rem;
-    color: #058EFE;
-}
+    h2 {
+        margin: 10px 0 5px;
+        font-size: 1.5rem;
+        color: $blue-dark;
+    }
 
-.contact-info h4 {
-    margin: 0 0 15px;
-    font-weight: 400;
-    color: #ddd;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-.contact-info a {
-    color: #00e0ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: #ff6ec4;
-    text-decoration: underline;
-}
-
-/* Links section */
-.contact-links {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.contact-links a {
-    background: rgba(255,255,255,0.15);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.contact-links a:hover {
-    background: rgba(255,255,255,0.3);
-    transform: scale(1.05);
-}
-
-/* Responsive: stack cards on mobile */
-@media (max-width: 768px) {
-    .contacts-container {
-        flex-direction: column;
-        align-items: center;
+    p {
+        margin: 5px 0;
     }
 }
 
 .map-container {
-    margin: 50px auto;
     max-width: 900px;
+    margin: 50px auto;
     text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+        color: $blue-dark;
+    }
+
+    iframe {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 2em;
+        border: 0;
+        border-radius: $radius;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
 }
 
-.map-container h2 {
-    margin-bottom: 20px;
-    color: rgb(93, 105, 210);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 400px;
-    border: 0;
-    border-radius: 0.8em;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-bottom: 2em;
+.map-address {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 .contact-building {
-    max-width: 1100px;       /* keeps it aligned with other sections */
-    margin: 2rem auto;        /* centers and adds top/bottom spacing */
-    padding: 0 1rem;
-    text-align: center;       /* centers the image */
+    max-width: 1000px;
+    margin: 2rem auto;
+    text-align: center;
 }
 
 .contact-building-image {
     width: 100%;
-    max-width: 1000px;        /* limit the image size */
     height: auto;
-    border-radius: 10px;      /* optional: rounded corners */
-    display: inline-block;
+    border-radius: 10px;
 }
-
-@media (max-width: 768px) {
-    .contact-building {
-      padding: 0 0.5rem;
-    }
-    .contact-building-image {
-      max-width: 100%;
-    }
-}
-
-/* ############ For News ####################### */
-
-.news-container{
-    max-width: 1300px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* desktop: 3 */
-    gap: 24px;
-    padding: 12px 12px;
-  }
-  
-  /* tablet: 2 cards per row */
-  @media (max-width: 1024px){
-    .news-container{
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  /* mobile: 1 card per row */
-  @media (max-width: 768px){
-    .news-container{
-      grid-template-columns: 1fr;
-    }
-  }
-
-.news-actions { margin-top: auto; }
-  
-.news-card{
-    width:100%;
-    background: rgba(255,255,255,0.08);
-    border-radius: 0.8em;
-    overflow:hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    display:flex;
-    flex-direction:column;
-}
-  
-.news-image{
-    width:100%;
-    height: 180px;
-    object-fit: cover;
-    display:block;
-}
-  
-.news-body{
-    padding: 16px 18px 18px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-  
-.news-meta{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    opacity:0.9;
-}
-  
-.news-badge{
-    font-size: 0.8rem;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.18);
-}
-  
-.news-date{
-    font-size: 0.85rem;
-    opacity: 0.85;
-}
-  
-.news-title{
-    margin:0;
-    font-size: 1.05rem;
-}
-  
-.news-text{
-    margin:0;
-    opacity:0.95;
-    line-height:1.4;
-}
-  
-.news-link{
-    margin-top:auto;
-    font-weight:600;
-    text-decoration:none;
-}
-
-.news-filter{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin: 10px 0 18px;
-  }
-  
-  .news-filter-btn{
-    border: 0;
-    border-radius: 999px;
-    padding: 8px 14px;
-    background: rgba(255,255,255,0.12);
-    color: inherit;
-    cursor: pointer;
-  }
-  
-  .news-filter-btn.active{
-    background: rgba(255,255,255,0.28);
-    font-weight: 600;
-  }
-
-/* ############ For DropDown Table in Mobile View ####################### */
-
-/* hide mobile dropdown by default */
-.mobile-nav-wrap { display: none; }
-
-/* minimal accessible label helper (if you don't already have .sr-only) */
-.sr-only {
-  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;
-}
-
-/* mobile behavior */
-@media (max-width: 768px) {
-  .topnav .nav { display: none; }        /* hide your desktop UL on mobile */
-  .mobile-nav-wrap { display: block; padding: 8px 12px; }
-  .mobile-nav {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 8px;
-  }
-}
-
-/* =========================
-   FIX: project cards overflow on mobile
-   ========================= */ 
-
-/* prevent any horizontal scrolling */
-html, body { overflow-x: hidden; }
-
-/* allow children inside flex/grid to actually shrink */
-.funded-project-card { min-width: 0; }
-.funded-project-card * { min-width: 0; }
-
-/* wrap long text/URLs instead of pushing out of screen */
-.funded-project-card, .funded-project-card p, .funded-project-card a, .funded-project-card li, .funded-project-card span {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-/* images should never exceed card width */
-.funded-project-card img { max-width: 100%; height: auto; display: block; }
-
-
-/* Each Page BACKGROUND */
-
-body{
-    position: relative;
-  }
-  
-  /* subtle fixed watermark background */
-  body::before{
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("../img/bg/brain_background.png"); /* adjust path */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;      /* fills width+height */
-    opacity: 0.06;               /* keep it subtle */
-    pointer-events: none;
-    z-index: -1;
-  }

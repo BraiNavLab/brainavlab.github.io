@@ -1,13 +1,23 @@
 ---
 layout: default
 ---
+{% comment %} Page of a single research topic (_projects folder). {% endcomment %}
+{% if page.subtitle %}<p class="project-subtitle">{{ page.subtitle }}</p>{% endif %}
 
-{{ content }}
+<div class="project-page">
+    <div>
+        {% comment %} Without a text of its own, the page shows the description of the card. {% endcomment %}
+        {% assign body = content | strip %}
+        {% if body == "" %}{{ page.description | markdownify }}{% else %}{{ content }}{% endif %}
+    </div>
 
-<h2> People </h2>
-<section class="people project-people">
-    {% for uname in page.people %}
-        {% assign person = site.data.people[uname] %}
-        {% include person.html person=person image=true%}
-    {% endfor %}
-</section>
+    <div class="project-team">
+        <h2>People</h2>
+        <section class="project-people">
+            {% for uname in page.people %}
+                {% assign person = site.data.people[uname] %}
+                {% include person.html person=person %}
+            {% endfor %}
+        </section>
+    </div>
+</div>

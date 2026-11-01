@@ -1,76 +1,31 @@
-{% assign post = include.item %}
+{% comment %}
+News card, used on the News & Events page and on the home page.
+Parameters: item (a document of the _news folder), truncate (optional, maximum number of words of the text),
+heading (optional, level of the title: h3 if not set).
+The page that shows the cards must also include video-modal.html.
+{% endcomment %}
+{% assign item = include.item %}
+{% assign text = item.excerpt | strip_html | strip %}
+{% if include.truncate %}{% assign text = text | truncatewords: include.truncate %}{% endif %}
+{% assign heading = include.heading | default: "h3" %}
+{% comment %} The filter of the News & Events page has three tabs: any other type goes under News. {% endcomment %}
+{% assign category = item.type | downcase %}
+{% unless category == "publication" or category == "event" %}{% assign category = "news" %}{% endunless %}
 
-<div class="news-card">
-  {% if post.image %}
-    <img class="news-image" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+<article class="news-card" data-category="{{ category }}">
+  {% if item.image %}
+    <img class="news-image{% if item.image_fit == 'contain' %} news-image-contain{% endif %}" src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}" loading="lazy">
   {% endif %}
 
   <div class="news-body">
     <div class="news-meta">
-      {% if post.type %}<span class="news-badge">{{ post.type }}</span>{% endif %}
-      {% if post.date %}<span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>{% endif %}
+      <span class="news-badge">{{ category | capitalize }}</span>
+      <span class="news-date">{{ item.date | date: "%d %b %Y" }}</span>
     </div>
 
-    {% if post.title %}<h3 class="news-title">{{ post.title }}</h3>{% endif %}
+    <{{ heading }} class="news-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></{{ heading }}>
+    <p class="news-text">{{ text }}</p>
 
-    <p class="news-text">
-      {% if post.excerpt %}
-        {{ post.excerpt | strip_html | truncate: 220 }}
-      {% else %}
-        {{ post.content | strip_html | truncate: 220 }}
-      {% endif %}
-    </p>
-
-    {% assign t = post.type | default: "" | strip | downcase %}
-    <div class="news-actions">
-        
-        {% if post.video %}
-          <a href="#" class="news-link" data-bs-toggle="modal" data-bs-target="#videoModal{{ post.title | slugify }}">Watch Video</a>
-        {% endif %}
-
-        {% if t == "publication" and post.paper_url %}
-            <a class="news-link" href="{{ post.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
-        {% elsif t == "award" and post.article_url %}
-            <a class="news-link" href="{{ post.article_url }}" target="_blank" rel="noopener">Read Article</a>
-        {% else %}
-            <a class="news-link" href="{{ post.url | relative_url }}">Read more</a>
-        {% endif %}
-    </div>
+    {% include news-actions.html item=item read_more=true %}
   </div>
-</div>
-
-{% if post.video %}
-<div class="modal fade" id="videoModal{{ post.title | slugify }}" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">{{ post.title }}</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body p-0">
-        <video width="100%" controls controlsList="nodownload" oncontextmenu="return false;" playsinline webkit-playsinline preload="metadata">
-          <source src="{{ site.baseurl }}{{ post.video }}" type="video/mp4">
-          Il tuo browser non supporta il tag video.
-        </video>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
-
-<script>
-  // Ascolta l'evento di chiusura di QUALSIASI modal in tutta la pagina
-  document.addEventListener('hidden.bs.modal', function (event) {
-    
-    // 'event.target' indica esattamente la finestra che l'utente ha appena chiuso
-    var video = event.target.querySelector('video');
-    
-    // Se viene trovato un video dentro quella finestra, lo mettiamo in pausa
-    if (video) {
-      video.pause();
-      video.currentTime = 0; // Opzionale: resetta il video all'inizio per la prossima volta
-    }
-  });
-</script>
+</article>

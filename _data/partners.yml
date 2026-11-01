@@ -1,0 +1,82 @@
+# Partner logos scrolling on the home page, in this order.
+# logo: file in img/partners/. height: display height in pixels (default 56), to balance the logos visually.
+
+- name: "Boston Children's Hospital"
+  logo: /img/partners/boston_childrens_hospital.svg
+  url: https://www.childrenshospital.org/
+  height: 44
+
+- name: "CENTAI Institute"
+  logo: /img/partners/centai.svg
+  url: https://centai.eu
+  height: 64
+
+- name: "EPFL"
+  logo: /img/partners/epfl.svg
+  url: https://www.epfl.ch/
+  height: 32
+
+- name: "Harvard Medical School"
+  logo: /img/partners/harvard_medical_school.png
+  url: https://hms.harvard.edu/
+  height: 56
+
+- name: "Inria"
+  logo: /img/partners/inria.svg
+  url: https://www.inria.fr/
+  height: 40
+
+- name: "TReNDS Center"
+  logo: /img/partners/trends_center.png
+  url: https://trendscenter.org/
+  height: 64
+
+- name: "University College London"
+  logo: /img/partners/ucl.svg
+  url: https://www.ucl.ac.uk/
+  height: 40
+
+- name: "Universitat de Barcelona"
+  logo: /img/partners/universitat_barcelona.png
+  url: https://www.ub.edu/
+  height: 60
+
+- name: "University of Bordeaux"
+  logo: /img/partners/bordeaux.svg
+  url: https://www.u-bordeaux.fr/
+  height: 52
+
+- name: "University of Milan"
+  logo: /img/partners/milano.png
+  url: https://www.unimi.it
+  height: 60
+
+- name: "University of Oxford"
+  logo: /img/partners/oxford.svg
+  url: https://www.ox.ac.uk/
+  height: 52
+
+- name: "University of Padua"
+  logo: /img/partners/padova.png
+  url: https://www.unipd.it
+  height: 70
+
+- name: "University of Poitiers"
+  logo: /img/partners/poitiers.png
+  url: https://www.univ-poitiers.fr/
+  height: 60
+
+- name: "University of Trieste"
+  logo: /img/partners/trieste.png
+  url: https://portale.units.it
+  height: 60
+
+- name: "University of Tübingen"
+  logo: /img/partners/tubingen.png
+  url: https://uni-tuebingen.de/
+  height: 56
+
+- name: "University of Turin"
+  logo: /img/partners/torino.svg
+  url: https://www.unito.it
+  height: 60

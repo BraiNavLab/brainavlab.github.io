@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-<p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+{% comment %} Page of a single news item (_news folder). {% endcomment %}
+<article class="post">
+    <p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+    {{ content }}
+    {% include news-actions.html item=page %}
+    <p class="post-back"><a href="{{ '/pages/news.html' | relative_url }}#{{ page.type | downcase }}">&laquo; News &amp; Events</a></p>
+</article>
 
-<div class="post">
-{{ content }}
-</div>
+{% if page.video %}{% include video-modal.html %}{% endif %}

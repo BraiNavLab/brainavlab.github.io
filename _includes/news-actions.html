@@ -1,0 +1,21 @@
+{% comment %}
+Buttons of a news item: the label depends on which link is set in its front matter.
+read_more=true adds a link to the item's own page when it has no external link.
+{% endcomment %}
+{% assign item = include.item %}
+<div class="news-actions">
+  {% if item.video %}
+    <a href="#" class="news-link" data-bs-toggle="modal" data-bs-target="#videoModal"
+       data-video="{{ item.video | relative_url }}" data-video-title="{{ item.title | escape }}">Watch Video</a>
+  {% endif %}
+
+  {% if item.paper_url %}
+    <a class="news-link" href="{{ item.paper_url }}" target="_blank" rel="noopener">Read Paper</a>
+  {% elsif item.article_url %}
+    <a class="news-link" href="{{ item.article_url }}" target="_blank" rel="noopener">Read Article</a>
+  {% elsif item.event_url %}
+    <a class="news-link" href="{{ item.event_url }}" target="_blank" rel="noopener">See the Event</a>
+  {% elsif include.read_more %}
+    <a class="news-link" href="{{ item.url | relative_url }}">Read more</a>
+  {% endif %}
+</div>

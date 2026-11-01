@@ -1,82 +1,82 @@
-name: BraiNavLab
-url: http://127.0.0.1:5000/
-
-exclude: [bibble, README.md, Makefile]
-
-# to find the website on Google
-title: "BraiNavLab"
+# Site identity, also used by jekyll-seo-tag for titles and search engines.
+title: BraiNavLab
 description: "Research in neuroimaging, neurophysiology, brain connectivity and AI"
 url: "https://brainavlab.github.io"
-plugins:
+baseurl: ""   # set explicitly, so that GitHub Pages does not have to guess it
+
+# GitHub Pages would otherwise add the stylesheet of a default theme that the site does not use.
+theme: null
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# colorize code snippets with the pygments module
-highlighter: pygments
+# Files in the repository that must not be published.
+exclude: [README.md, CURATORS_GUIDE.md, LICENSE, Gemfile, Gemfile.lock, build_site.sh, back_up_stuff, vendor]
 
-# The path structure for blog posts.
-permalink: /blog/:year/:month/:day/:title.html
+# Optional restyling layer (css/restyle.scss, js/restyle.js, _includes/home-hero.html, fonts/).
+# Set to false to go back to the plain style.
+restyle: true
 
-# Sections on the "people" page.
-roles:
-  - key: full_professor
-    name: Full Professor
-  - key: associate_professor
-    name: Associate Professor
-  - key: assistant_professor
-    name: Assistant Professor
-  - key: post_doc
-    name: Post-DOC
-  - key: phd_student
-    name: PhD Student
-  - key: research_fellow
-    name: Research Fellow
-  - key: graduate_student
-    name: Graduate Student
-  - key: undergraduate_student
-    name: Undergraduate Student
-  - key: collab
-    name: Collaborator
-  - key: alum
-    name: Alumni
+# Also publish items with a future date, such as an event announced in advance.
+future: true
 
-# Number of news stories on the front page.
+# Number of news items in the home page carousel.
 front_page_news: 8
 
-# Base pathname for links.
-base: ''
-
-# make pages for the _projects folder
 collections:
   projects:
     output: true
+    permalink: /projects/:path.html
   news:
     output: true
     permalink: /news/:name/
 
-# Navigation bar links.
+# Every news item uses the post layout without having to declare it.
+defaults:
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: post
+
+# Navigation bar links. "collection" keeps the item active on the pages of that collection.
+# "icon" shows the item as an icon instead of its title. Icons: https://fontawesome.com/v6/icons
 navigation:
   - title: Home
     link: /
-  - title: News
+  - title: "News & Events"
     link: /pages/news.html
+    collection: news
   - title: People
     link: /pages/lab_member.html
   - title: Research Topics
     link: /pages/research_projects.html
+    collection: projects
   - title: Funded Projects
     link: /pages/funded_projects.html
   - title: Contacts
     link: /pages/contacts.html
-  - title: "Publications"
+  - title: Publications
     link: "https://scholar.google.com/citations?user=hd5zn0YAAAAJ&hl=en"
     external: true
-  # - title: Publications
-  #   link: /pages/publications.html
   - title: GitHub
     link: https://github.com/orgs/BraiNavLab
     external: true
+    icon: fa-brands fa-github
   - title: LinkedIn
-    link: https://www.linkedin.com/company/brainavlab  
+    link: https://www.linkedin.com/company/brainavlab
     external: true
+    icon: fa-brands fa-linkedin
+
+# Social links shown on the home page.
+social_links:
+  - title: LinkedIn
+    link: https://www.linkedin.com/company/brainavlab
+    icon: fa-brands fa-linkedin
+  - title: GitHub
+    link: https://github.com/orgs/BraiNavLab
+    icon: fa-brands fa-github
+  - title: Google Scholar
+    link: "https://scholar.google.com/citations?user=hd5zn0YAAAAJ&hl=en"
+    icon: fa-brands fa-google-scholar

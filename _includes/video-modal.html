@@ -1,0 +1,14 @@
+{% comment %} Video player shared by all the "Watch Video" links of a page (see js/site.js). {% endcomment %}
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5" id="videoModalTitle"></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <video class="w-100" controls controlsList="nodownload" playsinline preload="none"></video>
+      </div>
+    </div>
+  </div>
+</div>

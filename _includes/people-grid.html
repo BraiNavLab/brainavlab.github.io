@@ -1,0 +1,13 @@
+{% comment %}
+Cards of all the people of a status_group in _data/people.yml.
+Parameters: group (active, collab, alumni), class (CSS class of the grid).
+{% endcomment %}
+<div class="{{ include.class }}">
+  {% for person_entry in site.data.people %}
+    {% assign id = person_entry[0] %}
+    {% assign person = person_entry[1] %}
+    {% if person.status_group == include.group %}
+      {% include person-card.html person=person id=id %}
+    {% endif %}
+  {% endfor %}
+</div>

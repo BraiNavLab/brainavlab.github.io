@@ -1,86 +1,130 @@
 ---
 layout: default
-title: Home
 notitle: true
---- 
+---
 
-<section class="home-group">
-    <img src="/img/home_img/group_picture.jpg" alt="Research group banner" class="home-group-picture">
-</section> 
+{% if site.restyle %}
+    {% include home-hero.html %}
+{% else %}
+    <h1 class="visually-hidden">BraiNavLab</h1>
+    <section class="home-group">
+        <img src="{{ '/img/home_img/group_picture.jpg' | relative_url }}" alt="The BraiNavLab research group" class="home-group-picture" width="1280" height="851">
+    </section>
+{% endif %}
 
 <section class="text-box-mission">
-    <h1><center>Mission</center></h1>
+    <h2>Mission</h2>
     <hr>
-    <!-- <p>
-        The mission of the <b>BraiNAVLab</b> is investigating and modeling the <b>brain structure and function</b>, as well as their associations with the underlying genetic determinants relying on statistical/machine and deep learning methods.
-        The main current research activities focus on modeling <b>structural / functional / effective connectivity, brain microstructure, imaging genetics and brain computer interfaces (BCI)</b>.<br>
-        Regarding ML/DL, the focus is on <b>explainable</b> methods allowing to open the box and decrypt the outcomes of the algorithms. The lab activities cover a wide spectrum of applications 
-        ranging from neurosciences to translational, with particular emphasis of neurodegenerative diseases including Alzheimer's, multiple sclerosys and stroke. The lab is also actively participating to the activities 
-        of international standardization initiatives that is ISO/IEC JTC1 within the JPEG DNA IG and DICOM WG32.
-    </p> -->
-    <p>
-    The mission of <b>BraiNavLab</b> is to <b>explore, model, and understand</b> the intricate 
-    <b>structure and function of the human brain</b>, uncovering how these are shaped by their 
-    <b>underlying genetic determinants</b>. To achieve this, the lab leverages cutting-edge 
-    <b>statistical, machine learning, and deep learning methodologies</b>.
-    </p>
+    <div class="mission-text">
+        <p>
+        The mission of <b>BraiNavLab</b> is to <b>explore, model, and understand</b> the intricate
+        <b>structure and function of the human brain</b>, uncovering how these are shaped by their
+        <b>underlying genetic determinants</b>. To achieve this, the lab leverages cutting-edge
+        <b>statistical, machine learning, and deep learning methodologies</b>.
+        </p>
 
-    <p>
-    Our current research is centered on advancing models of 
-    <b>structural, functional, and effective connectivity</b>, as well as 
-    <b>brain microstructure, imaging genetics, and brain-computer interfaces (BCI)</b>. 
-    In the field of <b>ML/DL</b>, we place a strong emphasis on developing 
-    <b>explainable AI techniques</b>—designed not only to deliver accurate results but also 
-    to <b>open the black box</b> and make algorithmic insights <b>transparent and interpretable</b>.
-    </p>
+        <p>
+        Our current research is centered on advancing models of
+        <b>structural, functional, and effective connectivity</b>, as well as
+        <b>brain microstructure, imaging genetics, and brain-computer interfaces (BCI)</b>.
+        In the field of <b>ML/DL</b>, we place a strong emphasis on developing
+        <b>explainable AI techniques</b>—designed not only to deliver accurate results but also
+        to <b>open the black box</b> and make algorithmic insights <b>transparent and interpretable</b>.
+        </p>
 
-    <p>
-    <b>BraiNavLab's activities</b> span a wide range of applications, bridging 
-    <b>fundamental neuroscience</b> and <b>translational research</b>, with a particular focus on 
-    <b>neurodegenerative diseases</b> such as <b>Alzheimer's disease</b>, 
-    <b>multiple sclerosis</b>, <b>stroke</b>, and <b>epilepsy</b>.
-    </p>
+        <p>
+        <b>BraiNavLab's activities</b> span a wide range of applications, bridging
+        <b>fundamental neuroscience</b> and <b>translational research</b>, with a particular focus on
+        <b>neurodegenerative diseases</b> such as <b>Alzheimer's disease</b>,
+        <b>multiple sclerosis</b>, <b>stroke</b>, and <b>epilepsy</b>.
+        </p>
 
-    <p>
-    Beyond research, the lab is actively involved in 
-    <b>international standardization efforts</b>, contributing to initiatives such as 
-    <b>ISO/IEC JTC1</b>, the <b>JPEG DNA Interest Group</b>, and <b>DICOM WG32</b>, 
-    helping shape the future of <b>biomedical data representation and interoperability</b>.
-    </p>
+        <p>
+        Beyond research, the lab is actively involved in
+        <b>international standardization efforts</b>, contributing to initiatives such as
+        <b>ISO/IEC JTC1</b>, the <b>JPEG DNA Interest Group</b>, and <b>DICOM WG-32</b>,
+        helping shape the future of <b>biomedical data representation and interoperability</b>.
+        </p>
+    </div>
+</section>
 
+{% comment %} News items with "highlight: true" in their front matter (the awards, for now). {% endcomment %}
+{% assign highlights = site.news | where: "highlight", true | sort: "date" | reverse %}
+{% if highlights.size > 0 %}
+<section class="home-section">
+    <h2 class="home-title">Highlights</h2>
+    <div class="highlights-container">
+        {% for item in highlights %}
+            {% include news-item.html item=item truncate=30 %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% comment %} Latest items of the _news folder, except the ones already shown as highlights. {% endcomment %}
+{% assign latest = site.news | where_exp: "item", "item.highlight != true" | sort: "date" | reverse %}
+<section class="home-section">
+    <h2 class="home-title">Latest News</h2>
+    <div class="news-carousel" role="group" aria-label="Latest news">
+        <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous news">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="news-carousel-track" tabindex="0">
+            {% for item in latest limit: site.front_page_news %}
+                {% include news-item.html item=item truncate=24 %}
+            {% endfor %}
+        </div>
+        <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next news">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
+    <p class="home-more"><a href="{{ '/pages/news.html' | relative_url }}">News &amp; Events &raquo;</a></p>
 </section>
 
 <section class="networking">
-    <h2><center>National and International Partners</center></h2>
-    <img src="img/home_img/world_collaborations.svg" alt="Collaborations" class="section-image">
-    <!-- <p>The BraiNavLab collaborates with various national and international institutions and organizations to advance research in brain science and related fields</p> -->
-    <!-- <p>BraiNavLab collaborates with leading national and international institutions and organizations, fostering innovation and rigorous research to advance the frontiers of brain science and its related fields.</p> -->
-    <p>
-        <b>BraiNavLab</b> collaborates with <b>leading national and international institutions</b> and 
-        <b>organizations</b>, fostering <b>innovation</b> and <b>rigorous research</b> to advance the 
-        <b>frontiers of brain science</b> and its related fields. Through these partnerships, the lab actively 
-        contributes to <b>knowledge exchange</b>, the development of <b>cutting-edge methodologies</b>, and the 
-        translation of scientific discoveries into <b>impactful real-world applications</b>. 
-        <!-- By bridging <b>expertise</b> across <b>disciplines</b> and <b>borders</b>, <b>BraiNavLab</b> plays a 
-        vital role in shaping the <b>future of neuroscience</b> and its global impact on <b>health</b> and <b>society</b>. -->
-    </p>
+    <h2 class="home-title">Network</h2>
 
+    {% comment %} Partner logos from _data/partners.yml. The list is printed twice to make the scrolling seamless. {% endcomment %}
+    <div class="logo-marquee">
+        <div class="logo-marquee-track">
+            {% for round in (1..2) %}
+                <ul class="logo-marquee-group"{% if round == 2 %} aria-hidden="true"{% endif %}>
+                    {% for partner in site.data.partners %}
+                        <li>
+                            <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if round == 2 %} tabindex="-1"{% endif %}>
+                                <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% comment %} The link opens the full image, where the labels can be read on a phone. {% endcomment %}
+    <a class="map-link" href="{{ '/img/home_img/world_collaborations.png' | relative_url }}">
+        <img src="{{ '/img/home_img/world_collaborations.png' | relative_url }}" alt="World map of the institutions collaborating with BraiNavLab" class="section-image" width="2400" height="1286" loading="lazy">
+    </a>
+    <p>
+        <b>BraiNavLab</b> collaborates with <b>leading national and international institutions</b> and
+        <b>organizations</b>, fostering <b>innovation</b> and <b>rigorous research</b> to advance the
+        <b>frontiers of brain science</b> and its related fields. Through these partnerships, the lab actively
+        contributes to <b>knowledge exchange</b>, the development of <b>cutting-edge methodologies</b>, and the
+        translation of scientific discoveries into <b>impactful real-world applications</b>.
+    </p>
 </section>
 
-<!--  
-<section class="news-section">
-    <h2>Latest News</h2>
-    <ul class="news list-unstyled">
-        {% for post in site.posts limit: site.front_page_news %}
-            {% include news-item.html item=post %}
+<section class="social-section">
+    <h2 class="home-title">Follow Us</h2>
+    <ul class="social-links">
+        {% for social in site.social_links %}
+            <li>
+                <a href="{{ social.link }}" target="_blank" rel="noopener">
+                    <i class="{{ social.icon }}" aria-hidden="true"></i> {{ social.title }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
-    {% assign numposts = site.posts | size %}
-    {% if numposts >= 1 %}
-        <p>
-            <span class="fa fa-fw fa-history"></span>
-            <a href="{{ site.base }}/pages/older_posts.html">Older posts&hellip;</a>
-        </p>
-    {% endif %}
 </section>
--->
+
+{% include video-modal.html %}

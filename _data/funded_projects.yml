@@ -1,13 +1,14 @@
-####################### FUNDED PROJECTS #######################
+# Funded projects shown on pages/funded_projects.html in this order: keep the active ones first.
+# Optional fields: PI, reference_code, partners, money, link, article. Leave out the ones you do not have.
+# status: "Active" or "Closed".
 
-- proj001:
-  project_name: "FISM (2025)"
+- project_name: "FISM (2025)"
   PI: "Nicola Valè"
   people: ["Nicola Valè", "Silvia Francesca Storti", "Marialuisa Gandolfi"]
   reference_code: "2025/BS/004"
-  partners: ["Dept. of Engineering for Innovation Medicine, University of Verona, Italy; Dept. of Neurosciences, Biomedicine and Movement Sciences, University of Verona, Italy"]
+  partners: ["Dept. of Engineering for Innovation Medicine, University of Verona, Italy", "Dept. of Neurosciences, Biomedicine and Movement Sciences, University of Verona, Italy"]
   money: "€ 103'600.00"
-  description: "This project aims to investigate the neurophysiological correlates of motor-cognitive interference in people with and without Multiple Sclerosis using portable, wearable EEG. A second phase will assess the feasibility of a rehabilitative intervention targeting motor-cognitive integration, evaluating outcomes at both the motor and neural level."
+  description: "This project aims to investigate the neurophysiological correlates of motor-cognitive interference in people with and without Multiple Sclerosis using portable, wearable EEG. A second phase will assess the feasibility of a rehabilitative intervention targeting motor-cognitive integration, evaluating outcomes at both the motor and neural levels."
   funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
   link: "https://www.aism.it/bando_annuale_fism"
   article: "https://www.dimi.univr.it/?ent=iniziativa&id=14961"
@@ -15,11 +16,9 @@
   start: "Sept 2026"
   end: "Sept 2029"
 
-- proj002:
-  project_name: "INTELLI-MI"
+- project_name: "INTELLI-MI"
   PI: "Gloria Menegaz"
   people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  #reference_code: "AIH2025"
   partners: ["RIR Tech4Life", "InnovatiVE"]
   money: "€ 378'506.20 (out of € 2'557'022.54)"
   description: "The project presented by the RIR Tech4Life aims, through the integration of advanced intelligent technologies, to improve the efficiency and sustainability of the healthcare sector while ensuring personalized and secure solutions to enhance both the patient experience and the efficiency of healthcare facilities. Thanks to close collaboration among nine companies from the Veneto region and the Universities of Padua, Verona, and Ca’ Foscari of Venice, intelligent systems will be developed at various scales of intervention — covering the entire spectrum from the micro level (omics, molecular biology) to the macro level (information systems, robotics) — without neglecting regulatory aspects and compliance with current standards."
@@ -29,95 +28,80 @@
   start: "Oct 2024"
   end: "Apr 2027"
 
-- proj003:
-  project_name: "AI4HEALTH: empowering neurosciences with eXplainable AI methods"
-  PI: "Gloria Menegaz"
-  people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
-  reference_code: [""]
-  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
-  money: "Approximately €200k"
-  description: "Scientific objectives include exploring brain connectivity and microstructure modeling through explainable AI techniques in both healthy individuals and patients (e.g., cancer), and generalizing the developed methodology to other conditions, including neurodegenerative diseases (e.g., Parkinson’s and Alzheimer’s) and neurological disorders (e.g., stroke and epilepsy). Funding are used to support one RTD-A position (ING-INF/06) and two one-year research fellowships (Assegni di Ricerca; ING-INF/05 and INF/01)."
-  funded_agency: "MIUR D.M. 737/2021 (PRIN)"
-  link: [""]
+- project_name: "FISM (2023)"
+  PI: "Marialuisa Gandolfi"
+  people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
+  reference_code: "2023/R-Multi/010"
+  partners: ["Dept. of Neuroscience and Rehabilitation at the University of Ferrara"]
+  money: "€ 240'600.00"
+  description: "The effectiveness of combining a home-based digital motor telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible for wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in PwMS at Units 1 and 2."
+  funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
+  link: "https://www.dnbm.univr.it/?ent=progetto&id=6095"
   status: "Closed"
-  start: "2022"
-  end: "2025"
+  start: "Sept 2024"
+  end: "Aug 2026"
 
-- proj004:
-  project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging"
+- project_name: "AI4BRAVE: AI for modeling of the Brain-Heart Axis in aging"
   PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "202292PHR2"
-  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin"]
+  partners: ["Dept. of Neuroscience “Rita Levi Montalcini” at the University of Turin"]
   money: "€ 209'995.00 (out of € 258'872.00)"
   description: "The aim of this project is to contribute to modeling the aging process, focusing specifically on the heart–brain axis. These models will be based on endogenous and exogenous factors spanning micro- to macro-scale levels, and will leverage explainable AI as an enabling technology in both healthy and pathological subjects. The evaluation is carried out by the Evaluation Committee (from five to fifteen scientific experts) appointed by the National Committee for Research Evaluation."
   funded_agency: "MUR (PRIN 2022)"
   link: "https://www.mur.gov.it/sites/default/files/2023-06/Decreto%20Direttoriale%20n.%20861%20PE6_AllegatoA.pdf"
-  status: "Active"
+  status: "Closed"
   start: "Sept 2023"
   end: "Feb 2026"
 
-- proj005:
-  project_name: "AntIAGING: Artificial Intelligence for Healthy Aging"
+- project_name: "MNESYS"
+  people: ["Silvia Francesca Storti (task leader in WP4-Spoke2)" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
+  reference_code: "DN. 1553 11.10.2022."
+  money: "€ 24'000.00 + 2 Funded Research Fellowships"
+  description: "Our group participates in the MNESYS Extended Partnership on Neuroscience (Spoke 2), funded under the Italian PNRR framework. A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Spoke 2, WP4. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (start) to TRL3 (end)."
+  funded_agency: "MIUR-NRRP"
+  link: "https://tto.mnesys.eu/it/mnesys"
+  status: "Closed"
+  start: "Nov 2022"
+  end: "Feb 2026"
+
+- project_name: "AI4HEALTH: empowering neurosciences with eXplainable AI methods"
+  PI: "Gloria Menegaz"
+  people: ["Silvia Francesca Storti", "Ilaria Boscolo Galazzo", "Lorenza Brusini"]
+  partners: ["Dept. of Neuroscience “Rita Levi Montalcini” at the University of Turin"]
+  money: "Approximately €200k"
+  description: "Scientific objectives include exploring brain connectivity and microstructure modeling through explainable AI techniques in both healthy individuals and patients (e.g., cancer), and generalizing the developed methodology to other conditions, including neurodegenerative diseases (e.g., Parkinson’s and Alzheimer’s) and neurological disorders (e.g., stroke and epilepsy). Funding is used to support one RTD-A position (ING-INF/06) and two one-year research fellowships (Assegni di Ricerca; ING-INF/05 and INF/01)."
+  funded_agency: "MIUR D.M. 737/2021 (PRIN)"
+  status: "Closed"
+  start: "2022"
+  end: "2025"
+
+- project_name: "AntIAGING: Artificial Intelligence for Healthy Aging"
   PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Lorenza Brusini"]
   reference_code: "1695-0009-553-20"
-  partners: ["Dept. of Neuroscience at University Rita Levi Montalcini of Turin", "EB Neuro S.p.A", "CENTAI S.p.A"]
-  money: [""]
-  description: "Aging and artificial intelligence (AI) are key concepts in today’s socio-economic context. Aging is accompanied by structural and functional degeneration that affects quality of life. The goal of AntIAGING is to contribute to the understanding and modeling of this process, focusing on the heart–brain axis. Cardiovascular and neurodegenerative diseases are among the leading causes of death in aging populations and have the greatest socio-economic impact. It is now evident that these conditions are closely connected, making the study of their interactions one of the central topics in biomedical research. To identify characteristic patterns of the aging process, factors derived from brain imaging (neuroimaging) and genetic determinants from omics data will be analyzed and integrated using explainable AI (XAI) methods, which make it possible to decode the behavior of computational architectures and interpret their results. AntIAGING is promoted by a multidisciplinary consortium including the University of Turin, CENTAI Spa, and EBNeuro Spa — leading companies in the fields of AI and biomedical instrumentation — ensuring the exploitation and practical application of the project outcomes."
+  partners: ["Dept. of Neuroscience “Rita Levi Montalcini” at the University of Turin", "EB Neuro S.p.A.", "CENTAI S.p.A."]
+  description: "Aging and artificial intelligence (AI) are key concepts in today’s socio-economic context. Aging is accompanied by structural and functional degeneration that affects quality of life. The goal of AntIAGING is to contribute to the understanding and modeling of this process, focusing on the heart–brain axis. Cardiovascular and neurodegenerative diseases are among the leading causes of death in aging populations and have the greatest socio-economic impact. It is now evident that these conditions are closely connected, making the study of their interactions one of the central topics in biomedical research. To identify characteristic patterns of the aging process, factors derived from brain imaging (neuroimaging) and genetic determinants from omics data will be analyzed and integrated using explainable AI (XAI) methods, which make it possible to decode the behavior of computational architectures and interpret their results. AntIAGING is promoted by a multidisciplinary consortium including the University of Turin, CENTAI S.p.A., and EB Neuro S.p.A. — leading companies in the fields of AI and biomedical instrumentation — ensuring the exploitation and practical application of the project outcomes."
   funded_agency: "PR Veneto FSE+ 2021-2027"
   link: "https://www.tech4life.it/news/iniziativaantiaging-artificial-intelligence-for-healthy-aging/"
   status: "Closed"
   start: "Jan 2023"
   end: "2025"
 
-- proj006:
-  project_name: "MNESYS"
-  PI: "Our group participates in the MNESYS Extended Partnership on Neuroscience (Spoke 2), funded under the Italian PNRR framework."
-  people: ["Silvia Francesca Storti (task leader in WP4-Spoke2)" ,"Gloria Menegaz", "Ilaria Boscolo Galazzo", "Nicola Valè", "Ilaria Siviero", "Edoardo Paolini"]
-  reference_code: "DN. 1553 11.10.2022."
-  partners: [""]
-  money: "€ 24'000.00 + 2 Funded Research Fellowships"
-  description: "A multiscale integrated approach to the study of the nervous system in health and disease (MNESYS) (DN. 1553 11.10.2022) supported by #NEXTGENERATIONEU (NGEU). Spoke 2, WP4. Addressing neuronal dynamics and neuronal plasticity with neurostimulation and fast imaging technologies. Objectives: integrate multi-modal imaging technologies for brain connectomics into medically interpretable AI models and develop connectivity-based machine learning algorithms to address neuronal plasticity in health and disease for the design of personalized treatments. The WP foresees an advance from TRL1 (begin) to TRL3 (end)."
-  funded_agency: "MIUR-NRRP"
-  link: " https://tto.mnesys.eu/it/mnesys"
-  status: "Closed"
-  start: "Nov 2022"
-  end: "Feb 2026"
-
-- proj007:
-  project_name: "FISM (2023)"
-  PI: "Marialuisa Gandolfi"
-  people: ["Silvia Francesca Storti", "Nicola Valè", "Ilaria Siviero"]
-  reference_code: "2023/R-Multi/010"
-  partners: ["Dept. of Neuroscience and Rehabilitation at University of Ferrara"]
-  money: "€ 240'600.00"
-  description: "The effectiveness of combining a home-based Digital motor Telerehabilitation program with conventional therapy in Progressive Multiple Sclerosis: a multicentre, randomized controlled trial. Our group is responsible of wearable EEG and IMU-Based assessment of Mental Workload During Dual-Task Performance (iTUG) in PwMS at Units 1 and 2."
-  funded_agency: "Fondazione Italiana Sclerosi Multipla (FISM)"
-  link: "https://www.dnbm.univr.it/?ent=progetto&id=6095"
-  status: "Active"
-  start: "Sept 2024"
-  end: "Aug 2026"
-
-- proj008:
-  project_name: "Brain-RESTORE"
+- project_name: "Brain-RESTORE"
   PI: "Silvia Francesca Storti"
   people: ["Nicola Valè", "Ilaria Siviero", "Ettore Cinquetti"]
   reference_code: "2022K4EJRM"
-  partners: [""]
   money: "€ 38'900.00"
-  description: "Brain-connectivity based computer interfaces: An enhanced technology for restoring motor function in stroke survivors. This research was supported by the funding initiative of the University of Verona, Ricerca di Base 2022, for projects positively evaluated in the Prin call but not funded"
+  description: "Brain-connectivity based computer interfaces: An enhanced technology for restoring motor function in stroke survivors. This research was supported by the funding initiative of the University of Verona, Ricerca di Base 2022, for projects positively evaluated in the PRIN call but not funded."
   funded_agency: "Ricerca di Base, UniVR"
-  link: [""]
   status: "Closed"
   start: "Nov 2023"
   end: "Nov 2024"
 
-- proj009:
-  project_name: "OPERA"
+- project_name: "OPERA"
   PI: "Davide Quaglia"
   people: ["Silvia Francesca Storti", "Gloria Menegaz", "Ilaria Siviero", "Ettore Cinquetti"]
-  reference_code: [""]
   partners: ["Department of Computer Science (University of Verona)"]
   money: "€ 100'000.00"
   description: "Osservazione dei processi lavorativi, con garanzie oggettive di tutela della Privacy, per la prevenzione di Errori e situazioni di Rischio in maniera Automatica ai tempi di Industria 4.0 (OPERA 4.0). Work Package: MA2 Intelligent systems"
@@ -127,16 +111,14 @@
   start: "2021"
   end: "2022"
 
-- proj010:
-  project_name: "EDIPO"
+- project_name: "EDIPO"
   PI: "Gloria Menegaz"
   people: ["Ilaria Boscolo Galazzo", "Silvia Francesca Storti", "Lorenza Brusini"]
   reference_code: "2023/R-Multi/010"
   partners: ["Department of Computer Science (University of Verona)", "Imaging Genetics Center (IGC) of the University of Southern California (USC)", "French National Institute of Research in Informatics and Automation (INRIA)"]
   money: "€ 180'000.00"
-  description: "A computational solution for bringing neuroimaging genetic into translational research (EDIPO)"
+  description: "A computational solution for bringing neuroimaging genetics into translational research (EDIPO)"
   funded_agency: "Fondazione Cariverona"
-  link: [""]
   status: "Closed"
   start: "2020"
   end: "2022"

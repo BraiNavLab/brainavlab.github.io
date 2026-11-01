@@ -1,52 +1,34 @@
-<nav class="topnav">
-  <!-- DESKTOP menu: your original UL -->
+{% comment %}
+Main menu: a row of links, replaced by a dropdown on small screens (see js/site.js).
+An item is active on its own page and, with "collection" in _config.yml, on the pages of that collection.
+{% endcomment %}
+{% assign shorturl = page.url | replace: '.html', '' | replace: 'index', '' %}
+{% assign active_title = "" %}
+{% for item in site.navigation %}
+  {% assign itemshorturl = item.link | replace: '.html', '' %}
+  {% if itemshorturl == shorturl %}{% assign active_title = item.title %}{% endif %}
+  {% if item.collection and item.collection == page.collection %}{% assign active_title = item.title %}{% endif %}
+{% endfor %}
+<nav class="topnav" aria-label="Main menu">
   <ul id="mainMenu" class="nav nav-pills justify-content-center">
-    {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-  
     {% for item in site.navigation %}
-      {% assign itemshorturl = item.link | replace:'.html','' %}
-      {% assign is_active = '' %}
-      {% if itemshorturl == shorturl %}
-        {% assign is_active = 'active' %}
-      {% endif %}
-  
-      {% assign is_external = item.external | default: false %}
-  
       <li class="nav-item">
-        <a class="nav-link {{ is_active }} {% if item.title == 'GitHub' or item.title == 'LinkedIn' or item.title == 'Publications' %}social-link{% endif %}"
-           href="{% if is_external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
-           {% if is_external %}target="_blank" rel="noopener"{% endif %}>
-  
-          {% if item.title == 'GitHub' %}
-            <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
-          {% elsif item.title == 'LinkedIn' %}
-            <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
-          {% elsif item.title == 'Publications' %}
-            <i class="fas fa-file-alt" aria-hidden="true"></i><span class="sr-only">Publications</span>
-          {% else %}
-            {{ item.title }}
-          {% endif %}
-        </a>
+        <a class="nav-link{% if item.title == active_title %} active{% endif %}"
+           {% if item.title == active_title %}aria-current="page"{% endif %}
+           href="{% if item.external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
+           {% if item.icon %}aria-label="{{ item.title | escape }}" title="{{ item.title | escape }}"{% endif %}
+           {% if item.external %}target="_blank" rel="noopener"{% endif %}>{% if item.icon %}<i class="{{ item.icon }}" aria-hidden="true"></i><span class="nav-link-label">{{ item.title | escape }}</span>{% else %}{{ item.title | escape }}{% endif %}</a>
       </li>
     {% endfor %}
   </ul>
 
-  <!-- Mobile dropdown (shown only on small screens) -->
   <div class="mobile-nav-wrap">
-    <label class="sr-only" for="mobileNav">Menu</label>
-    <select id="mobileNav" class="mobile-nav" aria-label="Menu">
-      {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
+    <label class="visually-hidden" for="mobileNav">Menu</label>
+    <select id="mobileNav" class="mobile-nav">
+      <option value="" hidden{% if active_title == "" %} selected{% endif %}>Menu</option>
       {% for item in site.navigation %}
-        {% assign itemshorturl = item.link | replace:'.html','' %}
-        {% if item.external %}
-          {% assign href = item.link %}
-        {% else %}
-          {% assign href = item.link | relative_url %}
-        {% endif %}
-        <option value="{{ href }}" data-external="{{ item.external | default: false }}"
-          {% if itemshorturl == shorturl %}selected{% endif %}>
-          {{ item.title }}
-        </option>
+        <option value="{% if item.external %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}"
+                {% if item.title == active_title %}selected{% endif %}>{{ item.title | escape }}</option>
       {% endfor %}
     </select>
   </div>

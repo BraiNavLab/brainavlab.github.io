@@ -1,42 +1,30 @@
 ---
 layout: default
 title: Funded Projects
-notitle: true
 ---
 
-<!-- <h1 class="h1-funded-projects">Funded Projects</h1> -->
-<!-- <hr> -->
-
-<div class="funded-projects-filter">
-  <button type="button" class="funded-projects-filter-btn active" data-filter="all">All</button>
-  <button type="button" class="funded-projects-filter-btn" data-filter="active">Active</button>
-  <button type="button" class="funded-projects-filter-btn" data-filter="closed">Closed</button>
+<div class="filter-bar" data-cards=".funded-project-card">
+  <button type="button" class="filter-btn active" data-filter="all">All</button>
+  <button type="button" class="filter-btn" data-filter="active">Active</button>
+  <button type="button" class="filter-btn" data-filter="closed">Closed</button>
 </div>
 
 <div class="funded-projects-container">
   {% for project in site.data.funded_projects %}
-  {% assign s = project.status | default: "active" | strip | downcase %}
-    <div class="funded-project-card" data-status="{{ s }}">
+    {% assign status = project.status | downcase %}
+    <div class="funded-project-card" data-category="{{ status }}">
       <h2>{{ project.project_name }}</h2>
-      <p><strong>Status:</strong> 
-        <span class="status {{ project.status | downcase }}">
-          {{ project.status | capitalize }}
-        </span>
-      </p>
+      <p><strong>Status:</strong> <span class="status {{ status }}">{{ project.status }}</span></p>
       <p><strong>Duration:</strong> {{ project.start }} - {{ project.end }}</p>
-      <p><strong>PI:</strong> {{ project.PI }}</p>
+      {% if project.PI %}<p><strong>PI:</strong> {{ project.PI }}</p>{% endif %}
       <p><strong>People:</strong> {{ project.people | join: ", " }}</p>
-      <p><strong>Reference Code:</strong> {{ project.reference_code }}</p>
-      <p><strong>Partners:</strong> {{ project.partners | join: ", " }}</p>
-      <p><strong>Funding:</strong> {{ project.money }}</p>
-      <p><strong>Description:</strong> {{ project.description }}</p>
-      <p><strong>Funded Agency:</strong> {{ project.funded_agency }}</p>
-      {% if project.link %}
-        <p><strong>Website:</strong> <a href="{{ project.link }}" target="_blank">{{ project.link }}</a></p>
-      {% endif %}
-      {% if project.article %}
-        <p><strong>Article:</strong> <a href="{{ project.article }}" target="_blank">{{ project.article }}</a></p>
-      {% endif %}
+      {% if project.reference_code %}<p><strong>Reference Code:</strong> {{ project.reference_code }}</p>{% endif %}
+      {% if project.partners %}<p><strong>Partners:</strong> {{ project.partners | join: ", " }}</p>{% endif %}
+      {% if project.money %}<p><strong>Funding:</strong> {{ project.money }}</p>{% endif %}
+      <p class="funded-description"><strong>Description:</strong> {{ project.description }}</p>
+      <p><strong>Funding Agency:</strong> {{ project.funded_agency }}</p>
+      {% if project.link %}<p><strong>Website:</strong> <a href="{{ project.link }}" target="_blank" rel="noopener">{{ project.link }}</a></p>{% endif %}
+      {% if project.article %}<p><strong>Article:</strong> <a href="{{ project.article }}" target="_blank" rel="noopener">{{ project.article }}</a></p>{% endif %}
     </div>
   {% endfor %}
 </div>
