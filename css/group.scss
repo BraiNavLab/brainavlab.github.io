@@ -311,7 +311,7 @@ hr {
     }
 }
 
-// Trial: 3D cortex under the Mission title (js/brain-mesh.js, brain_mesh in _config.yml)
+// 3D cortex under the Mission title (js/brain-mesh.js, brain_mesh in _config.yml)
 .brain-mesh {
     display: block;
     width: 100%;
@@ -546,21 +546,28 @@ hr {
 }
 
 .map-country {
-    fill: rgba($blue-dark, 0.22);
+    fill: rgba($blue-dark, 0.3);
     transition: fill 0.2s ease;
 }
 
 .map-line {
     fill: none;
-    stroke: #a5a5a5;
-    stroke-width: 3.75;
+    stroke: $blue-dark;
+    stroke-opacity: 0.5;
+    stroke-width: 2.5;
     pointer-events: none;
-    transition: stroke 0.2s ease;
+    transition: stroke-opacity 0.2s ease, stroke-width 0.2s ease;
+}
+
+.map-line-end {
+    fill: $blue-dark;
+    pointer-events: none;
 }
 
 .map-label {
     fill: $text;
     font-size: 28px;
+    font-kerning: none;     // Safari ignores it when it aligns SVG text to the right, and the lines would not line up
     paint-order: stroke;
     stroke: rgba(255, 255, 255, 0.85);
     stroke-width: 5px;
@@ -586,11 +593,12 @@ hr {
     &.is-hot,
     &.is-active {
         .map-country {
-            fill: rgba($blue-dark, 0.5);
+            fill: rgba($blue-dark, 0.6);
         }
 
         .map-line {
-            stroke: $blue-dark;
+            stroke-opacity: 1;
+            stroke-width: 3.5;
         }
 
         .map-dot {
@@ -610,18 +618,6 @@ hr {
     svg {
         display: block;
         fill: currentColor;
-    }
-}
-
-// Close markers overlap: only the drawn shape of each one responds, not its rectangle
-@media (min-width: #{$tablet + 1}) {
-    .map-pin,
-    .map-pin svg {
-        pointer-events: none;
-    }
-
-    .map-pin use {
-        pointer-events: auto;
     }
 }
 
@@ -696,15 +692,10 @@ hr {
         width: var(--pin-width);
         color: $blue-dark;
         filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+        pointer-events: none;       // close markers overlap: only the drawn shape of each one responds
         transform: translateX(-50%);
         transform-origin: 50% 100%;
         transition: transform 0.18s ease, color 0.18s ease;
-
-        &:hover,
-        &:focus-visible {
-            color: $blue-hover;
-            transform: translateX(-50%) scale(1.35);
-        }
 
         &:focus-visible {
             outline: 2px solid $blue-dark;
@@ -715,9 +706,16 @@ hr {
         svg {
             width: 100%;
             height: auto;
+            pointer-events: none;
+        }
+
+        use {
+            pointer-events: auto;
         }
     }
 
+    .map-pin:hover,
+    .map-pin:focus-visible,
     .is-hot > .map-pin,
     .map-location[open] > .map-pin {
         color: $blue-hover;
@@ -784,7 +782,8 @@ hr {
 // Phones and tablets: the map would be too small for labels and markers, so the markers become a list under it
 @media (max-width: $tablet) {
     .map-label,
-    .map-line {
+    .map-line,
+    .map-line-end {
         display: none;
     }
 
@@ -851,6 +850,7 @@ hr {
 @media print {
     .map-label,
     .map-line,
+    .map-line-end,
     .map-dot {
         display: inline;
     }

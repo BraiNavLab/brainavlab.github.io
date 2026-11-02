@@ -1,14 +1,13 @@
-// Trial: 3D cerebral cortex under the Mission title of the home page, turning with the scroll of the page.
-// To remove it: "brain_mesh: false" in _config.yml, see there. Plain WebGL, no libraries.
+// 3D cerebral cortex under the Mission title of the home page, turning with the scroll of the page.
+// To remove it: "brain_mesh: false" in _config.yml. Plain WebGL, no libraries.
 // Surface: ICBM152 template of BrainNet Viewer, provided by Prof. Alan C. Evans (MNI), reduced with
 // img/_sources/brain/build_brain_mesh.py. The colours are those of the BraiNavLab logo.
 
 const brainCanvas = document.querySelector('.brain-mesh');
-const brainGl = brainCanvas && brainCanvas.getContext('webgl', { antialias: true });
-if (brainCanvas && !brainGl) brainCanvas.hidden = true;     // without WebGL there is simply no brain
+const gl = brainCanvas && brainCanvas.getContext('webgl', { antialias: true });
+if (brainCanvas && !gl) brainCanvas.hidden = true;     // without WebGL there is simply no brain
 
-if (brainGl) {
-    const gl = brainGl;
+if (gl) {
     const LEFT_SIDE_VIEW = Math.PI / 2;     // the left hemisphere faces the visitor when the brain is mid-screen
     const TILT = 0.2;                       // seen slightly from above
     const TURN_PER_SCREEN = 2.4;            // radians for a scroll of one screen height
@@ -68,7 +67,7 @@ if (brainGl) {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let faceCount = 0;
-    let angle = null;
+    let angle = 0;
     let frame = 0;
     let onScreen = false;
 
@@ -93,7 +92,7 @@ if (brainGl) {
         frame = 0;
         if (!faceCount) return;
         const target = targetAngle();
-        angle = angle === null ? target : angle + (target - angle) * 0.14;
+        angle += (target - angle) * 0.14;
         if (Math.abs(target - angle) < 0.001) angle = target;
         draw();
         if (angle !== target) frame = requestAnimationFrame(animate);

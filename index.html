@@ -92,13 +92,12 @@ notitle: true
                 <ul class="logo-marquee-group"{% if round == 2 %} aria-hidden="true"{% endif %}>
                     {% for partner in site.data.partners %}
                         {% if partner.logo %}
+                        {% capture logo %}<img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">{% endcapture %}
                         <li>
                             {% if partner.url %}
-                                <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if round == 2 %} tabindex="-1"{% endif %}>
-                                    <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">
-                                </a>
+                                <a href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if round == 2 %} tabindex="-1"{% endif %}>{{ logo }}</a>
                             {% else %}
-                                <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" height="{{ partner.height | default: 56 }}">
+                                {{ logo }}
                             {% endif %}
                         </li>
                         {% endif %}

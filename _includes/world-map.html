@@ -10,20 +10,26 @@ Data: _data/map_locations.yml (markers), _data/partners.yml (institutions), _dat
             <img src="{{ '/img/home_img/world_map_base.png' | relative_url }}" alt="World map of the institutions collaborating with BraiNavLab" width="2400" height="1286" loading="lazy">
             <svg viewBox="0 0 2400 1286" aria-hidden="true">
                 <symbol id="map-pin-shape" viewBox="0 0 89 102">
-                    <path d="M72.5 15.4C88.5 30.9 89 56.4 73.5 72.5 64.2 82.1 54.9 91.8 45.5 101.5 35.9 92.2 26.2 82.8 16.5 73.5 .5 58.1 0 32.6 15.5 16.5 30.9 .5 56.4 0 72.5 15.4Z"/>
-                    <circle cx="44.4" cy="44.9" r="18" fill="#fff"/>
+                    <path d="M44.5 102 16.3 78.9A44.5 44.5 0 1 1 72.7 78.9Z"/>
+                    <circle cx="44.5" cy="44.5" r="18" fill="#fff"/>
                 </symbol>
                 {% for location in site.data.map_locations %}
                     {% assign institutions = site.data.partners | where: "location", location.id %}
                     {% assign shape = site.data.map_shapes[location.id] %}
-                    <g class="map-area" data-location="{{ location.id }}">
+                    {% comment %} The line starts next to the name and ends at the tip of the marker, under it. {% endcomment %}
+                    {% if location.side == "left" %}{% assign start_x = location.label_x | plus: 14 %}{% else %}{% assign start_x = location.label_x | minus: 14 %}{% endif %}
+                    {% assign start_y = location.label_y | minus: 12 %}
+                    {% assign end_y = location.y | minus: 4 %}
+                    <g class="map-area" data-location="{{ location.id }}" style="--i: {{ forloop.index0 }}">
                         {% if shape %}<path class="map-country" d="{{ shape }}"/>{% endif %}
-                        <polyline class="map-line" points="{{ location.line }}"/>
-                        <text class="map-label" x="{{ location.label_x }}" y="{{ location.label_y }}">
+                        <path class="map-line" pathLength="1" d="M{{ start_x }} {{ start_y }}C{{ location.curve }} {{ location.x }} {{ end_y }}"/>
+                        <circle class="map-line-end" cx="{{ start_x }}" cy="{{ start_y }}" r="5"/>
+                        <text class="map-label" x="{{ location.label_x }}" y="{{ location.label_y }}"{% if location.side == "left" %} text-anchor="end"{% endif %}>
+                            {%- comment %} No spaces between the lines: in right-aligned text they would shift them. {% endcomment -%}
                             <tspan class="map-label-title">{{ location.name }}</tspan>
-                            {% for partner in institutions %}
-                                <tspan x="{{ location.label_x }}" dy="34">• {{ partner.name }}</tspan>
-                            {% endfor %}
+                            {%- for partner in institutions -%}
+                                <tspan x="{{ location.label_x }}" dy="34">{{ partner.name }}</tspan>
+                            {%- endfor -%}
                         </text>
                         <use class="map-dot" href="#map-pin-shape" x="{{ location.x | minus: 24 }}" y="{{ location.y | minus: 55 }}" width="48" height="55"/>
                     </g>

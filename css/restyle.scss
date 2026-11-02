@@ -484,14 +484,28 @@ section {
 }
 
 // Markers drop in the first time the map enters the screen (see js/restyle.js)
-@media (min-width: #{$tablet + 1}) {
-    .pins-waiting .map-pin {
+@media screen and (min-width: #{$tablet + 1}) {
+    .pins-waiting .map-pin,
+    .pins-waiting .map-line,
+    .pins-waiting .map-line-end {
         opacity: 0;
     }
 
     .pins-drop .map-pin {
         animation: pin-drop 0.45s $ease backwards;
         animation-delay: calc(var(--i) * 70ms);
+    }
+
+    // Then the lines draw themselves from the names to the markers
+    .pins-drop .map-line {
+        stroke-dasharray: 1;
+        animation: line-draw 0.7s ease-out backwards;
+        animation-delay: calc(var(--i) * 70ms + 0.3s);
+    }
+
+    .pins-drop .map-line-end {
+        animation: line-end-in 0.3s ease-out backwards;
+        animation-delay: calc(var(--i) * 70ms + 0.3s);
     }
 
     .map-popup {
@@ -509,6 +523,18 @@ section {
         border: 0;
         border-left: 1px solid $hairline;
         border-top: 1px solid $hairline;
+    }
+}
+
+@keyframes line-draw {
+    from {
+        stroke-dashoffset: 1;
+    }
+}
+
+@keyframes line-end-in {
+    from {
+        opacity: 0;
     }
 }
 

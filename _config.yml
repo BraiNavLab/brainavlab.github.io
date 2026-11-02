@@ -18,7 +18,7 @@ exclude: [README.md, CURATORS_GUIDE.md, LICENSE, Gemfile, Gemfile.lock, build_si
 # Set to false to go back to the plain style.
 restyle: true
 
-# Trial: 3D brain under the Mission title of the home page, turning with the scroll (js/brain-mesh.js, img/home_img/brain_mesh.bin).
+# 3D brain under the Mission title of the home page, turning with the scroll (js/brain-mesh.js, img/home_img/brain_mesh.bin).
 # Set to false to remove it.
 brain_mesh: true
 

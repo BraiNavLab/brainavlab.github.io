@@ -26,7 +26,7 @@ and open <http://127.0.0.1:4000>. The page reloads by itself when you save a fil
 | People | `_data/people.yml` |
 | Funded projects | `_data/funded_projects.yml` |
 | Partner logos and world map on the home page | `_data/partners.yml`, `_data/map_locations.yml`, `img/partners/` |
-| 3D brain under Mission (trial) | `brain_mesh` in `_config.yml`, `js/brain-mesh.js`, `img/home_img/brain_mesh.bin` |
+| 3D brain under Mission | `brain_mesh` in `_config.yml`, `js/brain-mesh.js`, `img/home_img/brain_mesh.bin` |
 | Styles | `css/group.scss` |
 | Scripts | `js/site.js` |
 | Optional restyling | `css/restyle.scss`, `js/restyle.js`, `_includes/home-hero.html`, `fonts/` (`restyle: false` in `_config.yml` turns it off; to remove it for good, set that first, then delete these files) |
@@ -79,7 +79,7 @@ Add a block to `_data/partners.yml` (without `url`, the logo and the name are si
 
 The field `location` decides the marker of the world map: the name appears on the map and in the pop-up of that marker, with the link to the website.
 
-For a country not yet on the map, also add a block to `_data/map_locations.yml`: `x` and `y` are the pixels of the tip of the marker on `img/home_img/world_map_base.png`, which you can read with any image viewer. The source of that image is in `img/_sources/map/`.
+For a country not yet on the map, also add a block to `_data/map_locations.yml`: `x` and `y` are the pixels of the tip of the marker on `img/home_img/world_map_base.png`, which you can read with any image viewer. The other fields are explained at the top of that file. The base image comes from the map in `img/_sources/map/`, without markers and labels.
 
 ## Images
 

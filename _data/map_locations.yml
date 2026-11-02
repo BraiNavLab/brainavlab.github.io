@@ -2,65 +2,75 @@
 # Their institutions are the blocks with the same "location" in _data/partners.yml.
 # id: name used by _data/partners.yml and _data/map_shapes.yml.
 # x, y: tip of the marker, in pixels of img/home_img/world_map_base.png (2400 x 1286).
-# label_x, label_y: start of the country name on the map. line: points of the line from the name to the marker.
+# label_x, label_y: where the country name is anchored on the map, on the side of the line.
+# side: where the name sits compared with the marker. "left" aligns the text to the right, so the line always starts next to it.
+# curve: the two control points of the line from the name to the tip of the marker, in pixels ("x1 y1 x2 y2").
+# For a line that enters the tip straight from below, put the second point exactly under the tip (same x).
 # popup: below opens the pop-up under the marker instead of above it, so that it does not cover the markers nearby.
 
 - id: italy
   name: Italy
   x: 1224
   y: 658
-  label_x: 1597
-  label_y: 957
-  line: "1577,948 1306,948 1233,659"
+  label_x: 1307
+  label_y: 729
+  side: right
+  curve: "1255 717 1224 705"
   popup: below
 
 - id: united_states
   name: United States
   x: 550
   y: 690
-  label_x: 50
-  label_y: 585
-  line: "256,573 468,573 525,643"
+  label_x: 501
+  label_y: 795
+  side: left
+  curve: "532 783 550 746"
 
 - id: france
   name: France
   x: 1145
   y: 635
-  label_x: 723
-  label_y: 666
-  line: "827,659 1052,659 1116,618"
+  label_x: 1040
+  label_y: 660
+  side: left
+  curve: "1070 600 1115 595"
   popup: below
 
 - id: germany
   name: Germany
   x: 1205
   y: 578
-  label_x: 1313
-  label_y: 413
-  line: "1308,463 1228,546"
+  label_x: 1320
+  label_y: 420
+  side: right
+  curve: "1262 446 1228 492"
 
 - id: spain
   name: Spain
   x: 1106
   y: 685
-  label_x: 708
-  label_y: 820
-  line: "798,814 1028,814 1090,672"
+  label_x: 1000
+  label_y: 880
+  side: left
+  curve: "1060 868 1106 786"
   popup: below
 
 - id: switzerland
   name: Switzerland
   x: 1188
   y: 616
-  label_x: 1198
-  label_y: 256
-  line: "1174,257 1122,269 1174,566"
+  label_x: 1360
+  label_y: 560
+  side: right
+  curve: "1280 548 1235 575"
   popup: below
 
 - id: united_kingdom
   name: United Kingdom
   x: 1120
   y: 567
-  label_x: 712
-  label_y: 523
-  line: "1007,514 1071,514 1092,524"
+  label_x: 1040
+  label_y: 475
+  side: left
+  curve: "1067 463 1120 463"
