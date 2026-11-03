@@ -29,7 +29,7 @@ and open <http://127.0.0.1:4000>. The page reloads by itself when you save a fil
 | 3D brain under Mission | `brain_mesh` in `_config.yml`, `js/brain-mesh.js`, `img/home_img/brain_mesh.bin` |
 | Styles | `css/group.scss` |
 | Scripts | `js/site.js` |
-| Optional restyling | `css/restyle.scss`, `js/restyle.js`, `_includes/home-hero.html`, `fonts/` (`restyle: false` in `_config.yml` turns it off; to remove it for good, set that first, then delete these files) |
+| Optional restyling | `css/restyle.scss`, `js/restyle.js`, `js/globe.js`, `_includes/home-hero.html`, `fonts/` (`restyle: false` in `_config.yml` turns it off; to remove it for good, set that first, then delete these files) |
 | Working files that are not published | `img/_sources/`, `back_up_stuff/` |
 
 Folders starting with `_` are not published as they are: Jekyll uses them to build the pages.

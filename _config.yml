@@ -14,7 +14,7 @@ plugins:
 # Files in the repository that must not be published.
 exclude: [README.md, CURATORS_GUIDE.md, LICENSE, Gemfile, Gemfile.lock, build_site.sh, back_up_stuff, vendor]
 
-# Optional restyling layer (css/restyle.scss, js/restyle.js, _includes/home-hero.html, fonts/).
+# Optional restyling layer (css/restyle.scss, js/restyle.js, js/globe.js, _includes/home-hero.html, fonts/).
 # Set to false to go back to the plain style.
 restyle: true
 

@@ -85,6 +85,11 @@ notitle: true
 <section class="networking">
     <h2 class="home-title">Network</h2>
 
+    {% if site.restyle %}
+        {% comment %} Turning globe with arcs between cities of the world (js/globe.js). {% endcomment %}
+        <canvas class="network-globe" aria-hidden="true"></canvas>
+    {% endif %}
+
     {% comment %} Partner logos from _data/partners.yml. The list is printed twice to make the scrolling seamless. {% endcomment %}
     <div class="logo-marquee">
         <div class="logo-marquee-track">
@@ -134,3 +139,13 @@ notitle: true
 {% include video-modal.html %}
 
 {% if site.brain_mesh %}<script src="{{ '/js/brain-mesh.js' | relative_url }}" defer></script>{% endif %}
+{% if site.restyle %}
+    {% comment %} d3-geo projects the globe and cuts the land at the horizon; it needs d3-array. {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js"
+            integrity="sha384-VpKMdU+TlpggHFip46tJ/xkFUs8NFBwLqUMo3+3uiu411lU6eUQYsHVU+JFpA5ja"
+            crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js"
+            integrity="sha384-VNiKRUXp0MmglFfqDwkfuk+Y78C3WTJShdKSaFwOacLR3UmamxHIJLBTD3BadIXD"
+            crossorigin="anonymous" defer></script>
+    <script src="{{ '/js/globe.js' | relative_url }}" defer></script>
+{% endif %}
